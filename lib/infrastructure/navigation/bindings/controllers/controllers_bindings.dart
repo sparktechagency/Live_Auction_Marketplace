@@ -1,0 +1,1 @@
+export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/home.controller.binding.dart'; 
