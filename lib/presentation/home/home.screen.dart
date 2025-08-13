@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:live_auction_marketplace/infrastructure/theme/app_colors.dart';
+import 'package:live_auction_marketplace/infrastructure/theme/text_styles.dart';
 
 import 'controllers/home.controller.dart';
 
@@ -13,10 +15,10 @@ class HomeScreen extends GetView<HomeController> {
         title: const Text('HomeScreen'),
         centerTitle: true,
       ),
-      body: const Center(
+      body:   Center(
         child: Text(
-          'HomeScreen is working',
-          style: TextStyle(fontSize: 20),
+          'MouvBid ',
+          style: AppTextStyles.H1_Bold.copyWith(color: AppColors.primary1000),
         ),
       ),
     );
