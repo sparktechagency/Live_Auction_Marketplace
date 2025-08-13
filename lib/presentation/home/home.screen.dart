@@ -17,7 +17,7 @@ class HomeScreen extends GetView<HomeController> {
       ),
       body:   Center(
         child: Text(
-          'MouvBid ',
+          'Hi Bro!',
           style: AppTextStyles.H1_Bold.copyWith(color: AppColors.primary1000),
         ),
       ),

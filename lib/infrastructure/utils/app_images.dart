@@ -1095,5 +1095,7 @@ class AppImages {
   static String travelWayfinderToiletSignManWomanToiletSignRestroomBathroomUserHumanPersonStreamlineCore = "$baseUrlLogo/travel-wayfinder-toilet-sign-man-woman--toilet-sign-restroom-bathroom-user-human-person--Streamline-Core.svg";
   static String travelWayfinderToiltetSignWomanToiletSignRestroomBathroomUserHumanPersonWomanFemaleStreamlineCore = "$baseUrlLogo/travel-wayfinder-toiltet-sign-woman--toilet-sign-restroom-bathroom-user-human-person-woman-female--Streamline-Core.svg";
   static String travelWayfinderWomanSymbolGeometricGenderFemalePersonHumanUserStreamlineCore = "$baseUrlLogo/travel-wayfinder-woman-symbol--geometric-gender-female-person-human-user--Streamline-Core.svg";
+  static String facebookIcon = "$baseUrlLogo/facebookIcon.svg";
+  static String googleIcon = "$baseUrlLogo/googleIcon.svg";
 
 }

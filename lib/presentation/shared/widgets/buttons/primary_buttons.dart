@@ -14,6 +14,7 @@ class PrimaryButton extends StatelessWidget {
   final bool isActive;
   final String? svgAsset;
   final double iconSize;
+  final Color? textColor;
 
   const PrimaryButton({
     super.key,
@@ -22,9 +23,9 @@ class PrimaryButton extends StatelessWidget {
     this.width,
     this.backgroundColor,
     this.isActive = true,
-    this.iconSize = 20,
+    this.iconSize = 14,
     this.svgAsset,
-    this.height,
+    this.height, this.textColor,
   });
 
   @override
@@ -39,7 +40,7 @@ class PrimaryButton extends StatelessWidget {
             if (states.contains(WidgetState.disabled)) {
               return AppColors.neutral950; // Custom color when inactive
             }
-            return backgroundColor ?? AppColors.primary800;
+            return backgroundColor ?? AppColors.primary1000;
           }),
           padding: WidgetStateProperty.all(
               EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
@@ -58,16 +59,16 @@ class PrimaryButton extends StatelessWidget {
             if (svgAsset != null) ...[
               SvgPicture.asset(
                 svgAsset!,
-                width: iconSize,
-                height: iconSize,
-                color: Colors.white,
+                width: iconSize.h,
+                height: iconSize.h,
+                color:AppColors.neutral50,
               ),
                 SizedBox(width: 8.w),
             ],
             Text(
               text,
               style: AppTextStyles.paragraph_2_Medium.copyWith(
-                color: AppColors.neutral950,
+                color: textColor?? AppColors.neutral950,
               ),
             ),
           ],

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../config.dart';
+import '../../presentation/auth/splashScreen/splash_screen.screen.dart';
 import '../../presentation/screens.dart';
 import 'bindings/controllers/controllers_bindings.dart';
 import 'routes.dart';
@@ -35,6 +36,16 @@ class Nav {
       name: Routes.SPLASH_SCREEN,
       page: () => const SplashScreenScreen(),
       binding: SplashScreenControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.ROLE_SELECTION,
+      page: () => const RoleSelectionScreen(),
+      binding: RoleSelectionControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.SIGN_UP_WITH_EMAIL,
+      page: () => const SignUpWithEmailScreen(),
+      binding: SignUpWithEmailControllerBinding(),
     ),
   ];
 }
