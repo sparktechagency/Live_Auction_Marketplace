@@ -62,5 +62,20 @@ class Nav {
       page: () => const LogInScreen(),
       binding: LogInControllerBinding(),
     ),
+    GetPage(
+      name: Routes.VERIFY_EMAIL,
+      page: () => const VerifyEmailScreen(),
+      binding: VerifyEmailControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.OTP_VERIFICATION,
+      page: () => const OtpVerificationScreen(),
+      binding: OtpVerificationControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.RESET_PASSWORD,
+      page: () => const ResetPasswordScreen(),
+      binding: ResetPasswordControllerBinding(),
+    ),
   ];
 }

@@ -5,10 +5,13 @@ class Routes {
   }
 
   static const HOME = '/home';
+  static const LOG_IN = '/log-in';
+  static const OTP_VERIFICATION = '/otp-verification';
   static const ROLE_SELECTION = '/role-selection';
   static const SIGN_UP = '/sign-up';
   static const SIGN_UP_WITH_EMAIL = '/sign-up-with-email';
   static const SPLASH_SCREEN = '/splash-screen';
   static const SUCCESS_SCREEN = '/success-screen';
-  static const LOG_IN = '/log-in';
+  static const VERIFY_EMAIL = '/verify-email';
+  static const RESET_PASSWORD = '/reset-password';
 }
