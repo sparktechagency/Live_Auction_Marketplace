@@ -66,6 +66,7 @@ class Main extends StatelessWidget {
               elevation: 0,
               scrolledUnderElevation: 0,
             ),
+            indicatorColor: AppColors.primary1000
           ),
         );
       },

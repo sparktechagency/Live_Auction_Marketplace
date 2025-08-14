@@ -47,5 +47,10 @@ class Nav {
       page: () => const SignUpWithEmailScreen(),
       binding: SignUpWithEmailControllerBinding(),
     ),
+    GetPage(
+      name: Routes.SIGN_UP,
+      page: () => const SignUpScreen(),
+      binding: SignUpControllerBinding(),
+    ),
   ];
 }

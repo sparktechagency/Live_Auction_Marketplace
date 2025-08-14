@@ -203,26 +203,26 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
     return InputDecoration(
       hintText: widget.hintText,
       hintStyle: AppTextStyles.buttonRegular.copyWith(
-        color: widget.dropdownHintTextColor ?? widget.hintTextColor ?? AppColors.primary200,
+        color: widget.dropdownHintTextColor ?? widget.hintTextColor ?? AppColors.neutral50,fontSize: 13.sp
       ),
       filled: widget.filledstatus ?? true,
       fillColor:
-      widget.filledColor ?? (widget.isEnabled ? AppColors.neutral950 : AppColors.neutral950),
+      widget.filledColor ?? (widget.isEnabled ? AppColors.neutral800 : AppColors.neutral800),
       contentPadding: EdgeInsets.symmetric(
         vertical: widget.boxHeight?.toDouble() ?? 18.h,
         horizontal: 20.w,
       ),
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(4),
+        borderRadius: BorderRadius.circular(100.r),
         borderSide: const BorderSide(color: Colors.transparent),
       ),
       enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(4),
+        borderRadius: BorderRadius.circular(100.r),
         borderSide: BorderSide(color: Colors.transparent),
       ),
       focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(4),
-        borderSide: BorderSide(color: AppColors.primary1000, width: 1.5),
+        borderRadius: BorderRadius.circular(100.r),
+        borderSide: BorderSide(color: AppColors.primary1000, width: 1 .w),
       ),
       prefixIcon: _buildPrefixIcon(context),
       suffixIcon: _isPasswordField && !widget.readOnly // Don't show password toggle for readOnly fields
@@ -233,7 +233,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           _obscureText ? AppImages.passwordOff : AppImages.passwordOn,
           height: 18.h,
           width: 18.w,
-          color: AppColors.primary200,
+          color: AppColors.neutral50,
         ),
 
         onPressed: () {
@@ -249,15 +249,15 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   Widget? _buildPrefixIcon(BuildContext context) {
     if (widget.prefixSvg is String) {
       return Padding(
-        padding: EdgeInsets.all(9.sp),
+        padding: EdgeInsets.only(left:10.w,top: 17.h,bottom: 16.h,right: 4.w),
         child: Padding(
-          padding: const EdgeInsets.only(left: 10),
+          padding:   EdgeInsets.only(left: 10.w),
           child: SvgPicture.asset(
             widget.prefixSvg!,
-            height: widget.prefixIconHeight?.toDouble() ?? 16.h,
-            width: widget.prefixIconWeight?.toDouble() ?? 16.w,
+            height: widget.prefixIconHeight?.toDouble() ?? 14.h,
+            width: widget.prefixIconWeight?.toDouble() ?? 14.w,
             fit: BoxFit.contain,
-            color: AppColors.primary200,
+            color: AppColors.neutral50,
           ),
         ),
       );

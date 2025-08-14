@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:live_auction_marketplace/presentation/shared/widgets/buttons/primary_buttons.dart';
 
+import '../../../infrastructure/navigation/routes.dart';
 import '../../../infrastructure/theme/app_colors.dart';
 import '../../../infrastructure/theme/text_styles.dart';
 import '../../../infrastructure/utils/app_images.dart';
@@ -44,7 +45,10 @@ class SignUpWithEmailScreen extends GetView<SignUpWithEmailController> {
                 svgAsset: AppImages
                     .mailSendEnvelopeEnvelopeEmailMessageUnopenedSealedCloseStreamlineCore,
                 width: double.infinity,
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed(Routes.SIGN_UP);
+
+                },
                 text: "Sign Up With Email",
                 textColor: AppColors.neutral50,
               ),

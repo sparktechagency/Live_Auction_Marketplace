@@ -5,8 +5,9 @@ class AppColors {
 
   //-----------------------------------Default Text Color----------------------------------------
 
-  static const Color defaultTextColor = Color(0xFF000000);
-
+  //static const Color defaultTextColor = Color(0xFF000000);
+  static const Color defaultTextColor = Color(0xFFFFFFFF);
+//defaultTextColor
   // -------------------------------------Primary Color------------------------------------------
 
   static const Color primary50 = Color(0xFFFFFFEA);
