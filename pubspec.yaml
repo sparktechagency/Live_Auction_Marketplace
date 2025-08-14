@@ -69,6 +69,7 @@ dependencies:
   flutter_phoenix:
   text_typewriter:
   intl_phone_number_input: ^0.7.4
+  intl_phone_selector: ^0.0.2
 
 
 

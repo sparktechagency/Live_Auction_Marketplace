@@ -52,5 +52,15 @@ class Nav {
       page: () => const SignUpScreen(),
       binding: SignUpControllerBinding(),
     ),
+    GetPage(
+      name: Routes.SUCCESS_SCREEN,
+      page: () => const SuccessScreenScreen(),
+      binding: SuccessScreenControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.LOG_IN,
+      page: () => const LogInScreen(),
+      binding: LogInControllerBinding(),
+    ),
   ];
 }

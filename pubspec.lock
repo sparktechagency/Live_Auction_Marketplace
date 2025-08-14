@@ -544,6 +544,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.4"
+  intl_phone_selector:
+    dependency: "direct main"
+    description:
+      name: intl_phone_selector
+      sha256: af476a4af9f2ad6f4c175203b583a20a23ccdccd9920e5de8c62a86dbf401fd3
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.2"
   js:
     dependency: transitive
     description:

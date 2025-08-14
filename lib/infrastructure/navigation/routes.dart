@@ -6,7 +6,9 @@ class Routes {
 
   static const HOME = '/home';
   static const ROLE_SELECTION = '/role-selection';
+  static const SIGN_UP = '/sign-up';
   static const SIGN_UP_WITH_EMAIL = '/sign-up-with-email';
   static const SPLASH_SCREEN = '/splash-screen';
-  static const SIGN_UP = '/sign-up';
+  static const SUCCESS_SCREEN = '/success-screen';
+  static const LOG_IN = '/log-in';
 }

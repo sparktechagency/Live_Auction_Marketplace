@@ -9,6 +9,7 @@ import 'package:live_auction_marketplace/presentation/shared/widgets/appbar/cust
 import 'package:live_auction_marketplace/presentation/shared/widgets/buttons/primary_buttons.dart';
 import 'package:live_auction_marketplace/presentation/shared/widgets/custom_text_form_field.dart';
 
+import '../../../infrastructure/navigation/routes.dart';
 import '../../../infrastructure/theme/app_colors.dart';
 import '../../../infrastructure/utils/app_images.dart';
 import 'controllers/sign_up.controller.dart';
@@ -91,17 +92,13 @@ class SignUpScreen extends GetView<SignUpController> {
                   decoration: BoxDecoration(
                     color: AppColors.neutral800,
                     borderRadius: BorderRadius.circular(100.r),
-
                   ),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(100.r), // Clip the ripple effect
+                    borderRadius: BorderRadius.circular(100.r),
+                    // Clip the ripple effect
                     child: InternationalPhoneNumberInput(
-                      onInputChanged: (PhoneNumber number) {
-
-                      },
-                      onInputValidated: (bool value) {
-
-                      },
+                      onInputChanged: (PhoneNumber number) {},
+                      onInputValidated: (bool value) {},
                       selectorConfig: SelectorConfig(
                         selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
                         useBottomSheetSafeArea: true,
@@ -112,9 +109,8 @@ class SignUpScreen extends GetView<SignUpController> {
                       ),
                       ignoreBlank: false,
                       autoValidateMode: AutovalidateMode.disabled,
-                      selectorTextStyle: AppTextStyles.paragraph_2_Regular.copyWith(
-                        color: AppColors.defaultTextColor,
-                      ),
+                      selectorTextStyle: AppTextStyles.paragraph_2_Regular
+                          .copyWith(color: AppColors.defaultTextColor),
                       textStyle: TextStyle(
                         color: AppColors.defaultTextColor,
                         fontSize: 16.sp,
@@ -123,7 +119,10 @@ class SignUpScreen extends GetView<SignUpController> {
                       initialValue: controller.number,
                       textFieldController: controller.controller,
                       formatInput: true,
-                      keyboardType: TextInputType.numberWithOptions(signed: true, decimal: true),
+                      keyboardType: TextInputType.numberWithOptions(
+                        signed: true,
+                        decimal: true,
+                      ),
                       inputDecoration: InputDecoration(
                         hintText: "Phone number",
                         hintStyle: AppTextStyles.paragraph_2_Regular,
@@ -164,13 +163,21 @@ class SignUpScreen extends GetView<SignUpController> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 24.h,
+                SizedBox(height: 24.h),
+                PrimaryButton(
+                  width: double.infinity,
+                  onPressed: () {
+                   // controller. successScreenController.title.value='Sign up successful';
+                   // controller.successScreenController.subTitle.value='Please Check your Email';
+                   //
+                   //  Get.toNamed(Routes.SUCCESS_SCREEN);
+
+controller.navigateToRegistrationSuccess();
+
+                  },
+                  text: "Sign UP",
                 ),
-                PrimaryButton(width: double.infinity,onPressed: (){}, text: "Sign UP"),
-                SizedBox(
-                  height: 12.h,
-                ),
+                SizedBox(height: 12.h),
                 RichText(
                   text: TextSpan(
                     children: [
