@@ -72,7 +72,9 @@ class LogInScreen extends GetView<LogInController> {
               ),
             ),
             SizedBox(height:24.h),
-            PrimaryButton(width: double.infinity,onPressed: (){}, text: "Log in"),
+            PrimaryButton(width: double.infinity,onPressed: (){
+              Get.offAllNamed(Routes.HOME);
+            }, text: "Log in"),
 
             SizedBox(height: 23.h),
             RichText(

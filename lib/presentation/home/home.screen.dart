@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:live_auction_marketplace/infrastructure/theme/app_colors.dart';
 import 'package:live_auction_marketplace/infrastructure/theme/text_styles.dart';
+import 'package:live_auction_marketplace/presentation/shared/widgets/buttons/primary_buttons.dart';
 
+import '../../infrastructure/utils/secure_storage_helper.dart';
 import 'controllers/home.controller.dart';
 
 class HomeScreen extends GetView<HomeController> {
@@ -16,10 +18,9 @@ class HomeScreen extends GetView<HomeController> {
         centerTitle: true,
       ),
       body:   Center(
-        child: Text(
-          'Hi Bro!',
-          style: AppTextStyles.H1_Bold.copyWith(color: AppColors.primary1000),
-        ),
+        child: PrimaryButton(onPressed: (){
+          SecureStorageHelper.remove("userRole");
+        }, text: "Delete role"),
       ),
     );
   }

@@ -70,6 +70,7 @@ dependencies:
   text_typewriter:
   intl_phone_number_input: ^0.7.4
   intl_phone_selector: ^0.0.2
+  simple_animation_progress_bar: ^1.9.2
 
 
 
