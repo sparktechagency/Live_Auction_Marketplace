@@ -5,6 +5,7 @@ export 'package:live_auction_marketplace/presentation/auth/forgetPassword/otpVer
 export 'package:live_auction_marketplace/presentation/auth/forgetPassword/resetPassword/reset_password.screen.dart';
 export 'package:live_auction_marketplace/presentation/auth/forgetPassword/verifyEmail/verify_email.screen.dart';
 export 'package:live_auction_marketplace/presentation/auth/logIn/log_in.screen.dart';
+export 'package:live_auction_marketplace/presentation/auth/sellerInformation/seller_information.screen.dart';
 export 'package:live_auction_marketplace/presentation/auth/signUp/sign_up.screen.dart';
 export 'package:live_auction_marketplace/presentation/auth/signUpWithEmail/sign_up_with_email.screen.dart';
 export 'package:live_auction_marketplace/presentation/auth/successScreen/success_screen.screen.dart';

@@ -77,5 +77,10 @@ class Nav {
       page: () => const ResetPasswordScreen(),
       binding: ResetPasswordControllerBinding(),
     ),
+    GetPage(
+      name: Routes.SELLER_INFORMATION,
+      page: () => const SellerInformationScreen(),
+      binding: SellerInformationControllerBinding(),
+    ),
   ];
 }

@@ -55,7 +55,7 @@ class _SuccessScreenScreenState extends State<SuccessScreenScreen> {
                 style: AppTextStyles.paragraph_1_Regular,
               );
             }),
-            SizedBox(height: 230.h),
+     Spacer(),
             Obx(() {
               return PrimaryButton(
                 width: double.infinity,
@@ -63,6 +63,7 @@ class _SuccessScreenScreenState extends State<SuccessScreenScreen> {
                 text: successScreenController.buttonText.value,
               );
             }),
+            SizedBox(height: 30.h),
           ],
         ),
       ),

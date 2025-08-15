@@ -83,6 +83,7 @@ class AppImages {
   static String editProfileIcon = "$baseUrlLogo/editProfile.svg";
   static String deleteIcon = "$baseUrlLogo/delete.svg";
   static String checkMate = "$baseUrlLogo/checkMate.svg";
+  static String roundedCamera = "$baseUrlLogo/roundedCamera.svg";
 
   // static String rateOurAppIcon = "$baseUrlLogo/rateOurApp.svg";
   static String starIconFullFill = "$baseUrlLogo/starIconFullFill.svg";
