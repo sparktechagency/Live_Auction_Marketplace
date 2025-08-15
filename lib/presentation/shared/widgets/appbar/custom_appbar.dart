@@ -48,7 +48,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                     width: 16.w,
                     color: AppColors.defaultTextColor,
                   ),
-                  onPressed: () => Get.back(),
+                  onPressed: onBackPressed ?? () => Get.back(),
                 )
               : null),
       title: Text(

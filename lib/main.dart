@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:live_auction_marketplace/infrastructure/theme/app_colors.dart';
 import 'package:live_auction_marketplace/infrastructure/utils/log_helper.dart';
 import 'package:live_auction_marketplace/presentation/auth/successScreen/controllers/success_screen.controller.dart';
+import 'package:live_auction_marketplace/presentation/shared/widgets/imagePicker/imagePickerController.dart';
 
 import 'infrastructure/navigation/navigation.dart';
 import 'infrastructure/navigation/routes.dart';
@@ -12,6 +13,7 @@ import 'infrastructure/utils/secure_storage_helper.dart';
 
 class AppController extends GetxController {
   static AppController get to => Get.find();
+
 
   final RxString role = ''.obs;
   final RxString userToken = ''.obs;

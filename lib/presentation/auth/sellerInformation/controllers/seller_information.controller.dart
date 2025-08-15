@@ -1,15 +1,31 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:live_auction_marketplace/infrastructure/utils/log_helper.dart';
+
+import '../../../../main.dart';
+import '../../../shared/widgets/imagePicker/imagePickerController.dart';
 
 class SellerInformationController extends GetxController {
-  // Page Controller for PageView
+
   PageController pageController = PageController();
+  final imageController = Get.put(imagePickerController());
 
 
   // Observable variables
   final currentPage = 0.obs;
   final totalPages = 2;
 
+  // Image picker instance
+  final ImagePicker _picker = ImagePicker();
+
+  // Selfie image
+  final Rx<File?> selfieImage = Rx<File?>(null);
+  
+  // ID card images
+  final Rx<File?> frontIdImage = Rx<File?>(null);
+  final Rx<File?> backIdImage = Rx<File?>(null);
 
   final businessIdController = TextEditingController();
   final addressController = TextEditingController();
@@ -66,15 +82,57 @@ class SellerInformationController extends GetxController {
   }
 
   // Handle selfie capture
-  void takeSelfie() {
-    // TODO: Implement camera functionality
-    Get.snackbar('Info', 'Camera functionality to be implemented');
+  Future<void> takeSelfie() async {
+    try {
+      final XFile? photo = await _picker.pickImage(
+        source: ImageSource.camera,
+        preferredCameraDevice: CameraDevice.front,
+        imageQuality: 80,
+      );
+      
+      if (photo != null) {
+        selfieImage.value = File(photo.path);
+        // Get.snackbar(
+        //   'Success',
+        //   'Selfie captured successfully!',
+        //   snackPosition: SnackPosition.BOTTOM,
+        // );
+      }
+    } catch (e) {
+     LoggerHelper.error(e);
+    }
   }
 
-  // Handle ID photo upload
-  void uploadIdPhoto(bool isFront) {
-    // TODO: Implement photo picker functionality
-    Get.snackbar('Info', 'Photo picker functionality to be implemented');
+  // Handle front ID card image selection
+  void selectFrontIdImage() {
+    if (imageController.selectedImages.isNotEmpty) {
+      frontIdImage.value = imageController.selectedImages.last;
+      imageController.clearAllImages();
+    }
+  }
+  
+  // Handle back ID card image selection
+  void selectBackIdImage() {
+    if (imageController.selectedImages.isNotEmpty) {
+      backIdImage.value = imageController.selectedImages.last;
+      imageController.clearAllImages();
+    }
+  }
+
+  // Pick front ID card image
+  Future<void> pickFrontIdImage(ImageSource source) async {
+    final pickedFile = await _picker.pickImage(source: source);
+    if (pickedFile != null) {
+      frontIdImage.value = File(pickedFile.path);
+    }
+  }
+
+  // Pick back ID card image
+  Future<void> pickBackIdImage(ImageSource source) async {
+    final pickedFile = await _picker.pickImage(source: source);
+    if (pickedFile != null) {
+      backIdImage.value = File(pickedFile.path);
+    }
   }
 
   // Validate current page data
