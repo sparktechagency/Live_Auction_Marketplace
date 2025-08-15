@@ -266,7 +266,10 @@ class SellerInformationScreen extends GetView<SellerInformationController> {
             // Seller Address
             Text('Seller Address', style: AppTextStyles.paragraph_2_Regular),
             SizedBox(height: 8.h),
-            CustomTextFormField(hintText: 'Address'),
+            CustomTextFormField(
+              hintText: 'Address',
+              controller: controller.addressController,
+            ),
             SizedBox(height: 10.h),
           ],
         ),
@@ -274,7 +277,7 @@ class SellerInformationScreen extends GetView<SellerInformationController> {
     );
   }
 
-  void _showFrontImagePicker(BuildContext context) {
+  void _showImagePicker(BuildContext context, bool isFront) {
     showModalBottomSheet(
       backgroundColor: AppColors.neutral950,
       context: context,
@@ -287,7 +290,9 @@ class SellerInformationScreen extends GetView<SellerInformationController> {
               Expanded(
                 child: GestureDetector(
                   onTap: () {
-                    controller.pickFrontIdImage(ImageSource.gallery);
+                    isFront
+                        ? controller.pickFrontIdImage(ImageSource.gallery)
+                        : controller.pickBackIdImage(ImageSource.gallery);
                     Get.back();
                   },
                   child: Column(
@@ -308,65 +313,9 @@ class SellerInformationScreen extends GetView<SellerInformationController> {
               Expanded(
                 child: GestureDetector(
                   onTap: () {
-                    controller.pickFrontIdImage(ImageSource.camera);
-                    Get.back();
-                  },
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(
-                        Icons.camera_alt,
-                        size: 50.w,
-                        color: AppColors.primary1000,
-                      ),
-                      SizedBox(height: 8.h),
-                      Text("Camera", style: AppTextStyles.paragraph_1_Regular),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-        );
-      },
-    );
-  }
-
-  void _showBackImagePicker(BuildContext context) {
-    showModalBottomSheet(
-      backgroundColor: AppColors.neutral950,
-      context: context,
-      builder: (_) {
-        return Padding(
-          padding: const EdgeInsets.all(18.0),
-          child: Row(
-            children: [
-              // Pick from gallery
-              Expanded(
-                child: GestureDetector(
-                  onTap: () {
-                    controller.pickBackIdImage(ImageSource.gallery);
-                    Get.back();
-                  },
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(
-                        Icons.image,
-                        size: 50.w,
-                        color: AppColors.primary1000,
-                      ),
-                      SizedBox(height: 8.h),
-                      Text("Gallery", style: AppTextStyles.paragraph_1_Regular),
-                    ],
-                  ),
-                ),
-              ),
-              // Pick from camera
-              Expanded(
-                child: GestureDetector(
-                  onTap: () {
-                    controller.pickBackIdImage(ImageSource.camera);
+                    isFront
+                        ? controller.pickFrontIdImage(ImageSource.camera)
+                        : controller.pickBackIdImage(ImageSource.camera);
                     Get.back();
                   },
                   child: Column(
@@ -392,13 +341,7 @@ class SellerInformationScreen extends GetView<SellerInformationController> {
 
   Widget _buildUploadBox(BuildContext context, {required bool isFront}) {
     return GestureDetector(
-      onTap: () {
-        if (isFront) {
-          _showFrontImagePicker(context);
-        } else {
-          _showBackImagePicker(context);
-        }
-      },
+      onTap: () => _showImagePicker(context, isFront),
       child: Obx(() {
         File? selectedImage = isFront
             ? controller.frontIdImage.value
@@ -483,7 +426,9 @@ class SellerInformationScreen extends GetView<SellerInformationController> {
               Expanded(
                 child: PrimaryButton(
                   width: double.infinity,
-                  onPressed: () {},
+                  onPressed: () {
+                    controller.validateSignup();
+                  },
                   text: 'Sign Up',
                 ),
               ),

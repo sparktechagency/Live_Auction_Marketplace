@@ -82,5 +82,30 @@ class Nav {
       page: () => const SellerInformationScreen(),
       binding: SellerInformationControllerBinding(),
     ),
+    GetPage(
+      name: Routes.GUIDE_LINE,
+      page: () => const GuideLineScreen(),
+      binding: GuideLineControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.GENDER_SELECTION,
+      page: () => const GenderSelectionScreen(),
+      binding: GenderSelectionControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.PRODUCT_SELECTION,
+      page: () => const ProductSelectionScreen(),
+      binding: ProductSelectionControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.CATEGORY_SELECTION,
+      page: () => const CategorySelectionScreen(),
+      binding: CategorySelectionControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.HOW_DOES_IT_WORKS,
+      page: () => const HowDoesItWorksScreen(),
+      binding: HowDoesItWorksControllerBinding(),
+    ),
   ];
 }

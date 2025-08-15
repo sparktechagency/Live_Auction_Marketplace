@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:live_auction_marketplace/infrastructure/utils/log_helper.dart';
-
-import '../../../../main.dart';
+import '../../../../infrastructure/navigation/routes.dart';
+import '../../../../infrastructure/theme/app_colors.dart';
 import '../../../shared/widgets/imagePicker/imagePickerController.dart';
+import '../../successScreen/controllers/success_screen.controller.dart';
 
 class SellerInformationController extends GetxController {
 
@@ -33,13 +34,6 @@ class SellerInformationController extends GetxController {
 
   double get progress => (currentPage.value + 1) / totalPages;
 
-  @override
-  void onInit() {
-    super.onInit();
-
-    businessIdController.text = '12445544';
-    addressController.text = 'Rhode Island, USA';
-  }
 
   @override
   void onClose() {
@@ -92,18 +86,13 @@ class SellerInformationController extends GetxController {
       
       if (photo != null) {
         selfieImage.value = File(photo.path);
-        // Get.snackbar(
-        //   'Success',
-        //   'Selfie captured successfully!',
-        //   snackPosition: SnackPosition.BOTTOM,
-        // );
       }
     } catch (e) {
      LoggerHelper.error(e);
     }
   }
 
-  // Handle front ID card image selection
+
   void selectFrontIdImage() {
     if (imageController.selectedImages.isNotEmpty) {
       frontIdImage.value = imageController.selectedImages.last;
@@ -139,12 +128,10 @@ class SellerInformationController extends GetxController {
   bool _validateCurrentPage() {
     switch (currentPage.value) {
       case 0:
-      // Validate selfie is taken
-      // TODO: Add selfie validation
+
         return true;
       case 1:
-      // Validate ID information
-      // TODO: Add ID validation
+
         return addressController.text.isNotEmpty;
       case 2:
         return true;
@@ -153,6 +140,53 @@ class SellerInformationController extends GetxController {
     }
   }
 
+void validateSignup(){
+  // Check if front ID card is uploaded
+  if (frontIdImage.value == null) {
+    Get.snackbar(
+      '!! Warning !!',
+      'Front of ID card is required',
+      snackPosition: SnackPosition.TOP,
+      backgroundColor: Colors.red,
+      colorText: Colors.white,
+    );
+    return;
+  }
+
+  // Check if back ID card is uploaded
+  if (backIdImage.value == null) {
+    Get.snackbar(
+      '!! Warning !!',
+      'Back of ID card is required',
+      snackPosition: SnackPosition.TOP,
+      backgroundColor: Colors.red,
+      colorText: Colors.white,
+    );
+    return;
+  }
+
+  // Check if address is filled
+  if (addressController.text.trim().isEmpty) {
+    Get.snackbar(
+      '!! Warning !!',
+      'Address field is required',
+      snackPosition: SnackPosition.TOP,
+      backgroundColor: Colors.red,
+      colorText: Colors.white,
+    );
+    return;
+  }
+
+  Get.find<SuccessScreenController>().initializeSuccessScreen(
+    title: "Sign up successful",
+    subTitle: "Please Check your Email",
+    buttonText: "Next",
+    onPressed: () {
+      Get.offAllNamed(Routes.GUIDE_LINE);
+    },
+  );
+  Get.toNamed(Routes.SUCCESS_SCREEN);
+}
   // Save current page data
   void saveCurrentPage() {
     if (_validateCurrentPage()) {

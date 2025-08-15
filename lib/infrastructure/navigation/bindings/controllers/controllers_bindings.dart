@@ -1,7 +1,12 @@
  export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/home.controller.binding.dart';
  export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/splash_screen.controller.binding.dart';
+export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/category_selection.controller.binding.dart'; 
+export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/gender_selection.controller.binding.dart'; 
+export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/guide_line.controller.binding.dart'; 
+export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/how_does_it_works.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/log_in.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/otp_verification.controller.binding.dart'; 
+export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/product_selection.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/reset_password.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/role_selection.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/seller_information.controller.binding.dart'; 

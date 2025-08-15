@@ -21,7 +21,7 @@ class SignUpController extends GetxController {
       subTitle: "Please Check your Email",
       buttonText: "Next",
       onPressed: () {
-Get.offAllNamed(Routes.LOG_IN);
+Get.offAllNamed(Routes.GUIDE_LINE);
       },
     );
 

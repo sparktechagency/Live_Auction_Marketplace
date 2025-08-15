@@ -38,7 +38,7 @@ class PrimaryButton extends StatelessWidget {
         style: ButtonStyle(
           backgroundColor: WidgetStateProperty.resolveWith<Color>((states) {
             if (states.contains(WidgetState.disabled)) {
-              return AppColors.neutral950; // Custom color when inactive
+              return AppColors.neutral800; // Custom color when inactive
             }
             return backgroundColor ?? AppColors.primary1000;
           }),

@@ -9,3 +9,8 @@ export 'package:live_auction_marketplace/presentation/auth/sellerInformation/sel
 export 'package:live_auction_marketplace/presentation/auth/signUp/sign_up.screen.dart';
 export 'package:live_auction_marketplace/presentation/auth/signUpWithEmail/sign_up_with_email.screen.dart';
 export 'package:live_auction_marketplace/presentation/auth/successScreen/success_screen.screen.dart';
+export 'package:live_auction_marketplace/presentation/setupProfile/categorySelection/category_selection.screen.dart';
+export 'package:live_auction_marketplace/presentation/setupProfile/genderSelection/gender_selection.screen.dart';
+export 'package:live_auction_marketplace/presentation/setupProfile/guideLine/guide_line.screen.dart';
+export 'package:live_auction_marketplace/presentation/setupProfile/howDoesItWorks/how_does_it_works.screen.dart';
+export 'package:live_auction_marketplace/presentation/setupProfile/productSelection/product_selection.screen.dart';
