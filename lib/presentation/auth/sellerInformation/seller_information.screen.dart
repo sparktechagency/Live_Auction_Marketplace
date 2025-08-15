@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:live_auction_marketplace/infrastructure/theme/text_styles.dart';
 import 'package:live_auction_marketplace/presentation/shared/widgets/buttons/primary_buttons.dart';
+import 'package:live_auction_marketplace/presentation/shared/widgets/custom_text_form_field.dart';
 import 'package:live_auction_marketplace/presentation/shared/widgets/imagePicker/custom_image_picker.dart';
 
 import '../../../infrastructure/theme/app_colors.dart';
@@ -33,7 +34,7 @@ class SellerInformationScreen extends GetView<SellerInformationController> {
           }
         },
         leadingIcon:
-        AppImages.interfaceArrowsButtonLeftArrowKeyboardLeftStreamlineCore,
+            AppImages.interfaceArrowsButtonLeftArrowKeyboardLeftStreamlineCore,
         // actions: [
         //   Padding(
         //     padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 4.h),
@@ -52,15 +53,14 @@ class SellerInformationScreen extends GetView<SellerInformationController> {
             margin: EdgeInsets.symmetric(horizontal: 24.w),
             height: 8.h,
             child: Obx(
-                  () =>
-                  LinearProgressIndicator(
-                    value: controller.progress,
-                    backgroundColor: AppColors.neutral800,
-                    valueColor: AlwaysStoppedAnimation<Color>(
-                      AppColors.primary1000,
-                    ),
-                    borderRadius: BorderRadius.circular(100.r),
-                  ),
+              () => LinearProgressIndicator(
+                value: controller.progress,
+                backgroundColor: AppColors.neutral800,
+                valueColor: AlwaysStoppedAnimation<Color>(
+                  AppColors.primary1000,
+                ),
+                borderRadius: BorderRadius.circular(100.r),
+              ),
             ),
           ),
 
@@ -101,53 +101,52 @@ class SellerInformationScreen extends GetView<SellerInformationController> {
               controller.takeSelfie();
             },
             child: Obx(
-                  () =>
-              controller.selfieImage.value != null
+              () => controller.selfieImage.value != null
                   ? Container(
-                width: 124.w,
-                height: 124.w,
-                decoration: BoxDecoration(shape: BoxShape.circle),
-                child: ClipOval(
-                  child: Image.file(
-                    controller.selfieImage.value!,
-                    width: 124.w,
-                    height: 124.w,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              )
+                      width: 124.w,
+                      height: 124.w,
+                      decoration: BoxDecoration(shape: BoxShape.circle),
+                      child: ClipOval(
+                        child: Image.file(
+                          controller.selfieImage.value!,
+                          width: 124.w,
+                          height: 124.w,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    )
                   : DottedBorder(
-                options: CircularDottedBorderOptions(
-                  dashPattern: [5, 5],
-                  color: AppColors.neutral200,
-                  strokeWidth: 1.w,
-                  borderPadding: EdgeInsets.all(0),
-                  padding: EdgeInsets.all(0),
-                ),
-                child: Container(
-                  width: 124.w,
-                  height: 124.w,
-                  decoration: BoxDecoration(
-                    color: AppColors.neutral800,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset(
-                        AppImages.roundedCamera,
-                        height: 24.h,
-                        width: 24.w,
+                      options: CircularDottedBorderOptions(
+                        dashPattern: [5, 5],
+                        color: AppColors.neutral200,
+                        strokeWidth: 1.w,
+                        borderPadding: EdgeInsets.all(0),
+                        padding: EdgeInsets.all(0),
                       ),
-                      SizedBox(height: 12.h),
-                      Text(
-                        'Take Selfie',
-                        style: AppTextStyles.buttonRegular,
+                      child: Container(
+                        width: 124.w,
+                        height: 124.w,
+                        decoration: BoxDecoration(
+                          color: AppColors.neutral800,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SvgPicture.asset(
+                              AppImages.roundedCamera,
+                              height: 24.h,
+                              width: 24.w,
+                            ),
+                            SizedBox(height: 12.h),
+                            Text(
+                              'Take Selfie',
+                              style: AppTextStyles.buttonRegular,
+                            ),
+                          ],
+                        ),
                       ),
-                    ],
-                  ),
-                ),
-              ),
+                    ),
             ),
           ),
           SizedBox(height: 120.h),
@@ -249,62 +248,25 @@ class SellerInformationScreen extends GetView<SellerInformationController> {
                   }
                   return _buildUploadBox(context, isFront: false);
                 }),
-
               ],
             ),
 
-            SizedBox(height: 32.h),
+            SizedBox(height: 24.h),
 
             // Business ID
             Text(
               'Business ID (optional)',
-              style: AppTextStyles.buttonRegular.copyWith(color: Colors.white),
+              style: AppTextStyles.paragraph_2_Regular,
             ),
-            SizedBox(height: 16.h),
+            SizedBox(height: 8.h),
+            CustomTextFormField(hintText: 'Enter your business ID'),
 
-            TextField(
-              style: TextStyle(color: Colors.white),
-              decoration: InputDecoration(
-                hintText: '12445544',
-                hintStyle: TextStyle(color: Colors.grey[500]),
-                filled: true,
-                fillColor: Colors.grey[800],
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12.r),
-                  borderSide: BorderSide.none,
-                ),
-                contentPadding: EdgeInsets.symmetric(
-                  horizontal: 20.w,
-                  vertical: 16.h,
-                ),
-              ),
-            ),
-            SizedBox(height: 32.h),
+            SizedBox(height: 24.h),
 
             // Seller Address
-            Text(
-              'Seller Address',
-              style: AppTextStyles.buttonRegular.copyWith(color: Colors.white),
-            ),
-            SizedBox(height: 16.h),
-
-            TextField(
-              style: TextStyle(color: Colors.white),
-              decoration: InputDecoration(
-                hintText: 'Rhode Island, USA',
-                hintStyle: TextStyle(color: Colors.grey[500]),
-                filled: true,
-                fillColor: Colors.grey[800],
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12.r),
-                  borderSide: BorderSide.none,
-                ),
-                contentPadding: EdgeInsets.symmetric(
-                  horizontal: 20.w,
-                  vertical: 16.h,
-                ),
-              ),
-            ),
+            Text('Seller Address', style: AppTextStyles.paragraph_2_Regular),
+            SizedBox(height: 8.h),
+            CustomTextFormField(hintText: 'Address'),
             SizedBox(height: 10.h),
           ],
         ),
@@ -314,7 +276,7 @@ class SellerInformationScreen extends GetView<SellerInformationController> {
 
   void _showFrontImagePicker(BuildContext context) {
     showModalBottomSheet(
-      backgroundColor:AppColors.neutral950,
+      backgroundColor: AppColors.neutral950,
       context: context,
       builder: (_) {
         return Padding(
@@ -443,7 +405,7 @@ class SellerInformationScreen extends GetView<SellerInformationController> {
             : controller.backIdImage.value;
 
         return Padding(
-          padding:   EdgeInsets.all(1.sp),
+          padding: EdgeInsets.all(1.sp),
           child: DottedBorder(
             options: RectDottedBorderOptions(
               dashPattern: [5, 5],
@@ -490,44 +452,43 @@ class SellerInformationScreen extends GetView<SellerInformationController> {
     return Container(
       padding: EdgeInsets.all(24.w),
       child: Obx(
-            () =>
-            Row(
-              children: [
-                if (controller.currentPage.value < 1)
-                  Expanded(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        PrimaryButton(
-                          width: 148.w,
-                          backgroundColor: AppColors.neutral800,
-                          textColor: AppColors.defaultTextColor,
-                          onPressed: () {},
-                          text: "Save",
-                        ),
-
-                        PrimaryButton(
-                          width: 148.w,
-                          onPressed: () {
-                            controller.nextPage();
-                          },
-                          text: "Next",
-                        ),
-                      ],
-                    ),
-                  ),
-
-                if (controller.currentPage.value == 1)
-                  Expanded(
-                    child: PrimaryButton(
-                      width: double.infinity,
+        () => Row(
+          children: [
+            if (controller.currentPage.value < 1)
+              Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    PrimaryButton(
+                      width: 148.w,
+                      backgroundColor: AppColors.neutral800,
+                      textColor: AppColors.defaultTextColor,
                       onPressed: () {},
-                      text: 'Sign Up',
+                      text: "Save",
                     ),
-                  ),
-              ],
-            ),
+
+                    PrimaryButton(
+                      width: 148.w,
+                      onPressed: () {
+                        controller.nextPage();
+                      },
+                      text: "Next",
+                    ),
+                  ],
+                ),
+              ),
+
+            if (controller.currentPage.value == 1)
+              Expanded(
+                child: PrimaryButton(
+                  width: double.infinity,
+                  onPressed: () {},
+                  text: 'Sign Up',
+                ),
+              ),
+          ],
+        ),
       ),
     );
   }
