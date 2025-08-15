@@ -38,7 +38,22 @@ class ProductSelectionScreen extends GetView<ProductSelectionController> {
               SizedBox(
                 height: 24.h,
               ),
+          SizedBox(
+            height: 448.h,
+            child: GridView.builder(
 
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, // Number of columns
+                crossAxisSpacing: 8, // Spacing between columns
+                mainAxisSpacing: 8, // Spacing between rows
+                childAspectRatio: 1, // Width/height ratio of each item
+              ),
+              itemCount: 20,
+              itemBuilder: (context, index) {
+                return Container(height: 50,width: 50,color: AppColors.primary50,);
+              },
+            ),
+          )
             ],
           ),
         ),
