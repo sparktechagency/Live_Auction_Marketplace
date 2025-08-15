@@ -18,88 +18,90 @@ class LogInScreen extends GetView<LogInController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: CustomAppBar(
-        title: 'Log in',
-        centerTitle: true,
-        leadingIcon: AppImages
-            .interfaceArrowsButtonLeftArrowKeyboardLeftStreamlineCore,
-      ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
-        child: Column(
-          children: [
-            SizedBox(height: 38.h),
-            Align(
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Email*',
-                style: AppTextStyles.paragraph_2_Regular,
-              ),
-            ),
-            SizedBox(height: 8.h),
-            CustomTextFormField(
-              hintText: "example@gmail.com",
-              prefixSvg: AppImages
-                  .mailSendEnvelopeEnvelopeEmailMessageUnopenedSealedCloseStreamlineCore,
-            ),
-            SizedBox(height: 16.h),
-            Align(
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Password*',
-                style: AppTextStyles.paragraph_2_Regular,
-              ),
-            ),
-            SizedBox(height: 8.h),
-            CustomTextFormField(
-              keyboardType: 'visiblePassword',
-              hintText: "Password",
-              prefixSvg: AppImages
-                  .interfaceLockCombinationComboLockLockedPadlockSecureSecurityShieldKeyholeStreamlineCore,
-            ),
-            SizedBox(height:12.h),
-            Align(
-              alignment: Alignment.topLeft,
-              child: GestureDetector(
-                onTap: (){
-                  Get.toNamed(Routes.VERIFY_EMAIL);
-                },
+    return SafeArea(
+      child: Scaffold(
+        appBar: CustomAppBar(
+          title: 'Log in',
+          centerTitle: true,
+          leadingIcon: AppImages
+              .interfaceArrowsButtonLeftArrowKeyboardLeftStreamlineCore,
+        ),
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          child: Column(
+            children: [
+              SizedBox(height: 38.h),
+              Align(
+                alignment: Alignment.topLeft,
                 child: Text(
-                  'Forget password?',
-                  style: AppTextStyles.buttonRegular.copyWith(color: AppColors.primary600),
+                  'Email*',
+                  style: AppTextStyles.paragraph_2_Regular,
                 ),
               ),
-            ),
-            SizedBox(height:24.h),
-            PrimaryButton(width: double.infinity,onPressed: (){
-              Get.offAllNamed(Routes.HOME);
-            }, text: "Log in"),
-
-            SizedBox(height: 23.h),
-            RichText(
-              text: TextSpan(
-                children: [
-                  TextSpan(
-                    text: "Don't have an account? ",
-                    style: AppTextStyles.buttonRegular.copyWith(
-                      color: AppColors.neutral50,
-                    ),
-                  ),
-                  TextSpan(
-                    text: 'Sign Up',
-                    style: AppTextStyles.buttonRegular.copyWith(
-                      color: AppColors.primary600,
-                    ),recognizer: TapGestureRecognizer() ..onTap = () {
-
-                    Get.toNamed(Routes.SIGN_UP_WITH_EMAIL);
-
-                  },
-                  ),
-                ],
+              SizedBox(height: 8.h),
+              CustomTextFormField(
+                hintText: "example@gmail.com",
+                prefixSvg: AppImages
+                    .mailSendEnvelopeEnvelopeEmailMessageUnopenedSealedCloseStreamlineCore,
               ),
-            ),
-          ],
+              SizedBox(height: 16.h),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  'Password*',
+                  style: AppTextStyles.paragraph_2_Regular,
+                ),
+              ),
+              SizedBox(height: 8.h),
+              CustomTextFormField(
+                keyboardType: 'visiblePassword',
+                hintText: "Password",
+                prefixSvg: AppImages
+                    .interfaceLockCombinationComboLockLockedPadlockSecureSecurityShieldKeyholeStreamlineCore,
+              ),
+              SizedBox(height:12.h),
+              Align(
+                alignment: Alignment.topLeft,
+                child: GestureDetector(
+                  onTap: (){
+                    Get.toNamed(Routes.VERIFY_EMAIL);
+                  },
+                  child: Text(
+                    'Forget password?',
+                    style: AppTextStyles.buttonRegular.copyWith(color: AppColors.primary600),
+                  ),
+                ),
+              ),
+              SizedBox(height:24.h),
+              PrimaryButton(width: double.infinity,onPressed: (){
+                Get.offAllNamed(Routes.HOME);
+              }, text: "Log in"),
+      
+              SizedBox(height: 23.h),
+              RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "Don't have an account? ",
+                      style: AppTextStyles.buttonRegular.copyWith(
+                        color: AppColors.neutral50,
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'Sign Up',
+                      style: AppTextStyles.buttonRegular.copyWith(
+                        color: AppColors.primary600,
+                      ),recognizer: TapGestureRecognizer() ..onTap = () {
+      
+                      Get.toNamed(Routes.SIGN_UP_WITH_EMAIL);
+      
+                    },
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

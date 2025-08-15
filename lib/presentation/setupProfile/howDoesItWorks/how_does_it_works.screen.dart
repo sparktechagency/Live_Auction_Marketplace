@@ -8,15 +8,17 @@ class HowDoesItWorksScreen extends GetView<HowDoesItWorksController> {
   const HowDoesItWorksScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('HowDoesItWorksScreen'),
-        centerTitle: true,
-      ),
-      body: const Center(
-        child: Text(
-          'HowDoesItWorksScreen is working',
-          style: TextStyle(fontSize: 20),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('HowDoesItWorksScreen'),
+          centerTitle: true,
+        ),
+        body: const Center(
+          child: Text(
+            'HowDoesItWorksScreen is working',
+            style: TextStyle(fontSize: 20),
+          ),
         ),
       ),
     );

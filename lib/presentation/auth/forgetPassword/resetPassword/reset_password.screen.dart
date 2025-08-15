@@ -16,56 +16,58 @@ class ResetPasswordScreen extends GetView<ResetPasswordController> {
   const ResetPasswordScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: CustomAppBar(
-        title: 'Reset Password',
-        centerTitle: true,
-
-        leadingIcon:
-        AppImages.interfaceArrowsButtonLeftArrowKeyboardLeftStreamlineCore,
-      ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
-        child: Column(
-          children: [
-            SizedBox(height: 38.h),
-            Align(
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Password*',
-                style: AppTextStyles.paragraph_2_Regular,
+    return SafeArea(
+      child: Scaffold(
+        appBar: CustomAppBar(
+          title: 'Reset Password',
+          centerTitle: true,
+      
+          leadingIcon:
+          AppImages.interfaceArrowsButtonLeftArrowKeyboardLeftStreamlineCore,
+        ),
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          child: Column(
+            children: [
+              SizedBox(height: 38.h),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  'Password*',
+                  style: AppTextStyles.paragraph_2_Regular,
+                ),
               ),
-            ),
-            SizedBox(height: 8.h),
-            CustomTextFormField(
-              keyboardType: 'visiblePassword',
-              hintText: "Password",
-              prefixSvg: AppImages
-                  .interfaceLockCombinationComboLockLockedPadlockSecureSecurityShieldKeyholeStreamlineCore,
-            ),
-            SizedBox(height: 16.h),
-            Align(
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Password*',
-                style: AppTextStyles.paragraph_2_Regular,
+              SizedBox(height: 8.h),
+              CustomTextFormField(
+                keyboardType: 'visiblePassword',
+                hintText: "Password",
+                prefixSvg: AppImages
+                    .interfaceLockCombinationComboLockLockedPadlockSecureSecurityShieldKeyholeStreamlineCore,
               ),
-            ),
-            SizedBox(height: 8.h),
-            CustomTextFormField(
-              keyboardType: 'visiblePassword',
-              hintText: "Password",
-              prefixSvg: AppImages
-                  .interfaceLockCombinationComboLockLockedPadlockSecureSecurityShieldKeyholeStreamlineCore,
-            ),
-
-
-            SizedBox(height:24.h),
-            PrimaryButton(width: double.infinity,onPressed: (){
-              controller.navigateToRegistrationSuccess();
-            }, text: "Reset Password"),
-
-          ],
+              SizedBox(height: 16.h),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  'Password*',
+                  style: AppTextStyles.paragraph_2_Regular,
+                ),
+              ),
+              SizedBox(height: 8.h),
+              CustomTextFormField(
+                keyboardType: 'visiblePassword',
+                hintText: "Password",
+                prefixSvg: AppImages
+                    .interfaceLockCombinationComboLockLockedPadlockSecureSecurityShieldKeyholeStreamlineCore,
+              ),
+      
+      
+              SizedBox(height:24.h),
+              PrimaryButton(width: double.infinity,onPressed: (){
+                controller.navigateToRegistrationSuccess();
+              }, text: "Reset Password"),
+      
+            ],
+          ),
         ),
       ),
     );

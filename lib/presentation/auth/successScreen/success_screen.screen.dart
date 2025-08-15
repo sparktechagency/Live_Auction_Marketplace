@@ -24,47 +24,49 @@ class _SuccessScreenScreenState extends State<SuccessScreenScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(height: 278.h),
-            Container(
-              height: 100.h,
-              width: 100.h,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(100.r),
-                color: AppColors.primary600,
+    return SafeArea(
+      child: Scaffold(
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 278.h),
+              Container(
+                height: 100.h,
+                width: 100.h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100.r),
+                  color: AppColors.primary600,
+                ),
+                child: Center(child: SvgPicture.asset(AppImages.checkMate)),
               ),
-              child: Center(child: SvgPicture.asset(AppImages.checkMate)),
-            ),
-            SizedBox(height: 12.h),
-            Obx(() {
-              return Text(
-                successScreenController.title.value,
-                style: AppTextStyles.H5_Regular,
-              );
-            }),
-            SizedBox(height: 4.h),
-            Obx(() {
-              return Text(
-                successScreenController.subTitle.value,
-                style: AppTextStyles.paragraph_1_Regular,
-              );
-            }),
-     Spacer(),
-            Obx(() {
-              return PrimaryButton(
-                width: double.infinity,
-                onPressed: successScreenController.handleButtonPress,
-                text: successScreenController.buttonText.value,
-              );
-            }),
-            SizedBox(height: 30.h),
-          ],
+              SizedBox(height: 12.h),
+              Obx(() {
+                return Text(
+                  successScreenController.title.value,
+                  style: AppTextStyles.H5_Regular,
+                );
+              }),
+              SizedBox(height: 4.h),
+              Obx(() {
+                return Text(
+                  successScreenController.subTitle.value,
+                  style: AppTextStyles.paragraph_1_Regular,
+                );
+              }),
+       Spacer(),
+              Obx(() {
+                return PrimaryButton(
+                  width: double.infinity,
+                  onPressed: successScreenController.handleButtonPress,
+                  text: successScreenController.buttonText.value,
+                );
+              }),
+              SizedBox(height: 30.h),
+            ],
+          ),
         ),
       ),
     );

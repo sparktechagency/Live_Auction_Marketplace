@@ -15,43 +15,45 @@ class VerifyEmailScreen extends GetView<VerifyEmailController> {
   const VerifyEmailScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar:CustomAppBar(
-        title: 'Forget Password',
-        centerTitle: true,
-
-        leadingIcon: AppImages
-            .interfaceArrowsButtonLeftArrowKeyboardLeftStreamlineCore,
-      ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
-        child: Column(
-          children: [
-            SizedBox(height: 38.h),
-            Align(
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Email*',
-                style: AppTextStyles.paragraph_2_Regular,
+    return SafeArea(
+      child: Scaffold(
+        appBar:CustomAppBar(
+          title: 'Forget Password',
+          centerTitle: true,
+      
+          leadingIcon: AppImages
+              .interfaceArrowsButtonLeftArrowKeyboardLeftStreamlineCore,
+        ),
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          child: Column(
+            children: [
+              SizedBox(height: 38.h),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  'Email*',
+                  style: AppTextStyles.paragraph_2_Regular,
+                ),
               ),
-            ),
-            SizedBox(height: 8.h),
-            CustomTextFormField(
-              hintText: "example@gmail.com",
-              prefixSvg: AppImages
-                  .mailSendEnvelopeEnvelopeEmailMessageUnopenedSealedCloseStreamlineCore,
-            ),
-            SizedBox(height: 24.h),
-
-
-
-            PrimaryButton(width: double.infinity,onPressed: (){
-
-              Get.toNamed(Routes.OTP_VERIFICATION);
-            }, text: "Get OTP"),
-
-
-          ],
+              SizedBox(height: 8.h),
+              CustomTextFormField(
+                hintText: "example@gmail.com",
+                prefixSvg: AppImages
+                    .mailSendEnvelopeEnvelopeEmailMessageUnopenedSealedCloseStreamlineCore,
+              ),
+              SizedBox(height: 24.h),
+      
+      
+      
+              PrimaryButton(width: double.infinity,onPressed: (){
+      
+                Get.toNamed(Routes.OTP_VERIFICATION);
+              }, text: "Get OTP"),
+      
+      
+            ],
+          ),
         ),
       ),
     );

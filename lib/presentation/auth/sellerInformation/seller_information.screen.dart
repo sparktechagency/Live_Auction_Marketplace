@@ -22,60 +22,62 @@ class SellerInformationScreen extends GetView<SellerInformationController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: CustomAppBar(
-        title: 'Seller Information',
-        centerTitle: true,
-        onBackPressed: () {
-          if (controller.currentPage.value == 1) {
-            controller.previousPage();
-          } else {
-            Get.back();
-          }
-        },
-        leadingIcon:
-            AppImages.interfaceArrowsButtonLeftArrowKeyboardLeftStreamlineCore,
-        // actions: [
-        //   Padding(
-        //     padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 4.h),
-        //     child: Text(
-        //       "Skip Now",
-        //       style: AppTextStyles.captionRegular.copyWith(color: AppColors.primary400),
-        //     ),
-        //   )
-        // ],
-      ),
-      body: Column(
-        children: [
-          // Progress Bar
-          SizedBox(height: 38.h),
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 24.w),
-            height: 8.h,
-            child: Obx(
-              () => LinearProgressIndicator(
-                value: controller.progress,
-                backgroundColor: AppColors.neutral800,
-                valueColor: AlwaysStoppedAnimation<Color>(
-                  AppColors.primary1000,
+    return SafeArea(
+      child: Scaffold(
+        appBar: CustomAppBar(
+          title: 'Seller Information',
+          centerTitle: true,
+          onBackPressed: () {
+            if (controller.currentPage.value == 1) {
+              controller.previousPage();
+            } else {
+              Get.back();
+            }
+          },
+          leadingIcon:
+              AppImages.interfaceArrowsButtonLeftArrowKeyboardLeftStreamlineCore,
+          // actions: [
+          //   Padding(
+          //     padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 4.h),
+          //     child: Text(
+          //       "Skip Now",
+          //       style: AppTextStyles.captionRegular.copyWith(color: AppColors.primary400),
+          //     ),
+          //   )
+          // ],
+        ),
+        body: Column(
+          children: [
+            // Progress Bar
+            SizedBox(height: 38.h),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 24.w),
+              height: 8.h,
+              child: Obx(
+                () => LinearProgressIndicator(
+                  value: controller.progress,
+                  backgroundColor: AppColors.neutral800,
+                  valueColor: AlwaysStoppedAnimation<Color>(
+                    AppColors.primary1000,
+                  ),
+                  borderRadius: BorderRadius.circular(100.r),
                 ),
-                borderRadius: BorderRadius.circular(100.r),
               ),
             ),
-          ),
-
-          // Page Content
-          Expanded(
-            child: PageView(
-              controller: controller.pageController,
-              onPageChanged: controller.onPageChanged,
-              children: [_buildSelfieScreen(), _buildIDInfoScreen(context)],
+      
+            // Page Content
+            Expanded(
+              child: PageView(
+                controller: controller.pageController,
+                onPageChanged: controller.onPageChanged,
+                children: [_buildSelfieScreen(), _buildIDInfoScreen(context)],
+              ),
             ),
-          ),
-
-          // Bottom Buttons
-          _buildBottomButtons(),
-        ],
+      
+            // Bottom Buttons
+            _buildBottomButtons(),
+          ],
+        ),
       ),
     );
   }
