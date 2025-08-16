@@ -29,7 +29,7 @@ class RoleSelectionController extends GetxController {
   }
 
   Future<void> _saveRolePreference(String role) async {
-    await SecureStorageHelper.setString("userRole", selectedRole.value);
+    await SecureStorageHelper.setString("userRole", role);
 
      LoggerHelper.info("User role is: ${AppController.to.role.value}");
 

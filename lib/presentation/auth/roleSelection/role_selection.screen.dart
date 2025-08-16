@@ -21,7 +21,7 @@ class RoleSelectionScreen extends GetView<RoleSelectionController> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height: 174.h),
+              Spacer(flex: 2),
               Text(
                 'MouvBid',
                 style: AppTextStyles.H1_Bold.copyWith(
@@ -36,7 +36,7 @@ class RoleSelectionScreen extends GetView<RoleSelectionController> {
                 ),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: 48.h),
+              SizedBox(height: 32.h),
               Text(
                 "Are You Seller or Buyer?",
                 style: AppTextStyles.paragraph_1_Regular.copyWith(
@@ -65,27 +65,18 @@ class RoleSelectionScreen extends GetView<RoleSelectionController> {
                 );
               }),
 
-              SizedBox(height: 190.h),
-              // Obx(
-              //   () => PrimaryButton(
-              //     width: double.infinity,
-              //     onPressed: controller.selectedRole.value.isNotEmpty
-              //         ? () => controller.proceedToNext()
-              //         : null,
-              //     text: "Next",
-              //   ),
-              // ),
+              Spacer(flex: 3),
               Obx(() {
                 return PrimaryButton(
                   width: double.infinity,
                   isActive: controller.selectedRole.value.isNotEmpty,
                   onPressed: () {
-
                     controller.proceedToNext();
                   },
                   text: 'Next',
                 );
               }),
+              SizedBox(height: 24.h),
             ],
           ),
         ),

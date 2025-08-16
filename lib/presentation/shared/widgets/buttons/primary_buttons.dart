@@ -67,7 +67,7 @@ class PrimaryButton extends StatelessWidget {
             ],
             Text(
               text,
-              style: AppTextStyles.paragraph_2_Medium.copyWith(
+              style: AppTextStyles.paragraph_1_Medium.copyWith(
                 color: textColor?? AppColors.neutral950,
               ),
             ),

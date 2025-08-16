@@ -20,6 +20,7 @@ class AppImages {
   static String agreementPaper = "$baseUrlImage/agreementPaper.png";
   static String chatPerson = "$baseUrlImage/chatPerson.png";
   static String sitePic = "$baseUrlImage/sitePic.png";
+  static String productImage = "$baseUrlImage/productImage.jpg";
   static String noInternet = "$baseUrlImage/noInternet.gif";
   static String selectionImage2 = "$baseUrlImage/selectionImage1.png";
   static String selectionImage1 = "$baseUrlImage/selectionImage2.png";
