@@ -1,23 +1,44 @@
 import 'package:get/get.dart';
 
+import '../../../../infrastructure/utils/app_images.dart';
+
 class ProductSelectionController extends GetxController {
-  //TODO: Implement ProductSelectionController
+  // List to store selected item titles
+  final RxList<String> selectedItems = <String>[].obs;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  final List<Map<String, String>> itemSelection = [
+    {'image': AppImages.selectionImage1, 'title': 'Sneakers'},
+    {'image': AppImages.selectionImage2, 'title': 'Sports cards'},
+    {'image': AppImages.selectionImage3, 'title': 'Video Games'},
+    {'image': AppImages.selectionImage1, 'title': 'Sneakers'},
+    {'image': AppImages.selectionImage2, 'title': 'Sports cards'},
+    {'image': AppImages.selectionImage3, 'title': 'Video Games'},
+    {'image': AppImages.selectionImage1, 'title': 'Sneakers'},
+    {'image': AppImages.selectionImage2, 'title': 'Sports cards'},
+    {'image': AppImages.selectionImage3, 'title': 'Video Games'},    {'image': AppImages.selectionImage1, 'title': 'Sneakers'},
+    {'image': AppImages.selectionImage2, 'title': 'Sports cards'},
+    {'image': AppImages.selectionImage3, 'title': 'Video Games'},
+  ];
+
+  // Method to toggle item selection
+  void toggleItemSelection(String title) {
+    if (selectedItems.contains(title)) {
+      selectedItems.remove(title);
+    } else {
+      selectedItems.add(title);
+    }
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  // Method to check if item is selected
+  bool isItemSelected(String title) {
+    return selectedItems.contains(title);
   }
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
+  // Method to get selected items count
+  int get selectedItemsCount => selectedItems.length;
 
-  void increment() => count.value++;
+  // Method to clear all selections
+  void clearSelections() {
+    selectedItems.clear();
+  }
 }

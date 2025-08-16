@@ -21,6 +21,9 @@ class AppImages {
   static String chatPerson = "$baseUrlImage/chatPerson.png";
   static String sitePic = "$baseUrlImage/sitePic.png";
   static String noInternet = "$baseUrlImage/noInternet.gif";
+  static String selectionImage2 = "$baseUrlImage/selectionImage1.png";
+  static String selectionImage1 = "$baseUrlImage/selectionImage2.png";
+  static String selectionImage3 = "$baseUrlImage/selectionImage3.png";
 
   // Here All are SVG
 
