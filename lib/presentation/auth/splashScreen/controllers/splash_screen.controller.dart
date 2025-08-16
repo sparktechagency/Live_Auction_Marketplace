@@ -10,8 +10,8 @@ class SplashScreenController extends GetxController {
      String role = await SecureStorageHelper.getString("userRole");
 
     if(role.isNotEmpty){
-      // Get.offAllNamed(Routes.HOME);
-      Get.offAllNamed(Routes.ROLE_SELECTION);
+      Get.offAllNamed(Routes.HOME);
+      //Get.offAllNamed(Routes.ROLE_SELECTION);
     }else{
       Get.offAllNamed(Routes.ROLE_SELECTION);
     }

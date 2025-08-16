@@ -20,7 +20,7 @@ class SuccessScreenScreen extends StatefulWidget {
 
 class _SuccessScreenScreenState extends State<SuccessScreenScreen> {
   final SuccessScreenController successScreenController =
-  Get.find<SuccessScreenController>();
+      Get.find<SuccessScreenController>();
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +56,7 @@ class _SuccessScreenScreenState extends State<SuccessScreenScreen> {
                   style: AppTextStyles.paragraph_1_Regular,
                 );
               }),
-       Spacer(),
+              Spacer(),
               Obx(() {
                 return PrimaryButton(
                   width: double.infinity,
