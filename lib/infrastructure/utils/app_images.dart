@@ -14,6 +14,11 @@ class AppImages {
   static String noImage = "$baseUrlImage/noImage.jpg";
   static String carSadan = "$baseUrlImage/sadan.png";
   static String carSUV = "$baseUrlImage/suv.png";
+  static String product1 = "$baseUrlImage/product1.jpg";
+  static String product2 = "$baseUrlImage/product2.jpg";
+  static String product3 = "$baseUrlImage/product3.jpg";
+  static String product4 = "$baseUrlImage/product4.jpg";
+  static String productOwner = "$baseUrlImage/productOwner.jpg";
   static String person2 = "$baseUrlImage/person2.png";
   static String profileImage = "$baseUrlImage/profileImage.png";
   static String rateOurApp = "$baseUrlImage/rateOurApp.png";
@@ -39,6 +44,8 @@ class AppImages {
 
   static String imageFileIcon = "$baseUrlLogo/imageFile.svg";
   static String upload = "$baseUrlLogo/upload.svg";
+
+  static String buyerNavbar = "$baseUrlLogo/buyerNavebar.svg";
   static String undo = "$baseUrlLogo/Undo.svg";
   static String swedish = "$baseUrlLogo/swedish.svg";
   static String Danish = "$baseUrlLogo/Danish.svg";

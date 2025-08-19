@@ -5,7 +5,9 @@ import 'package:get/get.dart';
 import '../../config.dart';
 import '../../presentation/auth/splashScreen/splash_screen.screen.dart';
 import '../../presentation/screens.dart';
+import '../../presentation/main_app/main_app.screen.dart';
 import 'bindings/controllers/controllers_bindings.dart';
+import 'bindings/controllers/main_app.controller.binding.dart';
 import 'routes.dart';
 
 class EnvironmentsBadge extends StatelessWidget {
@@ -31,6 +33,11 @@ class Nav {
       name: Routes.HOME,
       page: () => const HomeScreen(),
       binding: HomeControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.MAIN_APP,
+      page: () => const MainAppScreen(),
+      binding: MainAppControllerBinding(),
     ),
     GetPage(
       name: Routes.SPLASH_SCREEN,
@@ -106,6 +113,21 @@ class Nav {
       name: Routes.HOW_DOES_IT_WORKS,
       page: () => const HowDoesItWorksScreen(),
       binding: HowDoesItWorksControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.CATEGORIES,
+      page: () => const CategoriesScreen(),
+      binding: CategoriesControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.MY_ORDER,
+      page: () => const MyOrderScreen(),
+      binding: MyOrderControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.ACCOUNT,
+      page: () => const AccountScreen(),
+      binding: AccountControllerBinding(),
     ),
   ];
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';  // Import the Flutter SVG package
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../infrastructure/theme/app_colors.dart';
 import '../../../../infrastructure/theme/text_styles.dart';
@@ -21,86 +21,153 @@ class CustomBottomNavBar extends StatelessWidget {
     required this.currentIndex,
     required this.onTap,
     required this.items,
-    this.backgroundColor =AppColors.secondary700,
+    this.backgroundColor = AppColors.defaultBlack,
     this.selectedItemColor = AppColors.primary1000,
     this.unselectedItemColor = AppColors.neutral500,
-    this.cornerRadius = 0.0,
+    this.cornerRadius = 100,
     this.elevation = 0.0,
-    this.height = 60.0,
+    this.height = 54, // Increased height to accommodate the floating button
   });
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      elevation: elevation,
-      color:AppColors.secondary700,
-      shadowColor: Colors.black.withOpacity(0.1),
-      clipBehavior: Clip.hardEdge,
-      borderRadius: BorderRadius.only(
-        topLeft: Radius.circular(cornerRadius),
-        topRight: Radius.circular(cornerRadius),
-      ),
-      child: Container(
-        decoration: BoxDecoration(
-          color: backgroundColor,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(cornerRadius),
-            topRight: Radius.circular(cornerRadius),
-          ),
-        ),
-        height: height,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: List.generate(items.length, (index) {
-            final item = items[index];
-            final isSelected = index == currentIndex;
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 18.h),
+      child: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          // Main Navigation Bar
+          Material(
+            elevation: elevation,
+            color: backgroundColor,
+            shadowColor: Colors.black.withOpacity(0.1),
+            clipBehavior: Clip.hardEdge,
+            borderRadius: BorderRadius.circular(cornerRadius),
+            child: Container(
+              decoration: BoxDecoration(
+                color: backgroundColor,
+                borderRadius: BorderRadius.circular(cornerRadius),
+              ),
+              height: height.h,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  // First two items (Home, Categories)
+                  ...items.take(2).map((item) {
+                    final index = items.indexOf(item);
+                    final isSelected = index == currentIndex;
 
-            return Expanded(
-              child: InkWell(
-                onTap: () => onTap(index),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    // Icon with background indicator
-                    Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        // Animated background for selected state
-                        AnimatedContainer(
-                          duration: const Duration(milliseconds: 200),
-                          // height: isSelected ? 40 : 0,
-                          // width: isSelected ? 40 : 0,
-                          decoration: BoxDecoration(
-                            color: isSelected ? Colors.transparent : Colors.transparent,
-                            borderRadius: BorderRadius.circular(0),
-                          ),
+                    return Expanded(
+                      child: InkWell(
+                        onTap: () => onTap(index),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SvgPicture.asset(
+                              item.svgAssetPath,
+                              color: isSelected ? selectedItemColor : unselectedItemColor,
+                              width: 16.w,
+                              height: 16.w,
+                            ),
+                            SizedBox(height: 4.h),
+                            Text(
+                              item.label,
+                              style: AppTextStyles.captionRegular.copyWith(
+                                color: isSelected ? selectedItemColor : unselectedItemColor,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
                         ),
-                        // SVG Icon
-                        SvgPicture.asset(
-                          item.svgAssetPath,  // Use the SVG asset path
-                          color: isSelected ? selectedItemColor : unselectedItemColor,
-                          width: 18.w,  // You can adjust the size as needed
-                          height: 18.h,
-                        ),
-                      ],
-                    ),
-                     SizedBox(height: 4.h),
-                    // Label
-                    Text(
-                      item.label,
-                      style: AppTextStyles.captionRegular.copyWith(
-                        color: isSelected ? selectedItemColor : unselectedItemColor,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 13.sp
-
                       ),
-                    ),
-                  ],
+                    );
+                  }).toList(),
+
+                  // Empty space for the center floating button
+                  Expanded(child: SizedBox()),
+
+                  // Last two items (My Order, Account)
+                  ...items.skip(3).map((item) {
+                    final index = items.indexOf(item);
+                    final isSelected = index == currentIndex;
+
+                    return Expanded(
+                      child: InkWell(
+                        onTap: () => onTap(index),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SvgPicture.asset(
+                              item.svgAssetPath,
+                              color: isSelected ? selectedItemColor : unselectedItemColor,
+                              width: 16.w,
+                              height: 16.w,
+                            ),
+                            SizedBox(height: 4.h),
+                            Text(
+                              item.label,
+                              style: AppTextStyles.captionRegular.copyWith(
+                                color: isSelected ? selectedItemColor : unselectedItemColor,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  }).toList(),
+                ],
+              ),
+            ),
+          ),
+
+          // Floating Center Button (Sell button) - Properly centered
+          Positioned(
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0,
+            child: Center(
+              child: GestureDetector(
+                onTap: () => onTap(2), // Index 2 for the center button
+                child: Container(
+                  width: 48.w,
+                  height: 48.w,
+                  decoration: BoxDecoration(
+                    color: AppColors.primary1000, // Yellow/amber color like in the image
+                    shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2),
+                        blurRadius: 8,
+                        offset: Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      // You can replace this with an SVG if you have one
+                      // Icon(
+                      //   Icons.add, // Or use SvgPicture.asset if you have an SVG
+                      //   color: Colors.white,
+                      //   size: 20,
+                      // ),
+                      Text(
+                        items[2].label, // "Sell" text
+                        style: AppTextStyles.captionRegular.copyWith(
+                          fontSize: 12.sp,
+                          color: AppColors.neutral950,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            );
-          }),
-        ),
+            ),
+          ),
+        ],
       ),
     );
   }

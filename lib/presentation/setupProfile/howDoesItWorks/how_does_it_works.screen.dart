@@ -74,7 +74,7 @@ class HowDoesItWorksScreen extends GetView<HowDoesItWorksController> {
                         controller.selectedWorkList.length - 1) {
                       controller.currentIndex.value++;
                     } else {
-                      Get.offAllNamed(Routes.HOME);
+                      Get.offAllNamed(Routes.MAIN_APP);
                     }
                   },
                   text: controller.currentIndex.value <
