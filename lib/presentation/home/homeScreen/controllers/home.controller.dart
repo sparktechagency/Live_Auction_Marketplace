@@ -75,8 +75,8 @@ class HomeController extends GetxController {
     searchFieldSelected.value=true;
   }
 
-  void onSearchFieldDeselected() {
-    searchFieldSelected.value=false;
+  void onSearchFieldDeselected(){
+    searchFieldSelected.value = false;
   }
 
   @override

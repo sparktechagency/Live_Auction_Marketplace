@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 
 import '../../config.dart';
 import '../../presentation/auth/splashScreen/splash_screen.screen.dart';
-import '../../presentation/screens.dart';
 import '../../presentation/main_app/main_app.screen.dart';
+import '../../presentation/screens.dart';
 import 'bindings/controllers/controllers_bindings.dart';
 import 'bindings/controllers/main_app.controller.binding.dart';
 import 'routes.dart';
@@ -129,5 +129,11 @@ class Nav {
       page: () => const AccountScreen(),
       binding: AccountControllerBinding(),
     ),
+    GetPage(
+      name: Routes.PRODUCT_DETAILS,
+      page: () => const ProductDetailsScreen(),
+      binding: ProductDetailsControllerBinding(),
+    ),
+
   ];
 }

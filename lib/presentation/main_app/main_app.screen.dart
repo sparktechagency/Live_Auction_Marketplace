@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../infrastructure/utils/app_images.dart';
+import '../home/homeScreen/home.screen.dart';
 import '../shared/widgets/bottomNav/custom_nav_bar.dart';
 import '../shared/widgets/bottomNav/nav_bar_model.dart';
-import '../home/home.screen.dart';
+
 import '../categories/categories.screen.dart';
 import '../myOrder/my_order.screen.dart';
 import '../Account/account.screen.dart';

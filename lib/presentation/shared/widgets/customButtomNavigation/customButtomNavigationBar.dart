@@ -12,7 +12,8 @@ import "package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart";
 import '../../../../infrastructure/theme/app_colors.dart';
 import '../../../../infrastructure/theme/text_styles.dart';
 import '../../../../infrastructure/utils/app_images.dart';
-import '../../../home/home.screen.dart';
+
+import '../../../home/homeScreen/home.screen.dart';
 import 'buttomNavController.dart';
 
 class MainScreen extends StatelessWidget {
