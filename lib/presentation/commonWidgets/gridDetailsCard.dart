@@ -198,9 +198,8 @@ class _gridCardState extends State<gridCard> {
                 widget.title,
                 style: AppTextStyles.buttonRegular.copyWith(
                   color: AppColors.neutral50,
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.w400,
                   height: 1.3,
+
                 ),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,

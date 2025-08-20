@@ -44,6 +44,9 @@ class AppImages {
 
   static String imageFileIcon = "$baseUrlLogo/imageFile.svg";
   static String upload = "$baseUrlLogo/upload.svg";
+  static String notificatioContainer = "$baseUrlLogo/notificatioContainer.svg";
+  static String giftContainer = "$baseUrlLogo/giftContainer.svg";
+  static String filter = "$baseUrlLogo/filter.svg";
 
   static String buyerNavbar = "$baseUrlLogo/buyerNavebar.svg";
   static String undo = "$baseUrlLogo/Undo.svg";
