@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
  import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:live_auction_marketplace/infrastructure/navigation/routes.dart';
 import 'package:live_auction_marketplace/infrastructure/theme/app_colors.dart';
 import 'package:live_auction_marketplace/infrastructure/theme/text_styles.dart';
 import 'package:live_auction_marketplace/infrastructure/utils/app_images.dart';
@@ -115,7 +116,7 @@ class HomeScreen extends GetView<HomeController> {
                             Align(
                               alignment: Alignment.centerLeft,
                               child: Padding(
-                                padding:   EdgeInsets.only(left: 30.w),
+                                padding:   EdgeInsets.only(left: 30.w,right: 10.w),
                                 child: GestureDetector(
                                   onTap: (){
                                     controller.onSearchFieldDeselected();
@@ -346,13 +347,18 @@ class HomeScreen extends GetView<HomeController> {
                             itemCount: controller.items.length,
                             itemBuilder: (context, index) {
                               final item = controller.items[index];
-                              return gridCard(
-                                imageUrl: item['imageUrl'] ?? '',
-                                title: item['title'] ?? '',
-                                isLive: item['isLive'] ?? false,
-                                viewerCount: item['viewerCount'] ?? 0,
-                                shopName: item['shopName'] ?? '',
-                                productOwnerPicture: item['ownerPic'],
+                              return GestureDetector(
+                                onTap: (){
+                                  Get.toNamed(Routes.PRODUCT_DETAILS);
+                                },
+                                child: gridCard(
+                                  imageUrl: item['imageUrl'] ?? '',
+                                  title: item['title'] ?? '',
+                                  isLive: item['isLive'] ?? false,
+                                  viewerCount: item['viewerCount'] ?? 0,
+                                  shopName: item['shopName'] ?? '',
+                                  productOwnerPicture: item['ownerPic'],
+                                ),
                               );
                             },
                           );
