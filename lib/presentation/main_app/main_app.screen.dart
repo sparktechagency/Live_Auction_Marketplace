@@ -15,36 +15,40 @@ class MainAppScreen extends GetView<MainAppController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Obx(() => _buildCurrentScreen()),
-      bottomNavigationBar: Obx(() => CustomBottomNavBar(
-        currentIndex: controller.currentIndex.value,
-        onTap: controller.changeTabIndex,
-        items: [
-          CustomNavItem(
-            svgAssetPath: AppImages.interfaceHome2DoorEntranceHomeHouseMapRoofRoundStreamlineCore,
-            label: 'Home',
-          ),
-          CustomNavItem(
-            svgAssetPath:  AppImages.interfaceSearchGlassSearchMagnifyingStreamlineCore,
-            label: 'Categories',
-          ),
-          CustomNavItem(
-            svgAssetPath: AppImages.buyerNavbar,
-            label: 'Sell',
-            isFloatingButton: true,
-          ),
-          CustomNavItem(
-            svgAssetPath: AppImages.buyerNavbar,
-            label: 'My Order',
-          ),
-          CustomNavItem(
-            svgAssetPath: AppImages.interfaceSecurityShieldProfileShieldSecureSecurityProfilePersonStreamlineCore,
+    return SafeArea(
+      top: false,
+      bottom: true,
+      child: Scaffold(
+        body: Obx(() => _buildCurrentScreen()),
+        bottomNavigationBar: Obx(() => CustomBottomNavBar(
+          currentIndex: controller.currentIndex.value,
+          onTap: controller.changeTabIndex,
+          items: [
+            CustomNavItem(
+              svgAssetPath: AppImages.interfaceHome2DoorEntranceHomeHouseMapRoofRoundStreamlineCore,
+              label: 'Home',
+            ),
+            CustomNavItem(
+              svgAssetPath:  AppImages.interfaceSearchGlassSearchMagnifyingStreamlineCore,
+              label: 'Categories',
+            ),
+            CustomNavItem(
+              svgAssetPath: AppImages.buyerNavbar,
+              label: 'Sell',
+              isFloatingButton: true,
+            ),
+            CustomNavItem(
+              svgAssetPath: AppImages.buyerNavbar,
+              label: 'My Order',
+            ),
+            CustomNavItem(
+              svgAssetPath: AppImages.interfaceSecurityShieldProfileShieldSecureSecurityProfilePersonStreamlineCore,
 
-            label: 'Account',
-          ),
-        ],
-      )),
+              label: 'Account',
+            ),
+          ],
+        )),
+      ),
     );
   }
 
