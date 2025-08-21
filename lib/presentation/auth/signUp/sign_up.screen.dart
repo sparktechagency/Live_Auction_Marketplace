@@ -80,7 +80,20 @@ class SignUpScreen extends GetView<SignUpController> {
                       .interfaceLockCombinationComboLockLockedPadlockSecureSecurityShieldKeyholeStreamlineCore,
                 ),
                 SizedBox(height: 16.h),
-      
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    'Address',
+                    style: AppTextStyles.paragraph_2_Regular,
+                  ),
+                ),
+                SizedBox(height: 8.h),
+                CustomTextFormField(
+                  hintText: "Washington, Livia,1212",
+                  prefixSvg: AppImages
+                      .mailSendEnvelopeEnvelopeEmailMessageUnopenedSealedCloseStreamlineCore,
+                ),
+                SizedBox(height: 16.h),
                 Align(
                   alignment: Alignment.topLeft,
                   child: Text(

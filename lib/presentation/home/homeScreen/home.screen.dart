@@ -401,7 +401,7 @@ class HomeScreen extends GetView<HomeController> {
                 BoxShadow(
                   color: Color(0xFFE5B045).withOpacity(0.2),
                   // Same color with opacity
-                  spreadRadius: 130,
+                  spreadRadius: 120,
                   // How far the shadow spreads
                   blurRadius: 70,
                   // How blurred the shadow is
