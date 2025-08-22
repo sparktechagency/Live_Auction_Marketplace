@@ -202,7 +202,7 @@ class HomeScreen extends GetView<HomeController> {
                       ),
                     if (controller.searchFieldSelected.value)
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20.w),
+                        padding: EdgeInsets.symmetric(horizontal: 0.w),
                         child: SizedBox(
                           height: 32.h,
                           child: ListView.builder(
@@ -216,62 +216,65 @@ class HomeScreen extends GetView<HomeController> {
                                     onTap: () {
                                       controller.onFilterButtonSelect(index);
                                     },
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(
-                                          100.r,
-                                        ),
-                                        color:
-                                            controller
-                                                    .selectedFilterButtonIndex
-                                                    .value ==
-                                                index
-                                            ? AppColors.primary1000
-                                            : AppColors.neutral800,
-                                      ),
-                                      child: Center(
-                                        child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                            horizontal: 13.h,
-                                            vertical: 7.w,
+                                    child: Padding(
+                                      padding: index==0?  EdgeInsets.only(left: 20.w):EdgeInsets.all(0),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(
+                                            100.r,
                                           ),
-                                          child: Row(
-                                            children: [
-                                              Text(
-                                                controller
-                                                    .filterButtonData[index]['buttonName'],
-                                                style: AppTextStyles
-                                                    .buttonRegular
-                                                    .copyWith(
-                                                      color:
-                                                          controller
-                                                                  .selectedFilterButtonIndex
-                                                                  .value ==
-                                                              index
-                                                          ? AppColors.neutral950
-                                                          : AppColors.neutral50,
-                                                    ),
-                                              ),
-      
-                                              if (index == 0)
-                                                Padding(
-                                                  padding: EdgeInsets.only(
-                                                    left: 8.w,
-                                                  ),
-                                                  child: SvgPicture.asset(
-                                                    AppImages.filter,
-                                                    height: 16.h,
-                                                    width: 16.w,
-                                                    color:
-                                                        controller
-                                                                .selectedFilterButtonIndex
-                                                                .value ==
-                                                            index
-                                                        ? AppColors.neutral950
-                                                        : AppColors.neutral50,
-                                                  ),
+                                          color:
+                                              controller
+                                                      .selectedFilterButtonIndex
+                                                      .value ==
+                                                  index
+                                              ? AppColors.primary1000
+                                              : AppColors.neutral800,
+                                        ),
+                                        child: Center(
+                                          child: Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 13.h,
+                                              vertical: 7.w,
+                                            ),
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                  controller
+                                                      .filterButtonData[index]['buttonName'],
+                                                  style: AppTextStyles
+                                                      .buttonRegular
+                                                      .copyWith(
+                                                        color:
+                                                            controller
+                                                                    .selectedFilterButtonIndex
+                                                                    .value ==
+                                                                index
+                                                            ? AppColors.neutral950
+                                                            : AppColors.neutral50,
+                                                      ),
                                                 ),
-                                            ],
+
+                                                // if (index == 0)
+                                                //   Padding(
+                                                //     padding: EdgeInsets.only(
+                                                //       left: 8.w,
+                                                //     ),
+                                                //     child: SvgPicture.asset(
+                                                //       AppImages.filter,
+                                                //       height: 16.h,
+                                                //       width: 16.w,
+                                                //       color:
+                                                //           controller
+                                                //                   .selectedFilterButtonIndex
+                                                //                   .value ==
+                                                //               index
+                                                //           ? AppColors.neutral950
+                                                //           : AppColors.neutral50,
+                                                //     ),
+                                                //   ),
+                                              ],
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -292,19 +295,6 @@ class HomeScreen extends GetView<HomeController> {
                           padding: EdgeInsets.symmetric(horizontal: 20.w),
                           child: Row(
                             children: [
-                              // Text(
-                              //   'Search results for "${controller.searchQuery.value}"',
-                              //   style: AppTextStyles.paragraph_2_Regular.copyWith(
-                              //     color: AppColors.neutral50,
-                              //   ),
-                              // ),
-                              // const Spacer(),
-                              // Text(
-                              //   '${controller.items.length} items',
-                              //   style: AppTextStyles.buttonRegular.copyWith(
-                              //     color: AppColors.neutral400,
-                              //   ),
-                              // ),
                               Text(
                                 '${controller.items.length} products Found',
                                 style: AppTextStyles.paragraph_2_Regular.copyWith(

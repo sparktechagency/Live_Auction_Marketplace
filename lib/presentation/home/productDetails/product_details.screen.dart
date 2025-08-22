@@ -23,19 +23,21 @@ class ProductDetailsScreen extends GetView<ProductDetailsController> {
       top: false,
       bottom: true,
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: CustomAppBar(
           title: "Product details",
           centerTitle: true,
           leadingIcon:
               AppImages.interfaceArrowsButtonLeftArrowKeyboardLeftStreamlineCore,
         ),
-        body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 24.w),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
 
-            children: [
+              children: [
               productDetilsCard(
                 imageUrl: AppImages.product1,
                 isShearActive: false,
@@ -200,6 +202,7 @@ class ProductDetailsScreen extends GetView<ProductDetailsController> {
                 width: double.infinity,
               ),
             ],
+            ),
           ),
         ),
       ),

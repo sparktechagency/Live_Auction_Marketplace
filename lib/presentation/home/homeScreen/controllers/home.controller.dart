@@ -38,9 +38,10 @@ class HomeController extends GetxController {
     {'buttonName': 'Video Games'},
   ];
   List<Map<String, dynamic>> filterButtonData = [
-    {'buttonName': 'Filter'},
-    {'buttonName': 'Popularity'},
+    {'buttonName': 'Top Sellers'},
+    {'buttonName': 'New Products'},
     {'buttonName': 'Low price'},
+    {'buttonName': 'High Price'},
 
   ];
 
