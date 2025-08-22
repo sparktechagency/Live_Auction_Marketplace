@@ -11,6 +11,7 @@ class Routes {
   static const GUIDE_LINE = '/guide-line';
   static const HOME = '/home';
   static const HOW_DOES_IT_WORKS = '/how-does-it-works';
+  static const LIVE_STREAMMING = '/live-streamming';
   static const LOG_IN = '/log-in';
   static const MAIN_APP = '/main-app';
   static const MY_ORDER = '/my-order';
@@ -25,4 +26,5 @@ class Routes {
   static const SPLASH_SCREEN = '/splash-screen';
   static const SUCCESS_SCREEN = '/success-screen';
   static const VERIFY_EMAIL = '/verify-email';
- }
+  static const DIRECT_BUY_PRODUCT = '/direct-buy-product';
+}

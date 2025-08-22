@@ -134,6 +134,15 @@ class Nav {
       page: () => const ProductDetailsScreen(),
       binding: ProductDetailsControllerBinding(),
     ),
-
+    GetPage(
+      name: Routes.LIVE_STREAMMING,
+      page: () => const LiveStreammingScreen(),
+      binding: LiveStreammingControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.DIRECT_BUY_PRODUCT,
+      page: () => const DirectBuyProductScreen(),
+      binding: DirectBuyProductControllerBinding(),
+    ),
   ];
 }

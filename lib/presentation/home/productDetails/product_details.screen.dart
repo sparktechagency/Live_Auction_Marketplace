@@ -7,6 +7,7 @@ import 'package:live_auction_marketplace/infrastructure/theme/app_colors.dart';
 import 'package:live_auction_marketplace/infrastructure/theme/text_styles.dart';
 import 'package:live_auction_marketplace/presentation/shared/widgets/buttons/primary_buttons.dart';
 
+import '../../../infrastructure/navigation/routes.dart';
 import '../../../infrastructure/utils/app_images.dart';
 import '../../../infrastructure/utils/secure_storage_helper.dart';
 import '../../commonWidgets/prductViewCard.dart';
@@ -134,7 +135,7 @@ class ProductDetailsScreen extends GetView<ProductDetailsController> {
                           SizedBox(width: 8.w),
                           Text(
                             'Date :  27 May',
-                            style: AppTextStyles.buttonRegular,
+                            style: AppTextStyles.paragraph_2_Regular,
                           ),
                         ],
                       ),
@@ -152,7 +153,7 @@ class ProductDetailsScreen extends GetView<ProductDetailsController> {
                           SizedBox(width: 8.w),
                           Text(
                             'Time : 7:00 PM',
-                            style: AppTextStyles.buttonRegular,
+                            style: AppTextStyles.paragraph_2_Regular,
                           ),
                         ],
                       ),
@@ -170,7 +171,7 @@ class ProductDetailsScreen extends GetView<ProductDetailsController> {
                           SizedBox(width: 8.w),
                           Text(
                             'Duration : 15 Min',
-                            style: AppTextStyles.buttonRegular,
+                            style: AppTextStyles.paragraph_2_Regular,
                           ),
                         ],
                       ),
@@ -178,14 +179,24 @@ class ProductDetailsScreen extends GetView<ProductDetailsController> {
                   ),
                 ),
               ),
-              // SizedBox(height: 24.h),
-              Spacer(),
+               SizedBox(height: 24.h),
+
               PrimaryButton(
                 onPressed: () async {
                  // await SecureStorageHelper.remove("userRole");
                 },
                 text: "Pre - Bid",
                 backgroundColor: AppColors.neutral100,
+                width: double.infinity,
+              ),
+              SizedBox(height: 24.h),
+
+              PrimaryButton(
+                onPressed: () async {
+                  Get.toNamed(Routes.DIRECT_BUY_PRODUCT);
+                },
+                text: "Buy Now",
+
                 width: double.infinity,
               ),
             ],

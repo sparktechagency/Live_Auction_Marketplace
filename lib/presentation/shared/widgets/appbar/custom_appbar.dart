@@ -16,6 +16,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Color backgroundColor;
   final Color iconColor;
   final String? leadingIcon;
+  final Color? leadingIconColor;
 
   // final TextStyle titleStyle;
   final Widget? customLeading; // Add custom leading support
@@ -29,7 +30,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.centerTitle = false,
     this.backgroundColor = AppColors.neutral950,
     this.iconColor = Colors.black,
-    this.customLeading, this.leadingIcon, // Optional custom leading
+    this.customLeading, this.leadingIcon, this.leadingIconColor, // Optional custom leading
   });
 
   @override
@@ -37,16 +38,20 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       centerTitle: centerTitle,
       backgroundColor: backgroundColor,
+
       leading:
           customLeading ??
           (showBackButton
               ? IconButton(
-                  icon: SvgPicture.asset(
-                   leadingIcon ?? AppImages
-                        .interfaceArrowsButtonLeftArrowKeyboardLeftStreamlineCore,
-                    height: 16.h,
-                    width: 16.w,
-                    color: AppColors.defaultTextColor,
+                  icon: Padding(
+                    padding:   EdgeInsets.only(left: 4.w),
+                    child: SvgPicture.asset(
+                     leadingIcon ?? AppImages
+                          .interfaceArrowsButtonLeftArrowKeyboardLeftStreamlineCore,
+                      height: 16.h,
+                      width: 16.w,
+                      color: leadingIconColor ?? AppColors.defaultTextColor,
+                    ),
                   ),
                   onPressed: onBackPressed ?? () => Get.back(),
                 )
@@ -56,6 +61,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         style: AppTextStyles.H6_Regular.copyWith(color: AppColors.defaultTextColor),
       ),
       actions: actions,
+
       scrolledUnderElevation: 0,
       elevation: 0, // Add elevation to match original
     );

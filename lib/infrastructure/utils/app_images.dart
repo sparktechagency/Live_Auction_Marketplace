@@ -50,7 +50,10 @@ class AppImages {
 
   static String buyerNavbar = "$baseUrlLogo/buyerNavebar.svg";
   static String undo = "$baseUrlLogo/Undo.svg";
+  static String phoneCalling = "$baseUrlLogo/callingIconPhone.svg";
   static String swedish = "$baseUrlLogo/swedish.svg";
+  static String stripeSvg = "$baseUrlLogo/stripeSvg.svg";
+  static String googlePaySvg = "$baseUrlLogo/googlePaySvg.svg";
   static String Danish = "$baseUrlLogo/Danish.svg";
   static String English = "$baseUrlLogo/English.svg";
   static String email2 = "$baseUrlLogo/email2.svg";
