@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 
 import '../../config.dart';
 import '../../presentation/auth/splashScreen/splash_screen.screen.dart';
+import '../../presentation/home/directBuyProduct/direct_buy_product.screen.dart';
+import '../../presentation/home/liveStreamming/live_streamming.screen.dart';
 import '../../presentation/main_app/main_app.screen.dart';
 import '../../presentation/screens.dart';
 import 'bindings/controllers/controllers_bindings.dart';
