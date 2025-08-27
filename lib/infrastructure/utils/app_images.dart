@@ -30,10 +30,12 @@ class AppImages {
   static String selectionImage2 = "$baseUrlImage/selectionImage1.png";
   static String selectionImage1 = "$baseUrlImage/selectionImage2.png";
   static String selectionImage3 = "$baseUrlImage/selectionImage3.png";
+  static String bidingPerson = "$baseUrlImage/bidingPerson.jpg";
 
   // Here All are SVG
 
   static String home = "$baseUrlLogo/home.svg";
+  static String wallet_svgrepo_com_1 = "$baseUrlLogo/wallet-svgrepo-com 1.svg";
   static String message = "$baseUrlLogo/message.svg";
   static String profile2 = "$baseUrlLogo/profile2.svg";
   static String report = "$baseUrlLogo/report.svg";
