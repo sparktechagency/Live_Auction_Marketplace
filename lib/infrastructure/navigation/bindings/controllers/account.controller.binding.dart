@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 
-import '../../../../presentation/Account/controllers/account.controller.dart';
+import '../../../../presentation/bothAccountScreens/Account/controllers/account.controller.dart';
+
 
 class AccountControllerBinding extends Bindings {
   @override

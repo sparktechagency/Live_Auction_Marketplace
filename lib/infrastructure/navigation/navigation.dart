@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import '../../config.dart';
 import '../../presentation/auth/splashScreen/splash_screen.screen.dart';
+import '../../presentation/bothAccountScreens/Account/account.screen.dart';
 import '../../presentation/home/directBuyProduct/direct_buy_product.screen.dart';
 import '../../presentation/home/liveStreamming/live_streamming.screen.dart';
 import '../../presentation/main_app/main_app.screen.dart';
@@ -165,6 +166,21 @@ class Nav {
       name: Routes.MESSAGEPage,
       page: () => const MessageScreen(),
       binding: MessageControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.HOME,
+      page: () => const HomeScreen(),
+      binding: HomeControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.HOME,
+      page: () => const HomeScreen(),
+      binding: HomeControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.PERSONAL,
+      page: () => const PersonalScreen(),
+      binding: PersonalControllerBinding(),
     ),
   ];
 }

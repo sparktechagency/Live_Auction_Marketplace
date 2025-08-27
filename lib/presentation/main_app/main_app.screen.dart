@@ -4,6 +4,7 @@ import 'package:live_auction_marketplace/presentation/message/message.screen.dar
 import 'package:live_auction_marketplace/presentation/tools/tools.screen.dart';
 import '../../infrastructure/utils/app_images.dart';
 
+import '../bothAccountScreens/Account/account.screen.dart';
 import '../home/home.screen.dart';
 import '../home/sellerHomeScreen/sellerHome/seller_home.screen.dart';
 import '../sellScreen/sell_screen.screen.dart';
@@ -12,7 +13,7 @@ import '../shared/widgets/bottomNav/nav_bar_model.dart';
 
 import '../categories/categories.screen.dart';
 import '../myOrder/my_order.screen.dart';
-import '../Account/account.screen.dart';
+
 import 'controllers/main_app.controller.dart';
 
 class MainAppScreen extends GetView<MainAppController> {

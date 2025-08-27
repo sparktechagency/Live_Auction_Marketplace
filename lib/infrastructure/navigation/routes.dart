@@ -15,6 +15,7 @@ class Routes {
   static const LIVE_STREAMMING = '/live-streamming';
   static const LOG_IN = '/log-in';
   static const MAIN_APP = '/main-app';
+  static const MESSAGEPage = '/message';
   static const MY_ORDER = '/my-order';
   static const OTP_VERIFICATION = '/otp-verification';
   static const PRODUCT_DETAILS = '/product-details';
@@ -30,5 +31,5 @@ class Routes {
   static const SUCCESS_SCREEN = '/success-screen';
   static const TOOLS = '/tools';
   static const VERIFY_EMAIL = '/verify-email';
-  static const MESSAGEPage = '/message';
+  static const PERSONAL = '/personal';
 }

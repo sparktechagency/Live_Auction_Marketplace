@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
  import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:live_auction_marketplace/presentation/Account/account.screen.dart';
-import 'package:live_auction_marketplace/presentation/categories/categories.screen.dart';
+ import 'package:live_auction_marketplace/presentation/categories/categories.screen.dart';
 import 'package:live_auction_marketplace/presentation/myOrder/my_order.screen.dart';
 import "package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart";
 
@@ -14,6 +13,8 @@ import '../../../../infrastructure/theme/text_styles.dart';
 import '../../../../infrastructure/utils/app_images.dart';
 
 
+
+import '../../../bothAccountScreens/Account/account.screen.dart';
 import '../../../home/home.screen.dart';
 import 'buttomNavController.dart';
 

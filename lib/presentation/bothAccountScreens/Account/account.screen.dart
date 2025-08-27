@@ -7,8 +7,11 @@ import 'package:live_auction_marketplace/infrastructure/theme/app_colors.dart';
 import 'package:live_auction_marketplace/infrastructure/theme/text_styles.dart';
 import 'package:live_auction_marketplace/presentation/shared/widgets/appbar/custom_appbar.dart';
 
-import '../../infrastructure/utils/app_images.dart';
-import 'components/selectionCard.dart';
+
+import '../../../infrastructure/navigation/routes.dart';
+import '../../../infrastructure/utils/app_images.dart';
+import '../components/selectionCard.dart';
+
 import 'controllers/account.controller.dart';
 
 class AccountScreen extends GetView<AccountController> {
@@ -37,7 +40,9 @@ class AccountScreen extends GetView<AccountController> {
                 title: 'Personal Information',
                 svgPath: AppImages
                     .interfaceSecurityShieldProfileShieldSecureSecurityProfilePersonStreamlineCore,
-                onTap: () {},
+                onTap: () {
+                  Get.toNamed(Routes.PERSONAL);
+                },
               ),
               SizedBox(height: 16.h),
               Selectioncard(
