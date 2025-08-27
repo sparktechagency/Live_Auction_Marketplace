@@ -146,5 +146,25 @@ class Nav {
       page: () => const DirectBuyProductScreen(),
       binding: DirectBuyProductControllerBinding(),
     ),
+    GetPage(
+      name: Routes.SELL_SCREEN,
+      page: () => const SellScreenScreen(),
+      binding: SellScreenControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.SELLER_HOME,
+      page: () => const SellerHomeScreen(),
+      binding: SellerHomeControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.TOOLS,
+      page: () => const ToolsScreen(),
+      binding: ToolsControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.MESSAGEPage,
+      page: () => const MessageScreen(),
+      binding: MessageControllerBinding(),
+    ),
   ];
 }

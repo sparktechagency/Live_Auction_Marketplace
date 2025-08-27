@@ -52,6 +52,8 @@ class AppImages {
   static String undo = "$baseUrlLogo/Undo.svg";
   static String phoneCallingSvg = "$baseUrlLogo/phoneCalling.svg";
   static String locationIcon2 = "$baseUrlLogo/locationIcon2.svg";
+  static String toolsIcon = "$baseUrlLogo/toolsIcon.svg";
+  static String messageIcon = "$baseUrlLogo/messageIcon.svg";
 
   static String swedish = "$baseUrlLogo/swedish.svg";
   static String stripeSvg = "$baseUrlLogo/stripeSvg.svg";

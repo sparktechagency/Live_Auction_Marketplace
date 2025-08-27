@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:live_auction_marketplace/presentation/message/message.screen.dart';
+import 'package:live_auction_marketplace/presentation/tools/tools.screen.dart';
 import '../../infrastructure/utils/app_images.dart';
 
 import '../home/home.screen.dart';
+import '../home/sellerHomeScreen/sellerHome/seller_home.screen.dart';
+import '../sellScreen/sell_screen.screen.dart';
 import '../shared/widgets/bottomNav/custom_nav_bar.dart';
 import '../shared/widgets/bottomNav/nav_bar_model.dart';
 
@@ -21,34 +25,58 @@ class MainAppScreen extends GetView<MainAppController> {
       bottom: true,
       child: Scaffold(
         body: Obx(() => _buildCurrentScreen()),
-        bottomNavigationBar: Obx(() => CustomBottomNavBar(
-          currentIndex: controller.currentIndex.value,
-          onTap: controller.changeTabIndex,
-          items: [
-            CustomNavItem(
-              svgAssetPath: AppImages.interfaceHome2DoorEntranceHomeHouseMapRoofRoundStreamlineCore,
-              label: 'Home',
-            ),
-            CustomNavItem(
-              svgAssetPath:  AppImages.interfaceSearchGlassSearchMagnifyingStreamlineCore,
-              label: 'Categories',
-            ),
-            CustomNavItem(
-              svgAssetPath: AppImages.buyerNavbar,
-              label: 'Sell',
-              isFloatingButton: true,
-            ),
-            CustomNavItem(
-              svgAssetPath: AppImages.buyerNavbar,
-              label: 'My Order',
-            ),
-            CustomNavItem(
-              svgAssetPath: AppImages.interfaceSecurityShieldProfileShieldSecureSecurityProfilePersonStreamlineCore,
+        bottomNavigationBar: Obx(
+          () => CustomBottomNavBar(
+            currentIndex: controller.currentIndex.value,
+            onTap: controller.changeTabIndex,
+            items: [
+              CustomNavItem(
+                svgAssetPath: AppImages
+                    .interfaceHome2DoorEntranceHomeHouseMapRoofRoundStreamlineCore,
+                label: 'Home',
+              ),
+              CustomNavItem(
+                // svgAssetPath:  AppImages.interfaceSearchGlassSearchMagnifyingStreamlineCore,
+                // label: 'Categories',
+                svgAssetPath: controller.buyerSelected == true
+                    ? AppImages
+                          .interfaceSearchGlassSearchMagnifyingStreamlineCore
+                    : AppImages.toolsIcon,
+                label: controller.buyerSelected == true
+                    ? 'Categories'
+                    : 'Tools',
+              ),
+              CustomNavItem(
+                svgAssetPath: AppImages.buyerNavbar,
+                // label: 'Sell',
+                label: controller.buyerSelected == true
+                    ? 'Sell'
+                    : 'Go Live',
+                isFloatingButton: true,
+              ),
+              CustomNavItem(
+                // svgAssetPath: AppImages.buyerNavbar,
+                svgAssetPath: controller.buyerSelected == true
+                    ? AppImages
+                    .buyerNavbar
+                    : AppImages.messageIcon,
 
-              label: 'Account',
-            ),
-          ],
-        )),
+                label: controller.buyerSelected == true
+                    ? 'My Order'
+                    : 'Message',
+              ),
+              CustomNavItem(
+                svgAssetPath: AppImages
+                    .interfaceSecurityShieldProfileShieldSecureSecurityProfilePersonStreamlineCore,
+
+                // label: 'Account',
+                label: controller.buyerSelected == true
+                    ? 'Account'
+                    : 'Me',
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -56,27 +84,24 @@ class MainAppScreen extends GetView<MainAppController> {
   Widget _buildCurrentScreen() {
     switch (controller.currentIndex.value) {
       case 0:
-        return const HomeScreen();
+        return controller.buyerSelected == true
+            ? HomeScreen()
+            : SellerHomeScreen();
       case 1:
-        return const CategoriesScreen();
+        return controller.buyerSelected == true
+            ? CategoriesScreen()
+            : ToolsScreen();
       case 2:
-
-        return _buildSellScreen();
+        return const SellScreenScreen();
       case 3:
-        return const MyOrderScreen();
+        //return const MyOrderScreen();
+        return controller.buyerSelected == true
+            ? MyOrderScreen()
+            : MessageScreen();
       case 4:
         return const AccountScreen();
       default:
         return const HomeScreen();
     }
-  }
-
-  Widget _buildSellScreen() {
-    return const Center(
-      child: Text(
-        'Sell Screen',
-        style: TextStyle(fontSize: 24),
-      ),
-    );
   }
 }

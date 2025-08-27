@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import '../../../../infrastructure/theme/app_colors.dart';
 import '../../../../infrastructure/theme/text_styles.dart';
+import '../../../../main.dart';
+import '../../../main_app/controllers/main_app.controller.dart';
 import 'nav_bar_model.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
@@ -28,7 +32,7 @@ class CustomBottomNavBar extends StatelessWidget {
     this.elevation = 0.0,
     this.height = 54, // Increased height to accommodate the floating button
   });
-
+  static AppController get to => Get.find();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -148,12 +152,15 @@ class CustomBottomNavBar extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      // You can replace this with an SVG if you have one
-                      // Icon(
-                      //   Icons.add, // Or use SvgPicture.asset if you have an SVG
-                      //   color: Colors.white,
-                      //   size: 20,
-                      // ),
+                   if(AppController.to.role.value!="buyer")
+                      Padding(
+                        padding:   EdgeInsets.only(bottom: 2.w),
+                        child: Icon(
+                          Icons.circle, // Or use SvgPicture.asset if you have an SVG
+                          color: AppColors.red500,
+                          size: 6.sp,
+                        ),
+                      ),
                       Text(
                         items[2].label, // "Sell" text
                         style: AppTextStyles.captionRegular.copyWith(

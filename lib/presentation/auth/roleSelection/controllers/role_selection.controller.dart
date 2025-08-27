@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:live_auction_marketplace/infrastructure/utils/log_helper.dart';
 
 import '../../../../infrastructure/navigation/routes.dart';
+import '../../../../infrastructure/utils/api_content.dart';
 import '../../../../infrastructure/utils/secure_storage_helper.dart';
 import '../../../../main.dart';
 
@@ -29,7 +30,7 @@ class RoleSelectionController extends GetxController {
   }
 
   Future<void> _saveRolePreference(String role) async {
-    await SecureStorageHelper.setString("userRole", role);
+    await SecureStorageHelper.setString(ApiConstants.userRole, role);
 
      LoggerHelper.info("User role is: ${AppController.to.role.value}");
 

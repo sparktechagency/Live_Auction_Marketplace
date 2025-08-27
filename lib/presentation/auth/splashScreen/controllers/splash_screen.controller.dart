@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 
 import '../../../../../infrastructure/navigation/routes.dart';
+import '../../../../infrastructure/utils/api_content.dart';
 import '../../../../infrastructure/utils/secure_storage_helper.dart';
 import '../../../shared/widgets/customButtomNavigation/customButtomNavigationBar.dart';
 
@@ -8,7 +9,7 @@ class SplashScreenController extends GetxController {
 
  void startSplashTimer(){
    Future.delayed(Duration(seconds: 3),() async {
-     String role = await SecureStorageHelper.getString("userRole");
+     String role = await SecureStorageHelper.getString(ApiConstants.userRole);
 
     if(role.isNotEmpty){
       Get.offAllNamed(Routes.MAIN_APP);

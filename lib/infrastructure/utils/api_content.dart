@@ -13,7 +13,7 @@ class ApiConstants {
   static const token = 'token';
   static const company = 'company';
   static const tempId = 'tempId';
-  //static const userId = 'userId';
+   static const userRole = 'userRole';
   static const resetPasswordToken = 'resetPasswordToken';
   static String APP_NAME = "Golf Game";
   static String bearerToken = "bearerToken";
