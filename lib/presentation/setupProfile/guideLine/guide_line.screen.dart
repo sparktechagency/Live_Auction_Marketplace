@@ -18,6 +18,8 @@ class GuideLineScreen extends GetView<GuideLineController> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+      top: false,
+      bottom: true,
       child: Scaffold(
         appBar: CustomAppBar(
           title: "",
@@ -50,7 +52,7 @@ class GuideLineScreen extends GetView<GuideLineController> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 8.h),
-                Text('Letâ€™s get Started!', style: AppTextStyles.H6_Regular),
+                Text('Let’s get Started!', style: AppTextStyles.H6_Regular),
                 SizedBox(height: 4.h),
                 Text(
                   'Before you kick off your selling journey,please agree to these Guidelines.',

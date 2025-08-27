@@ -181,10 +181,10 @@ class DirectBuyProductScreen extends GetView<DirectBuyProductController> {
                 SizedBox(height: 8.h),
                 _shippingInformation('Mr. Thomas', AppImages.personIcon),
                 SizedBox(height: 16.h),
-                _shippingInformation('01315679597', AppImages.phoneCalling),
+                _shippingInformation('01315679597', AppImages.phoneCallingSvg),
                 SizedBox(height: 16.h),
                 _shippingInformation(
-                    'Mirpur, Dhaka, Bangladesh', AppImages.phoneCalling),
+                    'Mirpur, Dhaka, Bangladesh', AppImages.locationIcon2),
                 SizedBox(height: 24.h),
                 Text(
                   'Shipping Address',
@@ -213,7 +213,7 @@ class DirectBuyProductScreen extends GetView<DirectBuyProductController> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             SvgPicture.asset(
-                              AppImages.stripeSvg, height: 24.h, width: 24.w,)
+                              AppImages.stripe, height: 24.h, width: 24.w,)
                             ,
                             SizedBox(
                               width: 8.w,
@@ -230,7 +230,9 @@ class DirectBuyProductScreen extends GetView<DirectBuyProductController> {
                                   controller.selectStripe();
                                 },
                                 child: _paymentSelectionButton(
-                                    controller.stripeSelected.value),
+                                    controller.stripeSelected.value
+
+                                ),
                               );
                             })
                           ],
@@ -240,7 +242,7 @@ class DirectBuyProductScreen extends GetView<DirectBuyProductController> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             SvgPicture.asset(
-                              AppImages.googlePaySvg, height: 24.h,
+                              AppImages.googlePay, height: 24.h,
                               width: 24.w,)
                             ,
                             SizedBox(

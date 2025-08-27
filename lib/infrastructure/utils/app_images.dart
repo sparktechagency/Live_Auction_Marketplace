@@ -50,7 +50,9 @@ class AppImages {
 
   static String buyerNavbar = "$baseUrlLogo/buyerNavebar.svg";
   static String undo = "$baseUrlLogo/Undo.svg";
-  static String phoneCalling = "$baseUrlLogo/callingIconPhone.svg";
+  static String phoneCallingSvg = "$baseUrlLogo/phoneCalling.svg";
+  static String locationIcon2 = "$baseUrlLogo/locationIcon2.svg";
+
   static String swedish = "$baseUrlLogo/swedish.svg";
   static String stripeSvg = "$baseUrlLogo/stripeSvg.svg";
   static String googlePaySvg = "$baseUrlLogo/googlePaySvg.svg";
@@ -114,6 +116,8 @@ class AppImages {
   static String pen = "$baseUrlLogo/Pen.svg";
   static String language = "$baseUrlLogo/language.svg";
   static String lock = "$baseUrlLogo/Lock.svg";
+  static String stripe = "$baseUrlLogo/stripe.svg";
+  static String googlePay = "$baseUrlLogo/googlePay.svg";
 
   static String InterfaceFileAddFileCommonAddStreamlineCore = "$baseUrlLogo/Interface-file-add--file-common-add--Streamline-Core.svg";
   static String InterfaceFileAddAlternateFileCommonAddStreamlineCore = "$baseUrlLogo/Interface-file-add-alternate--file-common-add--Streamline-Core.svg";
