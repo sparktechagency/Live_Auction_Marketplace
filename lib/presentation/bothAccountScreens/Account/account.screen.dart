@@ -55,7 +55,9 @@ class AccountScreen extends GetView<AccountController> {
                 title: 'Settings',
                 svgPath: AppImages
                     .interfaceSettingPieChartCogSettingGraphCogStreamlineCore,
-                onTap: () {},
+                onTap: () {
+                  Get.toNamed(Routes.SETTINGS);
+                },
               ),
               Spacer(),
               GestureDetector(

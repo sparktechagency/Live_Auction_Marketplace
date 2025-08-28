@@ -1,8 +1,10 @@
  export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/home.controller.binding.dart';
  export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/splash_screen.controller.binding.dart';
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/account.controller.binding.dart'; 
+export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/all_privacy_and_tearms.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/categories.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/category_selection.controller.binding.dart'; 
+export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/change_password.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/direct_buy_product.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/gender_selection.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/guide_line.controller.binding.dart'; 
@@ -21,8 +23,10 @@ export 'package:live_auction_marketplace/infrastructure/navigation/bindings/cont
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/sell_screen.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/seller_home.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/seller_information.controller.binding.dart'; 
+export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/settings.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/sign_up.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/sign_up_with_email.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/success_screen.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/tools.controller.binding.dart'; 
+export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/update_profile.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/verify_email.controller.binding.dart'; 

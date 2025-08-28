@@ -182,5 +182,25 @@ class Nav {
       page: () => const PersonalScreen(),
       binding: PersonalControllerBinding(),
     ),
+    GetPage(
+      name: Routes.UPDATE_PROFILE,
+      page: () => const UpdateProfileScreen(),
+      binding: UpdateProfileControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.SETTINGS,
+      page: () => const SettingsScreen(),
+      binding: SettingsControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.CHANGE_PASSWORD,
+      page: () => const ChangePasswordScreen(),
+      binding: ChangePasswordControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.ALL_PRIVACY_AND_TEARMS,
+      page: () => const AllPrivacyAndTearmsScreen(),
+      binding: AllPrivacyAndTearmsControllerBinding(),
+    ),
   ];
 }

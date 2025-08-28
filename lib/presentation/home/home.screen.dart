@@ -28,31 +28,12 @@ class HomeScreen extends GetView<HomeController> {
             return Scaffold(
               appBar: controller.searchFieldSelected.value == false
                   ? AppBar(
-                      leading: Row(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(left: 24.w),
-                            child: Container(
-                              width: 32.w,
-                              height: 32.w,
-                              decoration: BoxDecoration(
-                                color: AppColors.defaultTextColor,
-                                borderRadius: BorderRadius.circular(100.r),
-                              ),
-                              child: Center(
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(100.r),
-                                  child: Image.asset(
-                                    AppImages.productOwner,
-                                    width: 32.w,
-                                    height: 32.w,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
+                      leading: Padding(
+                        padding:   EdgeInsets.only(left: 20.w),
+                        child: CircleAvatar(
+                          radius: 20.r,
+                          backgroundImage: AssetImage(AppImages.productOwner),
+                        ),
                       ),
                       title: Column(
                         mainAxisSize: MainAxisSize.min,
@@ -80,6 +61,18 @@ class HomeScreen extends GetView<HomeController> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
+                              Container(
+                                height: 24.w,
+                                width: 24.w,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(100.r),
+                                  color: AppColors.neutral800
+                                ),
+                                child: Center(
+                                  child: SvgPicture.asset(AppImages.messageIcon,color: AppColors.neutral50,),
+                                ),
+                              ),
+                              SizedBox(width: 12.w),
                               SvgPicture.asset(AppImages.notificatioContainer),
                               SizedBox(width: 12.w),
                               SvgPicture.asset(AppImages.giftContainer),

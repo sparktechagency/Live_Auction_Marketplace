@@ -7,6 +7,7 @@ class Routes {
   static const ACCOUNT = '/account';
   static const CATEGORIES = '/categories';
   static const CATEGORY_SELECTION = '/category-selection';
+  static const CHANGE_PASSWORD = '/change-password';
   static const DIRECT_BUY_PRODUCT = '/direct-buy-product';
   static const GENDER_SELECTION = '/gender-selection';
   static const GUIDE_LINE = '/guide-line';
@@ -18,6 +19,7 @@ class Routes {
   static const MESSAGEPage = '/message';
   static const MY_ORDER = '/my-order';
   static const OTP_VERIFICATION = '/otp-verification';
+  static const PERSONAL = '/personal';
   static const PRODUCT_DETAILS = '/product-details';
   static const PRODUCT_SELECTION = '/product-selection';
   static const RESET_PASSWORD = '/reset-password';
@@ -25,11 +27,13 @@ class Routes {
   static const SELLER_HOME = '/seller-home';
   static const SELLER_INFORMATION = '/seller-information';
   static const SELL_SCREEN = '/sell-screen';
+  static const SETTINGS = '/settings';
   static const SIGN_UP = '/sign-up';
   static const SIGN_UP_WITH_EMAIL = '/sign-up-with-email';
   static const SPLASH_SCREEN = '/splash-screen';
   static const SUCCESS_SCREEN = '/success-screen';
   static const TOOLS = '/tools';
+  static const UPDATE_PROFILE = '/update-profile';
   static const VERIFY_EMAIL = '/verify-email';
-  static const PERSONAL = '/personal';
+  static const ALL_PRIVACY_AND_TEARMS = '/all-privacy-and-tearms';
 }
