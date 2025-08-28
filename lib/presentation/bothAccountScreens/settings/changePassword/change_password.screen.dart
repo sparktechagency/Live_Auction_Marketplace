@@ -13,6 +13,7 @@ import 'controllers/change_password.controller.dart';
 
 class ChangePasswordScreen extends GetView<ChangePasswordController> {
   const ChangePasswordScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,48 +25,42 @@ class ChangePasswordScreen extends GetView<ChangePasswordController> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(
-              height:   24.h
-              ),
+              SizedBox(height: 24.h),
               CustomTextFormField(
                 keyboardType: 'visiblePassword',
                 hintText: "Old Password",
                 prefixSvg: AppImages
                     .interfaceLockCombinationComboLockLockedPadlockSecureSecurityShieldKeyholeStreamlineCore,
               ),
-              SizedBox(
-                height: 10.h,
-              ),
+              SizedBox(height: 10.h),
               CustomTextFormField(
                 keyboardType: 'visiblePassword',
                 hintText: "Set New Password",
                 prefixSvg: AppImages
                     .interfaceLockCombinationComboLockLockedPadlockSecureSecurityShieldKeyholeStreamlineCore,
-              ),SizedBox(
-                height: 10.h,
               ),
+              SizedBox(height: 10.h),
               CustomTextFormField(
                 keyboardType: 'visiblePassword',
                 hintText: "Re-type New Password",
                 prefixSvg: AppImages
                     .interfaceLockCombinationComboLockLockedPadlockSecureSecurityShieldKeyholeStreamlineCore,
               ),
-              SizedBox(
-                height: 24.h,
-              ),
+              SizedBox(height: 24.h),
               Align(
                 alignment: Alignment.topLeft,
-                child: Text("Forgot password?",style: AppTextStyles.buttonRegular.copyWith(
-                  color: AppColors.primary400
-                ),),
+                child: Text(
+                  "Forgot password?",
+                  style: AppTextStyles.buttonRegular.copyWith(
+                    color: AppColors.primary400,
+                  ),
+                ),
               ),
-              SizedBox(
-                height: 24.h,
-              ),
+              SizedBox(height: 24.h),
               PrimaryButton(
                 width: double.infinity,
                 onPressed: () {
-controller. navigateToRegistrationSuccess();
+                  controller.navigateToRegistrationSuccess();
                 },
                 text: "Update Password",
               ),

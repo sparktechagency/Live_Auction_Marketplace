@@ -80,16 +80,16 @@ class HomeController extends GetxController {
     searchFieldSelected.value = false;
   }
 
-  @override
-  void onClose() {
-    searchController.dispose();
-    searchFocusNode.removeListener(_onSearchFocusChanged); // Don't forget this
-    searchFocusNode.dispose();
-    scrollController.dispose();
-    _debounceTimer?.cancel();
-    _scrollTimer?.cancel();
-    super.onClose();
-  }
+  // @override
+  // void onClose() {
+  //   searchController.dispose();
+  //   searchFocusNode.removeListener(_onSearchFocusChanged); // Don't forget this
+  //   searchFocusNode.dispose();
+  //   scrollController.dispose();
+  //   _debounceTimer?.cancel();
+  //   _scrollTimer?.cancel();
+  //   super.onClose();
+  // }
   void _setupScrollListener() {
     scrollController.addListener(() {
       // Detect if user is scrolling
@@ -332,8 +332,7 @@ class HomeController extends GetxController {
   }
 
   void _addToRecentSearches(String query) {
-    // Implementation for recent searches
-    // You can store this in shared preferences or local storage
+
   }
 
   void loadMoreItems() {

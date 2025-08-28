@@ -15,7 +15,7 @@ import '../../../../infrastructure/utils/app_images.dart';
 
 
 import '../../../bothAccountScreens/Account/account.screen.dart';
-import '../../../home/home.screen.dart';
+import '../../../home/homeScreen/home.screen.dart';
 import 'buttomNavController.dart';
 
 class MainScreen extends StatelessWidget {

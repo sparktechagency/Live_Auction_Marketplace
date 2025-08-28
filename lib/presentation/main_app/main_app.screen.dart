@@ -5,7 +5,7 @@ import 'package:live_auction_marketplace/presentation/tools/tools.screen.dart';
 import '../../infrastructure/utils/app_images.dart';
 
 import '../bothAccountScreens/Account/account.screen.dart';
-import '../home/home.screen.dart';
+import '../home/homeScreen/home.screen.dart';
 import '../home/sellerHomeScreen/sellerHome/seller_home.screen.dart';
 import '../sellScreen/sell_screen.screen.dart';
 import '../shared/widgets/bottomNav/custom_nav_bar.dart';

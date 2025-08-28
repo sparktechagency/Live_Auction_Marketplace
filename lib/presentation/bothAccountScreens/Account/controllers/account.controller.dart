@@ -1,23 +1,16 @@
 import 'package:get/get.dart';
 
-class AccountController extends GetxController {
-  //TODO: Implement AccountController
+import '../../../../main.dart';
 
-  final count = 0.obs;
+class AccountController extends GetxController {
+  static AppController get to => Get.find();
+
+  late   String userRole =  '';
+
   @override
   void onInit() {
+
     super.onInit();
+    userRole = AppController.to.role.value;
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

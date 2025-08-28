@@ -30,72 +30,93 @@ class AccountScreen extends GetView<AccountController> {
         ),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.w),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              _profileImageUpload(),
-              SizedBox(height: 16.h),
-              Selectioncard(
-                title: 'Personal Information',
-                svgPath: AppImages
-                    .interfaceSecurityShieldProfileShieldSecureSecurityProfilePersonStreamlineCore,
-                onTap: () {
-                  Get.toNamed(Routes.PERSONAL);
-                },
-              ),
-              SizedBox(height: 16.h),
-              Selectioncard(
-                title: 'Wallet',
-                svgPath: AppImages.wallet_svgrepo_com_1,
-                onTap: () {},
-              ),
-              SizedBox(height: 16.h),
-              Selectioncard(
-                title: 'Settings',
-                svgPath: AppImages
-                    .interfaceSettingPieChartCogSettingGraphCogStreamlineCore,
-                onTap: () {
-                  Get.toNamed(Routes.SETTINGS);
-                },
-              ),
-              Spacer(),
-              GestureDetector(
-                onTap: (){},
-                child: Container(
-
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.transparent,
-                    border: Border.all(width: 1.w, color: AppColors.red500),
-                    borderRadius: BorderRadius.circular(4.r),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                _profileImageUpload(),
+                SizedBox(height: 16.h),
+                Selectioncard(
+                  title: 'Personal Information',
+                  svgPath: AppImages
+                      .interfaceSecurityShieldProfileShieldSecureSecurityProfilePersonStreamlineCore,
+                  onTap: () {
+                    Get.toNamed(Routes.PERSONAL);
+                  },
+                ),
+                SizedBox(height: 16.h),
+                Selectioncard(
+                  title: 'Wallet',
+                  svgPath: AppImages.wallet_svgrepo_com_1,
+                  onTap: () {},
+                ),
+if(controller.userRole!="seller")
+                Padding(
+                  padding:   EdgeInsets.only(top: 16.h),
+                  child: Selectioncard(
+                    title: 'Schedule Auction Settings',
+                    svgPath: AppImages.interfaceTimeResetTimeClockResetStopwatchCircleMeasureLoadingStreamlineCore,
+                    onTap: () {},
                   ),
-                  child: Padding(
-                    padding:   EdgeInsets.symmetric(vertical: 16.5.h),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
+                ),
+                if(controller.userRole!="seller")
+                Padding(
+                  padding:   EdgeInsets.only(top: 16.h),
+                  child: Selectioncard(
+                    title: 'Give way Settings',
+                    svgPath: AppImages.giftIcon,
+                    onTap: () {},
+                  ),
+                ),
+                SizedBox(height: 16.h),
+                Selectioncard(
+                  title: 'Settings',
+                  svgPath: AppImages
+                      .interfaceSettingPieChartCogSettingGraphCogStreamlineCore,
+                  onTap: () {
+                    Get.toNamed(Routes.SETTINGS);
+                  },
+                ),
 
-                        SvgPicture.asset(AppImages.interfaceLogoutCircleArrowEnterRightLogoutPointCircleStreamlineCore,height: 16.h,width: 16.w,color: AppColors.red500,),
-                        SizedBox(
-                          width: 8.57.w,
-                        ),
-                      Text(
-                          "Log Out",
-                          style: AppTextStyles.paragraph_2_Regular.copyWith(
-                            color: AppColors.red500,
+                SizedBox(height: 64.h),
+                GestureDetector(
+                  onTap: (){},
+                  child: Container(
+
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.transparent,
+                      border: Border.all(width: 1.w, color: AppColors.red500),
+                      borderRadius: BorderRadius.circular(4.r),
+                    ),
+                    child: Padding(
+                      padding:   EdgeInsets.symmetric(vertical: 16.5.h),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+
+                          SvgPicture.asset(AppImages.interfaceLogoutCircleArrowEnterRightLogoutPointCircleStreamlineCore,height: 16.h,width: 16.w,color: AppColors.red500,),
+                          SizedBox(
+                            width: 8.57.w,
                           ),
-                        ),
-                      ],
+                        Text(
+                            "Log Out",
+                            style: AppTextStyles.paragraph_2_Regular.copyWith(
+                              color: AppColors.red500,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 10.h,
-              )
-            ],
+                SizedBox(
+                  height: 4.h,
+                )
+              ],
+            ),
           ),
         ),
       ),

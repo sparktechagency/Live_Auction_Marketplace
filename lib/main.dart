@@ -43,7 +43,6 @@ class AppController extends GetxController {
 void main() async {
   var initialRoute = await Routes.initialRoute;
 
-  // Initialize the global controller
   Get.put(AppController(), permanent: true);
 
   runApp(Phoenix(child: Main(initialRoute)));

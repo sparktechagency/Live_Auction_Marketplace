@@ -44,7 +44,9 @@ class SettingsScreen extends GetView<SettingsController> {
                   trailingIcon: true,
                   svgPath: AppImages
                       .interfaceSecurityShield2ShieldProtectionSecurityDefendCrimeWarCoverStreamlineCore,
-                  onTap: () {},
+                  onTap: () {
+                    controller.privacyPolicy();
+                  },
                 ),
                 SizedBox(height: 16.h),
                 Selectioncard(
@@ -52,7 +54,9 @@ class SettingsScreen extends GetView<SettingsController> {
                   trailingIcon: true,
                   svgPath: AppImages
                       .interfaceAlertWarningTriangleFrameAlertWarningTriangleExclamationCautionStreamlineCore,
-                  onTap: () {},
+                  onTap: () {
+                    controller.termsAndCondition();
+                  },
                 ),
                 SizedBox(height: 16.h),
                 Selectioncard(
@@ -60,7 +64,9 @@ class SettingsScreen extends GetView<SettingsController> {
                   trailingIcon: true,
                   svgPath: AppImages
                       .interfaceAlertInformationCircleInformationFrameInfoMoreHelpPointCircleStreamlineCore,
-                  onTap: () {},
+                  onTap: () {
+                    controller.aboutUs();
+                  },
                 ),
               ],
             ),

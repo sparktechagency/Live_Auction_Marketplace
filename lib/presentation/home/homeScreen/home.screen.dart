@@ -12,7 +12,7 @@ import 'package:live_auction_marketplace/presentation/commonWidgets/gridDetailsC
 import 'package:live_auction_marketplace/presentation/shared/widgets/customSearchBar/customSearchField.dart';
 
 
-import 'homeScreen/controllers/home.controller.dart';
+import 'controllers/home.controller.dart';
 
 class HomeScreen extends GetView<HomeController> {
   const HomeScreen({super.key});

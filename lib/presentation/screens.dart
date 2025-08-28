@@ -1,7 +1,7 @@
 
   export 'package:live_auction_marketplace/presentation/auth/forgetPassword/otpVerification/otp_verification.screen.dart';
  export 'package:live_auction_marketplace/presentation/auth/roleSelection/role_selection.screen.dart';
- export 'package:live_auction_marketplace/presentation/home/home.screen.dart';
+ export 'package:live_auction_marketplace/presentation/home/homeScreen/home.screen.dart';
  export 'package:live_auction_marketplace/presentation/main_app/main_app.screen.dart';
  export 'package:live_auction_marketplace/presentation/myOrder/my_order.screen.dart';
 export 'package:live_auction_marketplace/presentation/auth/forgetPassword/resetPassword/reset_password.screen.dart';
