@@ -28,6 +28,19 @@ class SettingsScreen extends GetView<SettingsController> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+if(controller.userRole !="buyer")
+                Padding(
+                  padding:   EdgeInsets.only(top: 16.h),
+                  child: Selectioncard(
+                    title: 'Store Information',
+                    trailingIcon: true,
+                    svgPath: AppImages
+                        .storeIcon,
+                    onTap: () {
+                      Get.toNamed(Routes.STORE_INFORMATION);
+                    },
+                  ),
+                ),
                 SizedBox(height: 16.h),
                 Selectioncard(
                   title: 'Change Password',

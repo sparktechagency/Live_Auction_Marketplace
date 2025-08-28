@@ -5,6 +5,7 @@ class Routes {
   }
 
   static const ACCOUNT = '/account';
+  static const ALL_PRIVACY_AND_TEARMS = '/all-privacy-and-tearms';
   static const CATEGORIES = '/categories';
   static const CATEGORY_SELECTION = '/category-selection';
   static const CHANGE_PASSWORD = '/change-password';
@@ -35,5 +36,5 @@ class Routes {
   static const TOOLS = '/tools';
   static const UPDATE_PROFILE = '/update-profile';
   static const VERIFY_EMAIL = '/verify-email';
-  static const ALL_PRIVACY_AND_TEARMS = '/all-privacy-and-tearms';
+  static const STORE_INFORMATION = '/store-information';
 }

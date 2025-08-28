@@ -20,6 +20,7 @@ export 'package:live_auction_marketplace/infrastructure/navigation/bindings/cont
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/product_selection.controller.binding.dart';
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/reset_password.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/role_selection.controller.binding.dart'; 
+export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/schedule_action_settings.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/sell_screen.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/seller_home.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/seller_information.controller.binding.dart'; 

@@ -7,7 +7,6 @@ import 'package:live_auction_marketplace/infrastructure/theme/app_colors.dart';
 import 'package:live_auction_marketplace/infrastructure/theme/text_styles.dart';
 import 'package:live_auction_marketplace/presentation/shared/widgets/appbar/custom_appbar.dart';
 
-
 import '../../../infrastructure/navigation/routes.dart';
 import '../../../infrastructure/utils/app_images.dart';
 import '../components/selectionCard.dart';
@@ -51,24 +50,25 @@ class AccountScreen extends GetView<AccountController> {
                   svgPath: AppImages.wallet_svgrepo_com_1,
                   onTap: () {},
                 ),
-if(controller.userRole!="seller")
-                Padding(
-                  padding:   EdgeInsets.only(top: 16.h),
-                  child: Selectioncard(
-                    title: 'Schedule Auction Settings',
-                    svgPath: AppImages.interfaceTimeResetTimeClockResetStopwatchCircleMeasureLoadingStreamlineCore,
-                    onTap: () {},
+                if (controller.userRole == "buyer")
+                  Padding(
+                    padding: EdgeInsets.only(top: 16.h),
+                    child: Selectioncard(
+                      title: 'Schedule Auction Settings',
+                      svgPath: AppImages
+                          .interfaceTimeResetTimeClockResetStopwatchCircleMeasureLoadingStreamlineCore,
+                      onTap: () {},
+                    ),
                   ),
-                ),
-                if(controller.userRole!="seller")
-                Padding(
-                  padding:   EdgeInsets.only(top: 16.h),
-                  child: Selectioncard(
-                    title: 'Give way Settings',
-                    svgPath: AppImages.giftIcon,
-                    onTap: () {},
+                if (controller.userRole == "buyer")
+                  Padding(
+                    padding: EdgeInsets.only(top: 16.h),
+                    child: Selectioncard(
+                      title: 'Give way Settings',
+                      svgPath: AppImages.giftIcon,
+                      onTap: () {},
+                    ),
                   ),
-                ),
                 SizedBox(height: 16.h),
                 Selectioncard(
                   title: 'Settings',
@@ -81,9 +81,8 @@ if(controller.userRole!="seller")
 
                 SizedBox(height: 64.h),
                 GestureDetector(
-                  onTap: (){},
+                  onTap: () {},
                   child: Container(
-
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: Colors.transparent,
@@ -91,17 +90,20 @@ if(controller.userRole!="seller")
                       borderRadius: BorderRadius.circular(4.r),
                     ),
                     child: Padding(
-                      padding:   EdgeInsets.symmetric(vertical: 16.5.h),
+                      padding: EdgeInsets.symmetric(vertical: 16.5.h),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-
-                          SvgPicture.asset(AppImages.interfaceLogoutCircleArrowEnterRightLogoutPointCircleStreamlineCore,height: 16.h,width: 16.w,color: AppColors.red500,),
-                          SizedBox(
-                            width: 8.57.w,
+                          SvgPicture.asset(
+                            AppImages
+                                .interfaceLogoutCircleArrowEnterRightLogoutPointCircleStreamlineCore,
+                            height: 16.h,
+                            width: 16.w,
+                            color: AppColors.red500,
                           ),
-                        Text(
+                          SizedBox(width: 8.57.w),
+                          Text(
                             "Log Out",
                             style: AppTextStyles.paragraph_2_Regular.copyWith(
                               color: AppColors.red500,
@@ -112,9 +114,7 @@ if(controller.userRole!="seller")
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 4.h,
-                )
+                SizedBox(height: 4.h),
               ],
             ),
           ),
