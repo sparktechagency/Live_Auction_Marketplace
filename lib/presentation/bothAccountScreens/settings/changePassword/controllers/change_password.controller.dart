@@ -1,23 +1,21 @@
 import 'package:get/get.dart';
 
+import '../../../../../infrastructure/navigation/routes.dart';
+import '../../../../auth/successScreen/controllers/success_screen.controller.dart';
+
 class ChangePasswordController extends GetxController {
-  //TODO: Implement ChangePasswordController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  final SuccessScreenController successScreenController = Get.put(
+    SuccessScreenController(),
+  );
+  void navigateToRegistrationSuccess() {
+    Get.find<SuccessScreenController>().initializeSuccessScreen(
+      title: "You have Successfully",
+      subTitle: "Updated Password",
+      buttonText: "Back to Home",
+      onPressed: () {
+        Get.offAllNamed(Routes.MAIN_APP);
+      },
+    );
+    Get.toNamed(Routes.SUCCESS_SCREEN);
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

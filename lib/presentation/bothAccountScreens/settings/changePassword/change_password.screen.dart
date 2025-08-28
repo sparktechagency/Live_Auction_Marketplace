@@ -65,7 +65,7 @@ class ChangePasswordScreen extends GetView<ChangePasswordController> {
               PrimaryButton(
                 width: double.infinity,
                 onPressed: () {
-
+controller. navigateToRegistrationSuccess();
                 },
                 text: "Update Password",
               ),
