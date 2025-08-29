@@ -93,8 +93,6 @@ class Orderdetailscard extends StatelessWidget {
         return AppColors.red500; // Red for cancelled
       case 'delivered':
         return AppColors.green500; // Green for delivered
-      case 'shipped':
-        return AppColors.primary600; // Keep your primary color for shipped
       default:
         return AppColors.primary600; // Default color
     }

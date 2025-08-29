@@ -42,7 +42,7 @@ class MyOrderController extends GetxController {
           'productName': 'Gaming Console',
           'size': 'Standard',
           'price': '\$499',
-          'status': 'Shipped', // ❗ Note mismatch here
+          'status': 'Delivered',
           'image': AppImages.watchPic,
           'orderDate': '2024-08-20',
         },
