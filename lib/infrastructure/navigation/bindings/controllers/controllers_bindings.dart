@@ -1,6 +1,7 @@
  export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/home.controller.binding.dart';
  export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/splash_screen.controller.binding.dart';
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/account.controller.binding.dart'; 
+export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/add_payment_methode.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/all_privacy_and_tearms.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/austion_settings.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/categories.controller.binding.dart'; 
@@ -16,6 +17,7 @@ export 'package:live_auction_marketplace/infrastructure/navigation/bindings/cont
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/log_in.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/message.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/my_order.controller.binding.dart'; 
+export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/my_wallet.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/otp_verification.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/personal.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/product_details.controller.binding.dart'; 

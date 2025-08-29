@@ -48,6 +48,7 @@ class AppImages {
 
   static String imageFileIcon = "$baseUrlLogo/imageFile.svg";
   static String upload = "$baseUrlLogo/upload.svg";
+  static String Plus = "$baseUrlLogo/Plus.svg";
   static String notificatioContainer = "$baseUrlLogo/notificatioContainer.svg";
   static String giftContainer = "$baseUrlLogo/giftContainer.svg";
   static String filter = "$baseUrlLogo/filter.svg";
@@ -124,6 +125,7 @@ class AppImages {
   static String lock = "$baseUrlLogo/Lock.svg";
   static String stripe = "$baseUrlLogo/stripe.svg";
   static String googlePay = "$baseUrlLogo/googlePay.svg";
+  static String accountBalanceDesign = "$baseUrlLogo/accountBalanceDesign.svg";
 
   static String InterfaceFileAddFileCommonAddStreamlineCore = "$baseUrlLogo/Interface-file-add--file-common-add--Streamline-Core.svg";
   static String InterfaceFileAddAlternateFileCommonAddStreamlineCore = "$baseUrlLogo/Interface-file-add-alternate--file-common-add--Streamline-Core.svg";

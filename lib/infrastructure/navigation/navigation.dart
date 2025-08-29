@@ -218,5 +218,15 @@ class Nav {
       page: () => const GiveAwayScreen(),
       binding: GiveAwayControllerBinding(),
     ),
+    GetPage(
+      name: Routes.MY_WALLET,
+      page: () => const MyWalletScreen(),
+      binding: MyWalletControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.ADD_PAYMENT_METHODE,
+      page: () => const AddPaymentMethodeScreen(),
+      binding: AddPaymentMethodeControllerBinding(),
+    ),
   ];
 }

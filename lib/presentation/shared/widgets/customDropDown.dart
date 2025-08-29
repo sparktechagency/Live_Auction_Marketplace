@@ -32,8 +32,9 @@ class CustomDropDown extends StatelessWidget {
       value: selectedValue,
       hint: Text(
         hintText,
-        style: AppTextStyles.buttonRegular.copyWith(
-          color: AppColors.primary200,
+        style: AppTextStyles.paragraph_2_Regular.copyWith(
+          color: AppColors.neutral50,
+          fontSize: 12.sp
         ),
       ),
       items: items,
@@ -48,34 +49,54 @@ class CustomDropDown extends StatelessWidget {
       decoration: InputDecoration(
         filled: true,
         fillColor: AppColors.neutral950,
-        contentPadding: EdgeInsets.only(top:  18.h,bottom: 18.h, right: 20.w,left: 4.w),
+        contentPadding: EdgeInsets.only(top: 18.h, bottom: 18.h, right: 8.w, left: 4.w),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4.r),
-          borderSide: BorderSide.none,
+          borderSide: BorderSide(color: AppColors.neutral800), // Default border
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(4.r),
+          borderSide: BorderSide(color: AppColors.neutral800), // Enabled border
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(4.r),
+          borderSide: BorderSide(color: AppColors.primary1000, width: 1.w), // Red border when selected/focused
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(4.r),
+          borderSide: BorderSide(color: Colors.red), // Red border for errors
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(4.r),
+          borderSide: BorderSide(color: Colors.red, width: 2.0), // Red border when focused with error
         ),
       ),
       dropdownStyleData: DropdownStyleData(
         maxHeight: 300.h,
         // width: 400.w, // Custom width
+
         decoration: BoxDecoration(
-          color: AppColors.secondary950,
-          borderRadius: BorderRadius.circular(12.r),
-          border: Border.all(color: AppColors.primary1000, width: 1.2),
+          color: AppColors.primary950,
+          borderRadius: BorderRadius.circular(4.r),
+          border: Border.all(color: AppColors.primary950, width: 1.w),
         ),
-         offset: const Offset(0, -4), // To adjust dropdown position
+        offset: const Offset(0, -4), // To adjust dropdown position
       ),
       iconStyleData: IconStyleData(
         icon: Transform.rotate(
-          angle: 3.14 / -2,
-          child: SvgPicture.asset(
-            AppImages.backIcon,
-            height: 24.h,
-            width: 24.w,
-            color: AppColors.primary200,
+          angle: 3.14 / 2,
+          child: Padding(
+            padding: EdgeInsets.all(4),
+            child: SvgPicture.asset(
+              AppImages.interfaceArrowsButtonRightArrowRightKeyboardStreamlineCore,
+              height: 24.h,
+              width: 24.w,
+              color: AppColors.neutral50,
+            ),
           ),
         ),
       ),
-      style: AppTextStyles.buttonRegular.copyWith(color: AppColors.primary200),
+      style: AppTextStyles.paragraph_2_Regular.copyWith(color: AppColors.neutral50),
     );
   }
 }

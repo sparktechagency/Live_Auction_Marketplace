@@ -7,7 +7,8 @@ import '../../infrastructure/theme/text_styles.dart';
 class Textbox extends StatelessWidget {
   final String Title;
   final String Subtitle;
-  const Textbox({super.key, required this.Title, required this.Subtitle});
+
+  const Textbox({super.key, required this.Title, required this.Subtitle,    });
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +27,7 @@ class Textbox extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+
             Text(
               Title,
               style: AppTextStyles.captionRegular.copyWith(

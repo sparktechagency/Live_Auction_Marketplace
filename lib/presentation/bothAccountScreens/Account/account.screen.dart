@@ -48,7 +48,9 @@ class AccountScreen extends GetView<AccountController> {
                 Selectioncard(
                   title: 'Wallet',
                   svgPath: AppImages.wallet_svgrepo_com_1,
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed(Routes.MY_WALLET);
+                  },
                 ),
                 // for developing purpose this condition is    if (controller.userRole == "buyer").
                 // in final version the condition should be    if (controller.userRole != "buyer")

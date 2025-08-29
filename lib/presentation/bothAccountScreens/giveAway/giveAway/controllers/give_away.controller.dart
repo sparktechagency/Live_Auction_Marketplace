@@ -38,10 +38,9 @@ class GiveAwayController extends GetxController {
   void loadGiveAwayTypes() {
     List<String> types = [
       'Most shared stream',
-      'Top viewer engagement',
-      'Longest watch time',
-      'Best comment',
-      'Random draw',
+      'Most Purchases',
+      'Comment-Based',
+
     ];
 
     giveAwayTypeList.value = types.map((type) {
@@ -97,34 +96,23 @@ class GiveAwayController extends GetxController {
   Future<bool> submitGiveAway() async {
     isLoading.value = true;
     try {
-      // Simulate API call
+
       await Future.delayed(Duration(seconds: 2));
 
-      // Get form data
+
       final formData = getFormData();
       print('Submitting give away: $formData');
 
-      // Reset form after successful submission
+
       resetAllSelections();
 
       isLoading.value = false;
 
-      Get.snackbar(
-        "Success",
-        "Give away created successfully!",
-        backgroundColor: Colors.green,
-        colorText: Colors.white,
-      );
 
       return true;
     } catch (e) {
       isLoading.value = false;
-      Get.snackbar(
-        "Error",
-        "Failed to create give away: ${e.toString()}",
-        backgroundColor: Colors.red,
-        colorText: Colors.white,
-      );
+
       return false;
     }
   }

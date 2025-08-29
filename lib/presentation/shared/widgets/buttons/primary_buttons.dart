@@ -23,7 +23,7 @@ class PrimaryButton extends StatelessWidget {
     this.width,
     this.backgroundColor,
     this.isActive = true,
-    this.iconSize = 14,
+    this.iconSize = 12,
     this.svgAsset,
     this.height, this.textColor,
   });

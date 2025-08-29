@@ -12,6 +12,7 @@ class Routes {
   static const CHANGE_PASSWORD = '/change-password';
   static const DIRECT_BUY_PRODUCT = '/direct-buy-product';
   static const GENDER_SELECTION = '/gender-selection';
+  static const GIVE_AWAY = '/give-away';
   static const GUIDE_LINE = '/guide-line';
   static const HOME = '/home';
   static const HOW_DOES_IT_WORKS = '/how-does-it-works';
@@ -20,6 +21,7 @@ class Routes {
   static const MAIN_APP = '/main-app';
   static const MESSAGEPage = '/message';
   static const MY_ORDER = '/my-order';
+  static const MY_WALLET = '/my-wallet';
   static const OTP_VERIFICATION = '/otp-verification';
   static const PERSONAL = '/personal';
   static const PRODUCT_DETAILS = '/product-details';
@@ -38,5 +40,5 @@ class Routes {
   static const TOOLS = '/tools';
   static const UPDATE_PROFILE = '/update-profile';
   static const VERIFY_EMAIL = '/verify-email';
-  static const GIVE_AWAY = '/give-away';
+  static const ADD_PAYMENT_METHODE = '/add-payment-methode';
 }

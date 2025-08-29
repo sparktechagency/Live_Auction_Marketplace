@@ -18,6 +18,8 @@ export 'package:live_auction_marketplace/presentation/bothAccountScreens/schedul
 export 'package:live_auction_marketplace/presentation/bothAccountScreens/settings/changePassword/change_password.screen.dart';
 export 'package:live_auction_marketplace/presentation/bothAccountScreens/settings/mainSettings/settings.screen.dart';
 export 'package:live_auction_marketplace/presentation/bothAccountScreens/updateProfile/update_profile.screen.dart';
+export 'package:live_auction_marketplace/presentation/bothAccountScreens/walletSection/addPaymentMethode/add_payment_methode.screen.dart';
+export 'package:live_auction_marketplace/presentation/bothAccountScreens/walletSection/myWallet/my_wallet.screen.dart';
 export 'package:live_auction_marketplace/presentation/categories/categories.screen.dart';
 export 'package:live_auction_marketplace/presentation/home/productDetails/product_details.screen.dart';
 export 'package:live_auction_marketplace/presentation/home/sellerHomeScreen/sellerHome/seller_home.screen.dart';
