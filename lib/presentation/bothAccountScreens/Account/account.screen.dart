@@ -50,6 +50,8 @@ class AccountScreen extends GetView<AccountController> {
                   svgPath: AppImages.wallet_svgrepo_com_1,
                   onTap: () {},
                 ),
+                // for developing purpose this condition is    if (controller.userRole == "buyer").
+                // in final version the condition should be    if (controller.userRole != "buyer")
                 if (controller.userRole == "buyer")
                   Padding(
                     padding: EdgeInsets.only(top: 16.h),
@@ -57,16 +59,22 @@ class AccountScreen extends GetView<AccountController> {
                       title: 'Schedule Auction Settings',
                       svgPath: AppImages
                           .interfaceTimeResetTimeClockResetStopwatchCircleMeasureLoadingStreamlineCore,
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed(Routes.AUSTION_SETTINGS);
+                      },
                     ),
                   ),
+                // for developing purpose this condition is    if (controller.userRole == "buyer").
+                // in final version the condition should be    if (controller.userRole != "buyer")
                 if (controller.userRole == "buyer")
                   Padding(
                     padding: EdgeInsets.only(top: 16.h),
                     child: Selectioncard(
                       title: 'Give way Settings',
                       svgPath: AppImages.giftIcon,
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed(Routes.GIVE_AWAY);
+                      },
                     ),
                   ),
                 SizedBox(height: 16.h),

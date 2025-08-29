@@ -1,7 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
- import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:live_auction_marketplace/infrastructure/navigation/routes.dart';
@@ -11,7 +11,7 @@ import 'package:live_auction_marketplace/infrastructure/utils/app_images.dart';
 import 'package:live_auction_marketplace/presentation/commonWidgets/gridDetailsCard.dart';
 import 'package:live_auction_marketplace/presentation/shared/widgets/customSearchBar/customSearchField.dart';
 
-
+import '../../commonWidgets/customSelectionButton.dart';
 import 'controllers/home.controller.dart';
 
 class HomeScreen extends GetView<HomeController> {
@@ -29,7 +29,7 @@ class HomeScreen extends GetView<HomeController> {
               appBar: controller.searchFieldSelected.value == false
                   ? AppBar(
                       leading: Padding(
-                        padding:   EdgeInsets.only(left: 20.w),
+                        padding: EdgeInsets.only(left: 20.w),
                         child: CircleAvatar(
                           radius: 20.r,
                           backgroundImage: AssetImage(AppImages.productOwner),
@@ -66,10 +66,13 @@ class HomeScreen extends GetView<HomeController> {
                                 width: 24.w,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(100.r),
-                                  color: AppColors.neutral800
+                                  color: AppColors.neutral800,
                                 ),
                                 child: Center(
-                                  child: SvgPicture.asset(AppImages.messageIcon,color: AppColors.neutral50,),
+                                  child: SvgPicture.asset(
+                                    AppImages.messageIcon,
+                                    color: AppColors.neutral50,
+                                  ),
                                 ),
                               ),
                               SizedBox(width: 12.w),
@@ -87,7 +90,7 @@ class HomeScreen extends GetView<HomeController> {
                 () => Column(
                   children: [
                     SizedBox(height: 20.h),
-      
+
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20.w),
                       child: Row(
@@ -107,16 +110,20 @@ class HomeScreen extends GetView<HomeController> {
                               },
                             ),
                           ),
-      
+
                           if (controller.searchFieldSelected.value)
                             Align(
                               alignment: Alignment.centerLeft,
                               child: Padding(
-                                padding:   EdgeInsets.only(left: 30.w,right: 10.w),
+                                padding: EdgeInsets.only(
+                                  left: 30.w,
+                                  right: 10.w,
+                                ),
                                 child: GestureDetector(
-                                  onTap: (){
+                                  onTap: () {
                                     controller.onSearchFieldDeselected();
-                                    FocusManager.instance.primaryFocus?.unfocus();
+                                    FocusManager.instance.primaryFocus
+                                        ?.unfocus();
                                   },
                                   child: SvgPicture.asset(
                                     AppImages
@@ -131,157 +138,75 @@ class HomeScreen extends GetView<HomeController> {
                         ],
                       ),
                     ),
-      
+
                     SizedBox(height: 16.h),
-      
+
                     // Category Filter Buttons
                     if (controller.searchFieldSelected.value == false)
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20.w),
-                        child: SizedBox(
-                          height: 32.h,
-                          child: ListView.builder(
-                            itemCount: controller.buttonData.length,
-                            scrollDirection: Axis.horizontal,
-                            itemBuilder: (context, index) {
-                              return Padding(
-                                padding: EdgeInsets.only(right: 8.w),
-                                child: Obx(() {
-                                  return GestureDetector(
-                                    onTap: () {
-                                      controller.onCategorySelected(index);
-                                    },
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(
-                                          100.r,
-                                        ),
-                                        color:
-                                            controller
-                                                    .selectedTypeButtonIndex
-                                                    .value ==
-                                                index
-                                            ? AppColors.primary1000
-                                            : AppColors.neutral800,
-                                      ),
-                                      child: Center(
-                                        child: Padding(
-                                          padding: EdgeInsets.symmetric(
-                                            horizontal: 13.h,
-                                            vertical: 7.w,
-                                          ),
-                                          child: Text(
-                                            controller
-                                                .buttonData[index]['buttonName'],
-                                            style: AppTextStyles.buttonRegular
-                                                .copyWith(
-                                                  color:
-                                                      controller
-                                                              .selectedTypeButtonIndex
-                                                              .value ==
-                                                          index
-                                                      ? AppColors.neutral950
-                                                      : AppColors.neutral50,
-                                                ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  );
-                                }),
-                              );
-                            },
-                          ),
+                      SizedBox(
+                        height: 32.h,
+                        child: ListView.builder(
+                          itemCount: controller.buttonData.length,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: EdgeInsets.only(right: 8.w),
+                              child: Obx(() {
+                                return Padding(
+                                  padding: index == 0
+                                      ? EdgeInsets.only(left: 20.w)
+                                      : EdgeInsets.all(0),
+                                  child: SelectableButton(
+                                    text: controller
+                                        .buttonData[index]['buttonName'],
+                                    isSelected:
+                                        controller
+                                            .selectedTypeButtonIndex
+                                            .value ==
+                                        index,
+                                    onTap: () =>
+                                        controller.onCategorySelected(index),
+                                  ),
+                                );
+                              }),
+                            );
+                          },
                         ),
                       ),
                     if (controller.searchFieldSelected.value)
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 0.w),
-                        child: SizedBox(
-                          height: 32.h,
-                          child: ListView.builder(
-                            itemCount: controller.filterButtonData.length,
-                            scrollDirection: Axis.horizontal,
-                            itemBuilder: (context, index) {
-                              return Padding(
-                                padding: EdgeInsets.only(right: 8.w),
-                                child: Obx(() {
-                                  return GestureDetector(
-                                    onTap: () {
-                                      controller.onFilterButtonSelect(index);
-                                    },
-                                    child: Padding(
-                                      padding: index==0?  EdgeInsets.only(left: 20.w):EdgeInsets.all(0),
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(
-                                            100.r,
-                                          ),
-                                          color:
-                                              controller
-                                                      .selectedFilterButtonIndex
-                                                      .value ==
-                                                  index
-                                              ? AppColors.primary1000
-                                              : AppColors.neutral800,
-                                        ),
-                                        child: Center(
-                                          child: Padding(
-                                            padding: EdgeInsets.symmetric(
-                                              horizontal: 13.h,
-                                              vertical: 7.w,
-                                            ),
-                                            child: Row(
-                                              children: [
-                                                Text(
-                                                  controller
-                                                      .filterButtonData[index]['buttonName'],
-                                                  style: AppTextStyles
-                                                      .buttonRegular
-                                                      .copyWith(
-                                                        color:
-                                                            controller
-                                                                    .selectedFilterButtonIndex
-                                                                    .value ==
-                                                                index
-                                                            ? AppColors.neutral950
-                                                            : AppColors.neutral50,
-                                                      ),
-                                                ),
-
-                                                // if (index == 0)
-                                                //   Padding(
-                                                //     padding: EdgeInsets.only(
-                                                //       left: 8.w,
-                                                //     ),
-                                                //     child: SvgPicture.asset(
-                                                //       AppImages.filter,
-                                                //       height: 16.h,
-                                                //       width: 16.w,
-                                                //       color:
-                                                //           controller
-                                                //                   .selectedFilterButtonIndex
-                                                //                   .value ==
-                                                //               index
-                                                //           ? AppColors.neutral950
-                                                //           : AppColors.neutral50,
-                                                //     ),
-                                                //   ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  );
-                                }),
-                              );
-                            },
-                          ),
+                      SizedBox(
+                        height: 32.h,
+                        child: ListView.builder(
+                          itemCount: controller.filterButtonData.length,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding: EdgeInsets.only(right: 8.w),
+                              child: Obx(() {
+                                return Padding(
+                                  padding: index == 0
+                                      ? EdgeInsets.only(left: 20.w)
+                                      : EdgeInsets.all(0),
+                                  child: SelectableButton(
+                                    text:  controller
+                                           .filterButtonData[index]['buttonName'],
+                                    isSelected:
+                                    controller
+                                           .selectedFilterButtonIndex
+                                                   .value==
+                                        index,
+                                    onTap: () =>
+                                        controller.onFilterButtonSelect(index),
+                                  ),
+                                );
+                              }),
+                            );
+                          },
                         ),
                       ),
+
                     SizedBox(height: 20.h),
-      
+
                     // Search Results Info (Optional)
                     Obx(() {
                       if (controller.searchQuery.value.isNotEmpty) {
@@ -291,21 +216,19 @@ class HomeScreen extends GetView<HomeController> {
                             children: [
                               Text(
                                 '${controller.items.length} products Found',
-                                style: AppTextStyles.paragraph_2_Regular.copyWith(
-                                  color: AppColors.neutral50,
-                                ),
+                                style: AppTextStyles.paragraph_2_Regular
+                                    .copyWith(color: AppColors.neutral50),
                               ),
-      
                             ],
                           ),
                         );
                       }
                       return const SizedBox.shrink();
                     }),
-      
+
                     if (controller.searchQuery.value.isNotEmpty)
                       SizedBox(height: 12.h),
-      
+
                     // Grid View with Search Results
                     Expanded(
                       child: Padding(
@@ -316,11 +239,11 @@ class HomeScreen extends GetView<HomeController> {
                               child: CircularProgressIndicator(),
                             );
                           }
-      
+
                           if (controller.items.isEmpty) {
                             return _buildEmptyState();
                           }
-      
+
                           return GridView.builder(
                             controller: controller.scrollController,
                             gridDelegate:
@@ -334,14 +257,12 @@ class HomeScreen extends GetView<HomeController> {
                             itemBuilder: (context, index) {
                               final item = controller.items[index];
                               return GestureDetector(
-                                onTap: (){
-                                  if(  item['isLive']==false){
+                                onTap: () {
+                                  if (item['isLive'] == false) {
                                     Get.toNamed(Routes.PRODUCT_DETAILS);
-                                  }
-                                  else{
+                                  } else {
                                     Get.toNamed(Routes.LIVE_STREAMMING);
                                   }
-      
                                 },
                                 child: gridCard(
                                   imageUrl: item['imageUrl'] ?? '',
@@ -387,7 +308,7 @@ class HomeScreen extends GetView<HomeController> {
               width: 114.w,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(1000.r),
-      
+
                 boxShadow: [
                   BoxShadow(
                     color: Color(0xFFE5B045).withOpacity(0.2),

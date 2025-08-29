@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-
 import '../../../infrastructure/theme/app_colors.dart';
 import '../../../infrastructure/theme/text_styles.dart';
 import '../../../infrastructure/utils/app_images.dart';
@@ -10,8 +9,9 @@ import '../../../infrastructure/utils/app_images.dart';
 class CustomTextFormFieldTwo extends StatefulWidget {
   final TextEditingController? controller;
   final String hintText;
+  final String? labelText; // Added label text
+  final TextStyle? labelStyle; // Added label style customization
   final Color? dropdownHintTextColor;
-
   final int? prefixIconHeight;
   final int? prefixIconWeight;
   final int? sufixIconHeight;
@@ -34,7 +34,7 @@ class CustomTextFormFieldTwo extends StatefulWidget {
   final double? dropdownWidth;
   final GlobalKey<FormState>? formKey;
   final bool isEnabled;
-  final bool readOnly; // Added readOnly property
+  final bool readOnly;
   final ValueChanged<String?>? onSaved, onFieldSubmitted;
   final FormFieldValidator<String>? validator;
   final VoidCallback? onTapSuffix;
@@ -47,6 +47,8 @@ class CustomTextFormFieldTwo extends StatefulWidget {
   const CustomTextFormFieldTwo({
     super.key,
     required this.hintText,
+    this.labelText, // Added label text parameter
+    this.labelStyle, // Added label style parameter
     this.suffixSvg,
     this.prefixSvg,
     this.hintColor,
@@ -118,37 +120,48 @@ class _CustomTextFormFieldTwoState extends State<CustomTextFormFieldTwo> {
   @override
   Widget build(BuildContext context) {
     if (widget.dropDownItems != null && widget.dropDownItems!.isNotEmpty) {
-      return IgnorePointer(
-        ignoring: !widget.isEnabled || widget.readOnly, // Updated to consider readOnly
-        child: DropdownButtonFormField<String>(
-          value: widget.selectedValue,
-          items: widget.dropDownItems,
-          onChanged: widget.isEnabled && !widget.readOnly ? widget.onChanged : null, // Updated
-          decoration: _inputDecoration(context),
-          style: AppTextStyles.buttonRegular,
-          dropdownColor: AppColors.neutral950,
-          iconEnabledColor: widget.dropdownIconColor,
-          icon: Transform.rotate(
-            angle: 3.14 / -2, // Rotate 90 degrees, in radians (for 180 degrees use 3.14, for 90 degrees use 3.14 / 2)
+      return _buildDropdownField();
+    }
+
+    return _buildTextFormField();
+  }
+
+  Widget _buildDropdownField() {
+    return IgnorePointer(
+      ignoring: !widget.isEnabled || widget.readOnly,
+      child: DropdownButtonFormField<String>(
+
+        value: widget.selectedValue,
+        items: widget.dropDownItems,
+        onChanged: widget.isEnabled && !widget.readOnly ? widget.onChanged : null,
+        decoration: _inputDecoration(context),
+        style: AppTextStyles.buttonRegular,
+        dropdownColor: AppColors.neutral950,
+        iconEnabledColor: widget.dropdownIconColor,
+        icon: Transform.rotate(
+          angle: 3.14 / -2,
+          child: Padding(
+            padding:   EdgeInsets.all(8.0),
             child: SvgPicture.asset(
-              //interface-arrows-button-left--arrow-keyboard-left--Streamline-Core
-              AppImages.interfaceArrowsButtonLeftArrowKeyboardLeftStreamlineCore, // Bell icon from assets
-              height: 24.h, // Set the desired height
-              width: 24.w,  // Set the desired width
-              color: widget.dropdownIconColor ?? AppColors.primary200, // Set the color
+              AppImages.interfaceArrowsButtonLeftArrowKeyboardLeftStreamlineCore,
+              height: 16.h,
+              width: 16.w,
+              color: widget.dropdownIconColor ?? AppColors.neutral50,
             ),
           ),
         ),
-      );
-    }
+      ),
+    );
+  }
 
+  Widget _buildTextFormField() {
     return TextFormField(
       controller: widget.controller,
       autofocus: widget.autofocus,
       focusNode: widget.focusNode,
       enabled: widget.isEnabled,
-      readOnly: widget.readOnly, // Added readOnly property
-      onChanged: widget.isEnabled && !widget.readOnly ? widget.onChanged : null, // Updated
+      readOnly: widget.readOnly,
+      onChanged: widget.isEnabled && !widget.readOnly ? widget.onChanged : null,
       onSaved: widget.onSaved,
       cursorColor: widget.cursorColor ?? AppColors.primary500,
       onFieldSubmitted: widget.onFieldSubmitted,
@@ -195,15 +208,22 @@ class _CustomTextFormFieldTwoState extends State<CustomTextFormFieldTwo> {
   }
 
   InputDecoration _inputDecoration(BuildContext context) {
-    // Check if this is a dropdown with a selected value
-    // bool isDropdownWithSelection = widget.dropDownItems != null &&
-    //     widget.dropDownItems!.isNotEmpty &&
-    //     widget.selectedValue != null;
-
     return InputDecoration(
+      // Label text inside the field (only show if not null and not empty)
+      label: (widget.labelText != null && widget.labelText!.trim().isNotEmpty)
+          ? Text(
+        widget.labelText!,
+        style: widget.labelStyle ??
+            AppTextStyles.captionRegular.copyWith(
+              color: AppColors.neutral200,
+     fontSize: 14.sp
+            ),
+      )
+          : null,
       hintText: widget.hintText,
       hintStyle: AppTextStyles.buttonRegular.copyWith(
-          color: widget.dropdownHintTextColor ?? widget.hintTextColor ?? AppColors.neutral200,fontSize: 13.sp
+          color: widget.dropdownHintTextColor ?? widget.hintTextColor ?? AppColors.neutral200,
+          fontSize: 13.sp
       ),
       filled: widget.filledstatus ?? true,
       fillColor:
@@ -222,10 +242,10 @@ class _CustomTextFormFieldTwoState extends State<CustomTextFormFieldTwo> {
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4.r),
-        borderSide: BorderSide(color: AppColors.primary1000, width: 1 .w),
+        borderSide: BorderSide(color: AppColors.primary1000, width: 1.w),
       ),
       prefixIcon: _buildPrefixIcon(context),
-      suffixIcon: _isPasswordField && !widget.readOnly // Don't show password toggle for readOnly fields
+      suffixIcon: _isPasswordField && !widget.readOnly
           ? IconButton(
         icon: widget.suffixSvg != null && _obscureText
             ? _buildSuffixIcon(context)!
@@ -235,7 +255,6 @@ class _CustomTextFormFieldTwoState extends State<CustomTextFormFieldTwo> {
           width: 18.w,
           color: AppColors.neutral50,
         ),
-
         onPressed: () {
           setState(() {
             _obscureText = !_obscureText;
@@ -251,7 +270,7 @@ class _CustomTextFormFieldTwoState extends State<CustomTextFormFieldTwo> {
       return Padding(
         padding: EdgeInsets.only(left:10.w,top: 17.h,bottom: 16.h,right: 4.w),
         child: Padding(
-          padding:   EdgeInsets.only(left: 10.w),
+          padding: EdgeInsets.only(left: 10.w),
           child: SvgPicture.asset(
             widget.prefixSvg!,
             height: widget.prefixIconHeight?.toDouble() ?? 14.h,
@@ -273,7 +292,7 @@ class _CustomTextFormFieldTwoState extends State<CustomTextFormFieldTwo> {
   Widget? _buildSuffixIcon(BuildContext context) {
     if (widget.suffixSvg is String) {
       return GestureDetector(
-        onTap: widget.onTapSuffix, // Handle suffix icon tap
+        onTap: widget.onTapSuffix,
         child: Padding(
           padding: EdgeInsets.all(20.sp),
           child: SvgPicture.asset(
@@ -281,7 +300,6 @@ class _CustomTextFormFieldTwoState extends State<CustomTextFormFieldTwo> {
             height: widget.sufixIconHeight?.toDouble() ?? 16.h,
             width: widget.sufixIconWeight?.toDouble() ?? 16.h,
             color: AppColors.neutral50,
-            //fit: BoxFit.cover,
           ),
         ),
       );

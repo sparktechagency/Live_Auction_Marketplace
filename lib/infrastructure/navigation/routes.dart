@@ -6,6 +6,7 @@ class Routes {
 
   static const ACCOUNT = '/account';
   static const ALL_PRIVACY_AND_TEARMS = '/all-privacy-and-tearms';
+  static const AUSTION_SETTINGS = '/austion-settings';
   static const CATEGORIES = '/categories';
   static const CATEGORY_SELECTION = '/category-selection';
   static const CHANGE_PASSWORD = '/change-password';
@@ -32,9 +33,10 @@ class Routes {
   static const SIGN_UP = '/sign-up';
   static const SIGN_UP_WITH_EMAIL = '/sign-up-with-email';
   static const SPLASH_SCREEN = '/splash-screen';
+  static const STORE_INFORMATION = '/store-information';
   static const SUCCESS_SCREEN = '/success-screen';
   static const TOOLS = '/tools';
   static const UPDATE_PROFILE = '/update-profile';
   static const VERIFY_EMAIL = '/verify-email';
-  static const STORE_INFORMATION = '/store-information';
+  static const GIVE_AWAY = '/give-away';
 }

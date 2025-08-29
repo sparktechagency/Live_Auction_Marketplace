@@ -208,5 +208,15 @@ class Nav {
       page: () => const StoreInformationScreen(),
       binding: ScheduleActionSettingsControllerBinding(),
     ),
+    GetPage(
+      name: Routes.AUSTION_SETTINGS,
+      page: () => const AustionSettingsScreen(),
+      binding: AustionSettingsControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.GIVE_AWAY,
+      page: () => const GiveAwayScreen(),
+      binding: GiveAwayControllerBinding(),
+    ),
   ];
 }

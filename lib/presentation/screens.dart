@@ -1,6 +1,7 @@
 
   export 'package:live_auction_marketplace/presentation/auth/forgetPassword/otpVerification/otp_verification.screen.dart';
  export 'package:live_auction_marketplace/presentation/auth/roleSelection/role_selection.screen.dart';
+ export 'package:live_auction_marketplace/presentation/bothAccountScreens/settings/allPrivacyAndTearms/all_privacy_and_tearms.screen.dart';
  export 'package:live_auction_marketplace/presentation/home/homeScreen/home.screen.dart';
  export 'package:live_auction_marketplace/presentation/main_app/main_app.screen.dart';
  export 'package:live_auction_marketplace/presentation/myOrder/my_order.screen.dart';
@@ -11,8 +12,9 @@ export 'package:live_auction_marketplace/presentation/auth/sellerInformation/sel
 export 'package:live_auction_marketplace/presentation/auth/signUp/sign_up.screen.dart';
 export 'package:live_auction_marketplace/presentation/auth/signUpWithEmail/sign_up_with_email.screen.dart';
 export 'package:live_auction_marketplace/presentation/auth/successScreen/success_screen.screen.dart';
+export 'package:live_auction_marketplace/presentation/bothAccountScreens/giveAway/giveAway/give_away.screen.dart';
 export 'package:live_auction_marketplace/presentation/bothAccountScreens/personal/personal.screen.dart';
- export 'package:live_auction_marketplace/presentation/bothAccountScreens/settings/allPrivacyAndTearms/all_privacy_and_tearms.screen.dart';
+export 'package:live_auction_marketplace/presentation/bothAccountScreens/scheduleActionSettings/austionSettings/austion_settings.screen.dart';
 export 'package:live_auction_marketplace/presentation/bothAccountScreens/settings/changePassword/change_password.screen.dart';
 export 'package:live_auction_marketplace/presentation/bothAccountScreens/settings/mainSettings/settings.screen.dart';
 export 'package:live_auction_marketplace/presentation/bothAccountScreens/updateProfile/update_profile.screen.dart';
