@@ -8,7 +8,9 @@ import 'package:live_auction_marketplace/infrastructure/theme/text_styles.dart';
 import 'package:live_auction_marketplace/presentation/shared/widgets/appbar/custom_appbar.dart';
 
 import '../../../infrastructure/navigation/routes.dart';
+import '../../../infrastructure/utils/api_content.dart';
 import '../../../infrastructure/utils/app_images.dart';
+import '../../../infrastructure/utils/secure_storage_helper.dart';
 import '../components/selectionCard.dart';
 
 import 'controllers/account.controller.dart';
@@ -54,7 +56,7 @@ class AccountScreen extends GetView<AccountController> {
                 ),
                 // for developing purpose this condition is    if (controller.userRole == "buyer").
                 // in final version the condition should be    if (controller.userRole != "buyer")
-                if (controller.userRole == "buyer")
+                if (controller.userRole != "buyer")
                   Padding(
                     padding: EdgeInsets.only(top: 16.h),
                     child: Selectioncard(
@@ -68,7 +70,7 @@ class AccountScreen extends GetView<AccountController> {
                   ),
                 // for developing purpose this condition is    if (controller.userRole == "buyer").
                 // in final version the condition should be    if (controller.userRole != "buyer")
-                if (controller.userRole == "buyer")
+                if (controller.userRole != "buyer")
                   Padding(
                     padding: EdgeInsets.only(top: 16.h),
                     child: Selectioncard(
@@ -90,43 +92,54 @@ class AccountScreen extends GetView<AccountController> {
                 ),
 
                 SizedBox(height: 64.h),
-                GestureDetector(
-                  onTap: () {},
-                  child: Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Colors.transparent,
-                      border: Border.all(width: 1.w, color: AppColors.red500),
-                      borderRadius: BorderRadius.circular(4.r),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(vertical: 16.5.h),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          SvgPicture.asset(
-                            AppImages
-                                .interfaceLogoutCircleArrowEnterRightLogoutPointCircleStreamlineCore,
-                            height: 16.h,
-                            width: 16.w,
-                            color: AppColors.red500,
-                          ),
-                          SizedBox(width: 8.57.w),
-                          Text(
-                            "Log Out",
-                            style: AppTextStyles.paragraph_2_Regular.copyWith(
-                              color: AppColors.red500,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
+                _logOut(),
+
                 SizedBox(height: 4.h),
               ],
             ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _logOut(){
+    return  GestureDetector(
+      onTap: () async {
+       await SecureStorageHelper.remove(ApiConstants.userRole);
+       Get.offAllNamed(
+         Routes.ROLE_SELECTION
+       );
+
+      },
+      child: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: Colors.transparent,
+          border: Border.all(width: 1.w, color: AppColors.red500),
+          borderRadius: BorderRadius.circular(4.r),
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 16.5.h),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SvgPicture.asset(
+                AppImages
+                    .interfaceLogoutCircleArrowEnterRightLogoutPointCircleStreamlineCore,
+                height: 16.h,
+                width: 16.w,
+                color: AppColors.red500,
+              ),
+              SizedBox(width: 8.57.w),
+              Text(
+                "Log Out",
+                style: AppTextStyles.paragraph_2_Regular.copyWith(
+                  color: AppColors.red500,
+                ),
+              ),
+            ],
           ),
         ),
       ),

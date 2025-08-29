@@ -31,6 +31,7 @@ class AppImages {
   static String selectionImage1 = "$baseUrlImage/selectionImage2.png";
   static String selectionImage3 = "$baseUrlImage/selectionImage3.png";
   static String bidingPerson = "$baseUrlImage/bidingPerson.jpg";
+  static String watchPic = "$baseUrlImage/watchPic.png";
 
   // Here All are SVG
 
