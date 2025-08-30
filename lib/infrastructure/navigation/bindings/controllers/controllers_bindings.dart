@@ -24,6 +24,7 @@ export 'package:live_auction_marketplace/infrastructure/navigation/bindings/cont
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/product_details.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/product_selection.controller.binding.dart';
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/reset_password.controller.binding.dart'; 
+export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/return_product.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/review_product.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/role_selection.controller.binding.dart'; 
 export 'package:live_auction_marketplace/infrastructure/navigation/bindings/controllers/schedule_action_settings.controller.binding.dart'; 

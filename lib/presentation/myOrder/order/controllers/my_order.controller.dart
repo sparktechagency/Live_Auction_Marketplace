@@ -34,7 +34,7 @@ class MyOrderController extends GetxController {
       allOrders.value = [
         {
           'id': '1',
-          'productName': 'Vintage Rolex Watch',
+          'productName': 'Vintage Rolex WatchVintage Rolex WatchVintage Rolex Watch',
           'size': 'One Size',
           'price': '\$5,000',
           'status': 'In Progress',

@@ -41,21 +41,33 @@ class OrderDetailsScreen extends GetView<OrderDetailsController> {
             ),
             SizedBox(height: 8.h),
             Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  controller.productTitle,
-                  style: AppTextStyles.paragraph_2_Regular.copyWith(
-                    color: AppColors.neutral50,
+                Expanded(
+                  flex: 2,
+                  child: Text(
+                    controller.productTitle,
+                    maxLines: 2,
+                    softWrap: true,
+                    overflow: TextOverflow.ellipsis,
+                    style: AppTextStyles.paragraph_2_Regular.copyWith(
+                      color: AppColors.neutral50,
+                      height: 1.5.h
+                    ),
                   ),
                 ),
-                Spacer(),
-                Padding(
-                  padding: EdgeInsets.only(right: 15.w),
-                  child: Text(
-                    ' ${controller.price}',
-                    style: AppTextStyles.paragraph_1_Bold.copyWith(
-                      color: AppColors.neutral50,
+
+                Flexible(
+                  flex: 1,
+                  child: Padding(
+                    padding:   EdgeInsets.only(right: 15.w),
+                    child: Text(
+                      controller.price,
+                      textAlign: TextAlign.end,
+                      style: AppTextStyles.paragraph_1_Bold.copyWith(
+                        color: AppColors.neutral50,
+                      ),
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
                 ),

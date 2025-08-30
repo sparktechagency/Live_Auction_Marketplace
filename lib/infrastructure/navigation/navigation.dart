@@ -243,5 +243,10 @@ class Nav {
       page: () => const ReviewProductScreen(),
       binding: ReviewProductControllerBinding(),
     ),
+    GetPage(
+      name: Routes.RETURN_PRODUCT,
+      page: () => const ReturnProductScreen(),
+      binding: ReturnProductControllerBinding(),
+    ),
   ];
 }

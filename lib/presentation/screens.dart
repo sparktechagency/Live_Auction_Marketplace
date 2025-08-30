@@ -25,6 +25,7 @@ export 'package:live_auction_marketplace/presentation/home/productDetails/produc
 export 'package:live_auction_marketplace/presentation/home/sellerHomeScreen/sellerHome/seller_home.screen.dart';
 export 'package:live_auction_marketplace/presentation/message/message.screen.dart';
 export 'package:live_auction_marketplace/presentation/myOrder/orderDetails/order_details.screen.dart';
+export 'package:live_auction_marketplace/presentation/myOrder/returnProduct/return_product.screen.dart';
 export 'package:live_auction_marketplace/presentation/myOrder/reviewProduct/review_product.screen.dart';
 export 'package:live_auction_marketplace/presentation/myOrder/trackOrder/track_order.screen.dart';
 export 'package:live_auction_marketplace/presentation/sellScreen/sell_screen.screen.dart';

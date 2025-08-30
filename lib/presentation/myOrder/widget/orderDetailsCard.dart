@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:live_auction_marketplace/infrastructure/theme/app_colors.dart';
 import 'package:live_auction_marketplace/infrastructure/theme/text_styles.dart';
 
+import '../../../infrastructure/navigation/routes.dart';
 import '../../../infrastructure/utils/app_images.dart';
 
 class Orderdetailscard extends StatelessWidget {
@@ -41,44 +45,54 @@ class Orderdetailscard extends StatelessWidget {
             ),
           ),
           SizedBox(width: 12.w),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                productName,
-                style: AppTextStyles.paragraph_1_Regular.copyWith(
-                  color: AppColors.neutral50,
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  productName,
+                  maxLines: 2,
+                  softWrap: true,
+                  overflow: TextOverflow.ellipsis,
+                  style: AppTextStyles.paragraph_1_Regular.copyWith(
+                    color: AppColors.neutral50,
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: 4.h,
-              ),
-              Text(
-                size,
-                style: AppTextStyles.paragraph_2_Regular.copyWith(
-                  color: AppColors.neutral500,
+                SizedBox(
+                  height: 4.h,
                 ),
-              ),
-              Spacer(),
-              Text(
-                price,
-                style: AppTextStyles.paragraph_1_Medium.copyWith(
-                  color: AppColors.neutral50,
+                Text(
+                  size,
+                  style: AppTextStyles.paragraph_2_Regular.copyWith(
+                    color: AppColors.neutral500,
+                  ),
                 ),
-              ),
-              Spacer(),
-              Text(
-                _getStatusText(status),
-                style: AppTextStyles.paragraph_2_Medium.copyWith(
-                  color: _getStatusColor(status),
+                Spacer(),
+                Text(
+                  price,
+                  style: AppTextStyles.paragraph_1_Medium.copyWith(
+                    color: AppColors.neutral50,
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: 2.h,
-              )
-            ],
+                Spacer(),
+                Text(
+                  _getStatusText(status),
+                  style: AppTextStyles.paragraph_2_Medium.copyWith(
+                    color: _getStatusColor(status),
+                  ),
+                ),
+                SizedBox(
+                  height: 2.h,
+                )
+              ],
+            ),
           ),
+
+          if(status.toLowerCase() == 'delivered')
+          GestureDetector(onTap: (){
+            Get.toNamed(Routes.RETURN_PRODUCT);
+          },child: SvgPicture.asset(AppImages.interfaceSettingMenuVerticalNavigationVerticalThreeCircleButtonMenuDotsStreamlineCore,color: AppColors.neutral50,))
         ],
       ),
     );
