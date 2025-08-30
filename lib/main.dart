@@ -76,3 +76,54 @@ class Main extends StatelessWidget {
     );
   }
 }
+
+
+
+
+// Column(
+// children: [
+// CountdownTimer(
+// key: _timer1Key,
+// initialSeconds: 12,
+// size: 48.w,
+// progressColor: AppColors.primary1000,
+// backgroundColor: AppColors.neutral800,
+// strokeWidth: 4.w, // Manual thickness
+//
+// textStyle: AppTextStyles.captionRegular.copyWith(color: AppColors.neutral50),
+// onStart: () => print('Timer 1 started!'),
+// onComplete: () => print('Timer 1 completed!'),
+// onReset: () => print('Timer 1 reset!'),
+// ),
+// SizedBox(height: 20.h),
+// Row(
+// mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+// children: [
+// ElevatedButton(
+// onPressed: () => _timer1Key.currentState?.start(),
+// style: ElevatedButton.styleFrom(
+// backgroundColor: Colors.green,
+// padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+// ),
+// child: Text('Start', style: TextStyle(fontSize: 14.sp)),
+// ),
+// ElevatedButton(
+// onPressed: () => _timer1Key.currentState?.pause(),
+// style: ElevatedButton.styleFrom(
+// backgroundColor: Colors.orange,
+// padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+// ),
+// child: Text('Pause', style: TextStyle(fontSize: 14.sp)),
+// ),
+// ElevatedButton(
+// onPressed: () => _timer1Key.currentState?.reset(),
+// style: ElevatedButton.styleFrom(
+// backgroundColor: Colors.red,
+// padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
+// ),
+// child: Text('Reset', style: TextStyle(fontSize: 14.sp)),
+// ),
+// ],
+// ),
+// ],
+// ),

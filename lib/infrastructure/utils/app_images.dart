@@ -3,6 +3,10 @@ class AppImages {
 
   static String baseUrlLogo = "assets/logo";
   static String baseUrlImage = "assets/image";
+  static String baseUrlVideo = "assets/video";
+
+  ///-----------------video path---------------------
+  static String demoVideo = "$baseUrlVideo/demoVideo.mp4";
 
   //Here All are images
   static String appLogo = "$baseUrlImage/logo.png";
