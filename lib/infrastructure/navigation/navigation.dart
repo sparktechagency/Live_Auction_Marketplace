@@ -228,5 +228,20 @@ class Nav {
       page: () => const AddPaymentMethodeScreen(),
       binding: AddPaymentMethodeControllerBinding(),
     ),
+    GetPage(
+      name: Routes.ORDER_DETAILS,
+      page: () => const OrderDetailsScreen(),
+      binding: OrderDetailsControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.TRACK_ORDER,
+      page: () => const TrackOrderScreen(),
+      binding: TrackOrderControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.REVIEW_PRODUCT,
+      page: () => const ReviewProductScreen(),
+      binding: ReviewProductControllerBinding(),
+    ),
   ];
 }

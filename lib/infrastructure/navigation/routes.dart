@@ -5,6 +5,7 @@ class Routes {
   }
 
   static const ACCOUNT = '/account';
+  static const ADD_PAYMENT_METHODE = '/add-payment-methode';
   static const ALL_PRIVACY_AND_TEARMS = '/all-privacy-and-tearms';
   static const AUSTION_SETTINGS = '/austion-settings';
   static const CATEGORIES = '/categories';
@@ -22,6 +23,7 @@ class Routes {
   static const MESSAGEPage = '/message';
   static const MY_ORDER = '/my-order';
   static const MY_WALLET = '/my-wallet';
+  static const ORDER_DETAILS = '/order-details';
   static const OTP_VERIFICATION = '/otp-verification';
   static const PERSONAL = '/personal';
   static const PRODUCT_DETAILS = '/product-details';
@@ -38,7 +40,8 @@ class Routes {
   static const STORE_INFORMATION = '/store-information';
   static const SUCCESS_SCREEN = '/success-screen';
   static const TOOLS = '/tools';
+  static const TRACK_ORDER = '/track-order';
   static const UPDATE_PROFILE = '/update-profile';
   static const VERIFY_EMAIL = '/verify-email';
-  static const ADD_PAYMENT_METHODE = '/add-payment-methode';
+  static const REVIEW_PRODUCT = '/review-product';
 }

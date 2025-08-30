@@ -11,6 +11,7 @@ class PrimaryButton extends StatelessWidget {
   final double? width;
   final double? height;
   final Color? backgroundColor;
+  final Color? borderColor;
   final bool isActive;
   final String? svgAsset;
   final double iconSize;
@@ -25,7 +26,7 @@ class PrimaryButton extends StatelessWidget {
     this.isActive = true,
     this.iconSize = 12,
     this.svgAsset,
-    this.height, this.textColor,
+    this.height, this.textColor, this.borderColor,
   });
 
   @override
@@ -46,8 +47,15 @@ class PrimaryButton extends StatelessWidget {
               EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
           ),
           shape: WidgetStateProperty.all(
+
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(100.r),
+              side: borderColor != null
+                  ? BorderSide(
+                color: borderColor!,
+                width: 1.w,
+              )
+                  : BorderSide.none,
             ),
           ),
           elevation: WidgetStateProperty.all(0),

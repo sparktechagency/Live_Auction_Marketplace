@@ -4,7 +4,8 @@ import '../../../../presentation/bothAccountScreens/Account/controllers/account.
 import '../../../../presentation/categories/controllers/categories.controller.dart';
 import '../../../../presentation/home/homeScreen/controllers/home.controller.dart';
 import '../../../../presentation/main_app/controllers/main_app.controller.dart';
-import '../../../../presentation/myOrder/controllers/my_order.controller.dart';
+ import '../../../../presentation/myOrder/order/controllers/my_order.controller.dart';
+import '../../../../presentation/myOrder/orderDetails/controllers/order_details.controller.dart';
 
 class MainAppControllerBinding extends Bindings {
   @override
@@ -23,6 +24,8 @@ class MainAppControllerBinding extends Bindings {
     );
     Get.lazyPut<MyOrderController>(
       () => MyOrderController(),
+    ); Get.lazyPut<OrderDetailsController>(
+      () => OrderDetailsController(),
     );
 
   }

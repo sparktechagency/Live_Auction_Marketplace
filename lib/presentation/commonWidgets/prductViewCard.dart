@@ -105,7 +105,13 @@ class _productDetilsCardState extends State<productDetilsCard> {
               right: 13.w,
               child: Container(
                 decoration: BoxDecoration(
-                  color: widget.progressStatusText=='In progress'?AppColors.primary600:AppColors.green700,
+                  color: widget.progressStatusText == 'In Progress'
+                      ? AppColors.primary600   // green
+                      : widget.progressStatusText == 'Delivered'
+                      ? AppColors.green700 // yellow (Delivered)
+                      : widget.progressStatusText == 'Cancel'
+                      ? AppColors.red700 // red (Cancel)
+                      : AppColors.neutral400, // default/fallback
                   borderRadius: BorderRadius.circular(100.r),
                 ),
                 child: Center(

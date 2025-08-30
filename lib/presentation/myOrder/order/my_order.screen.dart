@@ -4,9 +4,12 @@ import 'package:get/get.dart';
 import 'package:live_auction_marketplace/infrastructure/theme/app_colors.dart';
 import 'package:live_auction_marketplace/presentation/myOrder/widget/orderDetailsCard.dart';
 
-import '../commonWidgets/customSelectionButton.dart';
-import '../shared/widgets/appbar/custom_appbar.dart';
+import '../../../infrastructure/navigation/routes.dart';
+import '../../../infrastructure/utils/app_images.dart';
+import '../../commonWidgets/customSelectionButton.dart';
+import '../../shared/widgets/appbar/custom_appbar.dart';
 import 'controllers/my_order.controller.dart';
+
 
 class MyOrderScreen extends GetView<MyOrderController> {
   const MyOrderScreen({super.key});
@@ -34,7 +37,7 @@ class MyOrderScreen extends GetView<MyOrderController> {
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: EdgeInsets.only(right: 8.w),
+                    padding: EdgeInsets.only(right: 12.w),
                     child: Obx(() {
                       return Padding(
                         padding: index == 0
@@ -81,8 +84,23 @@ class MyOrderScreen extends GetView<MyOrderController> {
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: EdgeInsets.only(bottom: 12.h),
-                        child: Orderdetailscard(
-                          orderData: ordersToShow[index],
+                        child: GestureDetector(
+                          onTap: (){
+                            Get.toNamed(Routes.ORDER_DETAILS);
+                            controller.orderDetailsController.shopName = 'Jirah Shop';
+                            //controller.orderDetailsController.shopName = ordersToShow[index][''];
+                            controller.orderDetailsController.shopImageUrl = AppImages.productOwner;
+                            controller.orderDetailsController.productImageUrl = ordersToShow[index]['image'];
+                            controller.orderDetailsController.status = ordersToShow[index]['status'];
+                            controller.orderDetailsController.productTitle = ordersToShow[index]['productName'];
+                            controller.orderDetailsController.size = ordersToShow[index]['size'];
+                            controller.orderDetailsController.price = ordersToShow[index]['price'];
+                            controller.orderDetailsController.qty = ordersToShow[index]['qty'];
+                            controller.orderDetailsController.deliveryMethods = ordersToShow[index]['deliveryMethod'];
+                          },
+                          child: Orderdetailscard(
+                            orderData: ordersToShow[index],
+                          ),
                         ),
                       );
                     },

@@ -1,12 +1,16 @@
 import 'package:get/get.dart';
 
-import '../../../infrastructure/utils/app_images.dart';
+import '../../../../infrastructure/utils/app_images.dart';
+import '../../orderDetails/controllers/order_details.controller.dart';
+
+
 
 class MyOrderController extends GetxController {
   RxInt orderSelected = 0.obs;
   RxBool isLoading = false.obs;
+  final OrderDetailsController orderDetailsController = Get.find<OrderDetailsController>();
 
-  // All orders (fetched or static for now)
+
   var allOrders = <Map<String, dynamic>>[].obs;
 
   // Fixed categories with matching status
@@ -36,6 +40,8 @@ class MyOrderController extends GetxController {
           'status': 'In Progress',
           'image': AppImages.watchPic,
           'orderDate': '2024-08-25',
+          'qty': 5,
+          'deliveryMethod': 'On air \$50',
         },
         {
           'id': '2',
@@ -45,6 +51,8 @@ class MyOrderController extends GetxController {
           'status': 'Delivered',
           'image': AppImages.watchPic,
           'orderDate': '2024-08-20',
+          'qty': 12,
+          'deliveryMethod': 'Free Delivery',
         },
         {
           'id': '3',
@@ -54,6 +62,8 @@ class MyOrderController extends GetxController {
           'status': 'Delivered',
           'image': AppImages.watchPic,
           'orderDate': '2024-08-15',
+          'qty': 13,
+          'deliveryMethod': 'Free Delivery',
         },
         {
           'id': '4',
@@ -63,6 +73,8 @@ class MyOrderController extends GetxController {
           'status': 'Cancel',
           'image': AppImages.watchPic,
           'orderDate': '2024-08-10',
+          'qty': 75,
+          'deliveryMethod': 'On air \$50',
         },
         {
           'id': '5',
@@ -71,7 +83,8 @@ class MyOrderController extends GetxController {
           'price': '\$199',
           'status': 'In Progress',
           'image': AppImages.watchPic,
-          'orderDate': '2024-08-28',
+          'orderDate': '2024-08-28', 'qty': 5,
+          'deliveryMethod': 'On air \$50',
         },
         {
           'id': '6',
@@ -81,6 +94,8 @@ class MyOrderController extends GetxController {
           'status': 'Delivered',
           'image': AppImages.watchPic,
           'orderDate': '2024-08-22',
+          'qty': 8,
+          'deliveryMethod': 'Free Delivery',
         },
       ];
 

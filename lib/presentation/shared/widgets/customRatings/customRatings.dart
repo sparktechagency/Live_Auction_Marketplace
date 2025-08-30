@@ -41,7 +41,7 @@ class CustomSvgRatingBar extends StatelessWidget {
       stars.add(
         GestureDetector(
           onTap: () => onRatingChanged(currentStar),
-          child: SvgPicture.asset(iconToUse, height: iconSize, width: iconSize),
+          child: SvgPicture.asset(iconToUse, height: iconSize.w, width: iconSize.w),
         ),
       );
 

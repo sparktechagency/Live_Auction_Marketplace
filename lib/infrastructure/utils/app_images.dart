@@ -36,6 +36,8 @@ class AppImages {
   // Here All are SVG
 
   static String home = "$baseUrlLogo/home.svg";
+  static String ratingsIcon2Empty = "$baseUrlLogo/ratingsIcon2Empty.svg";
+  static String ratingsIcon2 = "$baseUrlLogo/ratingsIcon2.svg";
   static String storeIcon = "$baseUrlLogo/storeIcon.svg";
   static String giftIcon = "$baseUrlLogo/giftIcons.svg";
   static String wallet_svgrepo_com_1 = "$baseUrlLogo/wallet-svgrepo-com 1.svg";

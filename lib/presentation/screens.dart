@@ -4,7 +4,7 @@
  export 'package:live_auction_marketplace/presentation/bothAccountScreens/settings/allPrivacyAndTearms/all_privacy_and_tearms.screen.dart';
  export 'package:live_auction_marketplace/presentation/home/homeScreen/home.screen.dart';
  export 'package:live_auction_marketplace/presentation/main_app/main_app.screen.dart';
- export 'package:live_auction_marketplace/presentation/myOrder/my_order.screen.dart';
+ export 'package:live_auction_marketplace/presentation/myOrder/order/my_order.screen.dart';
 export 'package:live_auction_marketplace/presentation/auth/forgetPassword/resetPassword/reset_password.screen.dart';
 export 'package:live_auction_marketplace/presentation/auth/forgetPassword/verifyEmail/verify_email.screen.dart';
 export 'package:live_auction_marketplace/presentation/auth/logIn/log_in.screen.dart';
@@ -24,6 +24,9 @@ export 'package:live_auction_marketplace/presentation/categories/categories.scre
 export 'package:live_auction_marketplace/presentation/home/productDetails/product_details.screen.dart';
 export 'package:live_auction_marketplace/presentation/home/sellerHomeScreen/sellerHome/seller_home.screen.dart';
 export 'package:live_auction_marketplace/presentation/message/message.screen.dart';
+export 'package:live_auction_marketplace/presentation/myOrder/orderDetails/order_details.screen.dart';
+export 'package:live_auction_marketplace/presentation/myOrder/reviewProduct/review_product.screen.dart';
+export 'package:live_auction_marketplace/presentation/myOrder/trackOrder/track_order.screen.dart';
 export 'package:live_auction_marketplace/presentation/sellScreen/sell_screen.screen.dart';
 export 'package:live_auction_marketplace/presentation/setupProfile/categorySelection/category_selection.screen.dart';
 export 'package:live_auction_marketplace/presentation/setupProfile/genderSelection/gender_selection.screen.dart';

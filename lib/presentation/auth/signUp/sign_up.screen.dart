@@ -21,6 +21,8 @@ class SignUpScreen extends GetView<SignUpController> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+      top: false,
+      bottom: true,
       child: Scaffold(
         appBar: CustomAppBar(
           title: "Sign Up",

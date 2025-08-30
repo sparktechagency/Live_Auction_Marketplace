@@ -12,7 +12,7 @@ import '../shared/widgets/bottomNav/custom_nav_bar.dart';
 import '../shared/widgets/bottomNav/nav_bar_model.dart';
 
 import '../categories/categories.screen.dart';
-import '../myOrder/my_order.screen.dart';
+import '../myOrder/order/my_order.screen.dart';
 
 import 'controllers/main_app.controller.dart';
 
