@@ -31,7 +31,7 @@ class GuideLineScreen extends GetView<GuideLineController> {
               child: GestureDetector(
                 onTap: () {
                   // controller.navigationSelection();
-                  Get.offAllNamed(Routes.HOME);
+                  Get.offAllNamed(Routes.MAIN_APP);
                 },
                 child: SvgPicture.asset(
                   AppImages

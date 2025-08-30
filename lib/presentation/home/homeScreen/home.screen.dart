@@ -157,6 +157,8 @@ class HomeScreen extends GetView<HomeController> {
                                       ? EdgeInsets.only(left: 20.w)
                                       : EdgeInsets.all(0),
                                   child: SelectableButton(
+                                //  activeBorderColor: true,
+                                // inactiveBgColor: Colors.transparent,
                                     text: controller
                                         .buttonData[index]['buttonName'],
                                     isSelected:
@@ -267,8 +269,10 @@ class HomeScreen extends GetView<HomeController> {
                                 child: gridCard(
                                   imageUrl: item['imageUrl'] ?? '',
                                   title: item['title'] ?? '',
+                                  // isPatOrPresentActive:  item['isLive'] ?? false,
+                                  // pastOrPresentDate: 'ssfsdfs',
                                   isLive: item['isLive'] ?? false,
-                                  viewerCount: item['viewerCount'] ?? 0,
+                                  liveViewerCount: item['viewerCount'] ?? 0,
                                   shopName: item['shopName'] ?? '',
                                   productOwnerPicture: item['ownerPic'],
                                 ),

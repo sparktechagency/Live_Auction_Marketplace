@@ -248,5 +248,10 @@ class Nav {
       page: () => const ReturnProductScreen(),
       binding: ReturnProductControllerBinding(),
     ),
+    GetPage(
+      name: Routes.SELLER_PROFILE,
+      page: () => const SellerProfileScreen(),
+      binding: SellerProfileControllerBinding(),
+    ),
   ];
 }

@@ -10,6 +10,7 @@ class SelectableButton extends StatelessWidget {
   final VoidCallback onTap;
   final Color activeBgColor;
   final Color inactiveBgColor;
+  final bool? activeBorderColor;
   final Color activeTextColor;
   final Color inactiveTextColor;
   final double borderRadius;
@@ -23,7 +24,7 @@ class SelectableButton extends StatelessWidget {
     this.inactiveBgColor = AppColors.neutral800, // Default neutral
     this.activeTextColor = Colors.white,
     this.inactiveTextColor = Colors.grey,
-    this.borderRadius = 100.0,
+    this.borderRadius = 100.0,   this.activeBorderColor,
   }) : super(key: key);
 
   @override
@@ -33,6 +34,7 @@ class SelectableButton extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(borderRadius.r),
+          border: activeBorderColor!=null? isSelected? Border.all(width: 1.w,color: activeBgColor):Border.all(width: 1.w,color: AppColors.primary100):null,
           color: isSelected ?activeBgColor : inactiveBgColor
         ),
         child: Center(

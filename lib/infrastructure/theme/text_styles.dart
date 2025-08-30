@@ -71,6 +71,7 @@ class AppTextStyles {
     fontFamily: GoogleFonts.dmSans().fontFamily,
     color: AppColors.defaultTextColor,
     letterSpacing: 0,
+    height: 1.5.h
   );
   static TextStyle captionRegular = TextStyle(
     fontSize: 10.sp,

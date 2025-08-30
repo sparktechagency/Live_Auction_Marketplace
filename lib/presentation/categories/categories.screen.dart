@@ -255,7 +255,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
                         imageUrl: item['imageUrl'] ?? '',
                         title: item['title'] ?? '',
                         isLive: item['isLive'] ?? false,
-                        viewerCount: item['viewerCount'] ?? 0,
+                        liveViewerCount: item['viewerCount'] ?? 0,
                         shopName: item['shopName'] ?? '',
                         productOwnerPicture: item['ownerPic'],
                       ),

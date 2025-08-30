@@ -23,6 +23,7 @@ export 'package:live_auction_marketplace/presentation/bothAccountScreens/walletS
 export 'package:live_auction_marketplace/presentation/categories/categories.screen.dart';
 export 'package:live_auction_marketplace/presentation/home/productDetails/product_details.screen.dart';
 export 'package:live_auction_marketplace/presentation/home/sellerHomeScreen/sellerHome/seller_home.screen.dart';
+export 'package:live_auction_marketplace/presentation/home/sellerProfile/seller_profile.screen.dart';
 export 'package:live_auction_marketplace/presentation/message/message.screen.dart';
 export 'package:live_auction_marketplace/presentation/myOrder/orderDetails/order_details.screen.dart';
 export 'package:live_auction_marketplace/presentation/myOrder/returnProduct/return_product.screen.dart';

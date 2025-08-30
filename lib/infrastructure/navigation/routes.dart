@@ -29,6 +29,7 @@ class Routes {
   static const PRODUCT_DETAILS = '/product-details';
   static const PRODUCT_SELECTION = '/product-selection';
   static const RESET_PASSWORD = '/reset-password';
+  static const RETURN_PRODUCT = '/return-product';
   static const REVIEW_PRODUCT = '/review-product';
   static const ROLE_SELECTION = '/role-selection';
   static const SELLER_HOME = '/seller-home';
@@ -44,5 +45,5 @@ class Routes {
   static const TRACK_ORDER = '/track-order';
   static const UPDATE_PROFILE = '/update-profile';
   static const VERIFY_EMAIL = '/verify-email';
-  static const RETURN_PRODUCT = '/return-product';
+  static const SELLER_PROFILE = '/seller-profile';
 }

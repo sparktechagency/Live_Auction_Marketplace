@@ -25,6 +25,9 @@ class _SuccessScreenScreenState extends State<SuccessScreenScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+      top: false,
+      bottom: true,
+
       child: Scaffold(
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -64,7 +67,20 @@ class _SuccessScreenScreenState extends State<SuccessScreenScreen> {
                   text: successScreenController.buttonText.value,
                 );
               }),
-              SizedBox(height: 30.h),
+              SizedBox(
+                height: 16.h,
+              ),
+              if (successScreenController.secondButtonActive)
+                Obx(() {
+                  return PrimaryButton(
+                    backgroundColor: AppColors.neutral800,
+                    textColor: AppColors.neutral50,
+                    width: double.infinity,
+                    onPressed: successScreenController.handleSecondButtonPress,
+                    text: successScreenController.secondButtonText.value,
+                  );
+                }),
+              SizedBox(height: 16.h),
             ],
           ),
         ),

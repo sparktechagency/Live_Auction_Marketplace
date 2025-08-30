@@ -43,6 +43,9 @@ class ProductDetailsScreen extends GetView<ProductDetailsController> {
                 isShearActive: false,
                 followCount: 5500,
                 shopName: 'Jirah Shop',
+                onSellerProfileImageTab: (){
+                  Get.toNamed(Routes.SELLER_PROFILE);
+                },
                 productOwnerPicture: AppImages.productOwner,
                 // progressStatusText: 'Delivered',
                 isFollowCountActive: false,

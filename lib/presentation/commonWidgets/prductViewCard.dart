@@ -18,6 +18,7 @@ class productDetilsCard extends StatefulWidget {
   final String progressStatusText;
   final String shopName;
   final String? productOwnerPicture;
+  final VoidCallback? onSellerProfileImageTab;
 
   const productDetilsCard({
     super.key,
@@ -28,7 +29,7 @@ class productDetilsCard extends StatefulWidget {
     this.productOwnerPicture,
     this.isFollowCountActive = false,
 
-      this.progressStatusText="",
+      this.progressStatusText="", this.onSellerProfileImageTab,
   });
 
   @override
@@ -132,56 +133,59 @@ class _productDetilsCardState extends State<productDetilsCard> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 16.w,
-                      height: 16.w,
-                      decoration: BoxDecoration(
-                        color: AppColors.defaultTextColor,
-                        borderRadius: BorderRadius.circular(100.r),
-                      ),
-                      child: Center(
-                        child: ClipRRect(
+                GestureDetector(
+                  onTap: widget.onSellerProfileImageTab,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 16.w,
+                        height: 16.w,
+                        decoration: BoxDecoration(
+                          color: AppColors.defaultTextColor,
                           borderRadius: BorderRadius.circular(100.r),
-                          child:
-                              widget.productOwnerPicture != null &&
-                                  widget.productOwnerPicture!.isNotEmpty
-                              ? Image.asset(
-                                  widget.productOwnerPicture!,
-                                  width: 16.w,
-                                  height: 16.w,
-                                  fit: BoxFit.cover,
-                                  errorBuilder: (context, error, stackTrace) {
-                                    return Image.asset(
-                                      AppImages.profilePic,
-                                      width: 16.w,
-                                      height: 16.w,
-                                      fit: BoxFit.cover,
-                                    );
-                                  },
-                                )
-                              : Image.asset(
-                                  AppImages.profilePic,
-                                  width: 16.w,
-                                  height: 16.w,
-                                  fit: BoxFit.cover,
-                                ),
+                        ),
+                        child: Center(
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(100.r),
+                            child:
+                                widget.productOwnerPicture != null &&
+                                    widget.productOwnerPicture!.isNotEmpty
+                                ? Image.asset(
+                                    widget.productOwnerPicture!,
+                                    width: 16.w,
+                                    height: 16.w,
+                                    fit: BoxFit.cover,
+                                    errorBuilder: (context, error, stackTrace) {
+                                      return Image.asset(
+                                        AppImages.profilePic,
+                                        width: 16.w,
+                                        height: 16.w,
+                                        fit: BoxFit.cover,
+                                      );
+                                    },
+                                  )
+                                : Image.asset(
+                                    AppImages.profilePic,
+                                    width: 16.w,
+                                    height: 16.w,
+                                    fit: BoxFit.cover,
+                                  ),
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(width: 4.w),
-                    Expanded(
-                      child: Text(
-                        widget.shopName,
-                        style: AppTextStyles.buttonRegular.copyWith(
-                          color: AppColors.neutral50,
+                      SizedBox(width: 4.w),
+                      Expanded(
+                        child: Text(
+                          widget.shopName,
+                          style: AppTextStyles.buttonRegular.copyWith(
+                            color: AppColors.neutral50,
+                          ),
+                          overflow: TextOverflow.ellipsis,
                         ),
-                        overflow: TextOverflow.ellipsis,
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 if (widget.isFollowCountActive == true)
                   Padding(

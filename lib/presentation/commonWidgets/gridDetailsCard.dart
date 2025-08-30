@@ -9,7 +9,10 @@ class gridCard extends StatefulWidget {
   final String imageUrl;
   final String title;
   final bool isLive;
-  final int viewerCount;
+  final bool isPatOrPresentActive;
+
+  final int liveViewerCount;
+  final String? pastOrPresentDate;
   final String shopName;
   final String? productOwnerPicture;
 
@@ -18,9 +21,9 @@ class gridCard extends StatefulWidget {
     required this.imageUrl,
     required this.title,
     this.isLive = false,
-    this.viewerCount = 0,
+    this.liveViewerCount = 0,
     required this.shopName,
-    this.productOwnerPicture,
+    this.productOwnerPicture,   this.pastOrPresentDate, this.isPatOrPresentActive=false,
   });
 
   @override
@@ -82,7 +85,31 @@ class _gridCardState extends State<gridCard> {
                 ),
 
                 // Live Badge
-                if (widget.isLive)
+                if (widget.isPatOrPresentActive && widget.isLive==false)
+                  Positioned(
+                    top: 8.h,
+                    left: 8.w,
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 8.w,
+                        vertical: 4.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: AppColors.green600,
+                        borderRadius: BorderRadius.circular(12.r),
+                      ),
+                      child:Text(
+                        widget.pastOrPresentDate!,
+                        style: AppTextStyles.captionRegular.copyWith(
+                          color: Colors.white,
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ),
+                // pastOrPresentDate
+                if (widget.isLive && widget.isPatOrPresentActive==false)
                   Positioned(
                     top: 8.h,
                     left: 8.w,
@@ -117,7 +144,7 @@ class _gridCardState extends State<gridCard> {
                           ),
                           SizedBox(width: 4.w),
                           Text(
-                            '${widget.viewerCount}',
+                            '${widget.liveViewerCount}',
                             style: AppTextStyles.captionRegular.copyWith(
                               color: Colors.white,
                               fontSize: 10.sp,

@@ -272,7 +272,9 @@ class DirectBuyProductScreen extends GetView<DirectBuyProductController> {
                 ),
                 SizedBox(height: 32.h),
                 PrimaryButton(
-                    width: double.infinity, onPressed: () {}, text: "Pay Now"),
+                    width: double.infinity, onPressed: () {
+                      controller.navigateToRegistrationSuccess();
+                }, text: "Pay Now"),
                 SizedBox(height: 16.h,)
               ],
             ),
